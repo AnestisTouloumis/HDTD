@@ -1,0 +1,46 @@
+\name{meanmat.hat}
+\alias{meanmat.hat}
+\alias{print.meanmat.hat}
+\title{
+Estimation the Mean Matrix
+}
+\description{
+This function estimates the mean matrix.
+}
+\usage{
+meanmat.hat(datamat, N, group.sizes = NULL, group.vars = NULL)
+}
+\arguments{
+  \item{datamat}{numeric matrix containing the transposable data.
+}
+ \item{N}{
+positive integer number indicating the sample size, i.e., the number of subjects.
+}
+  \item{group.sizes}{
+numeric vector indicating the size of the row or column groups that share the same mean vector. It should be used only when \code{group.vars=}"\code{rows}" or "\code{columns}".
+}
+  \item{group.vars}{
+character indicating that the mean matrix can be simplified over the row or column variables. Options include "\code{rows}" or "\code{columns}".
+}
+}
+\details{
+It is assumed that there are \code{nrow(datamat)} row variables and \code{ncol(datamat)}/\code{N} column variables in \code{datamat}. Further, \code{datamat} should be written in such a way that every \code{ncol(datamat)}/\code{N} consecutive columns belong to the same subject and the order of the column variables in each block is preserved across subjects.
+}
+\value{
+Returns a list with components:
+\item{estmeanmat}{the estimated mean matrix.}
+\item{N}{the sample size.}
+\item{n.rows}{the number of row variables.}
+\item{n.cols}{the number of column variables.}
+}
+\author{
+Anestis Touloumis
+}
+
+\examples{
+data(VEGFmouse)
+## The sample mean matrix of the VEGF mouse data.
+sample.mean <- meanmat.hat(VEGFmouse,40)
+sample.mean
+sample.mean$estmeanmat
+}

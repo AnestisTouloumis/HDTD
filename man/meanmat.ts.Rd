@@ -1,0 +1,55 @@
+\name{meanmat.ts}
+\alias{meanmat.ts}
+\alias{print.meanmat.ts}
+\title{
+Nonparametric Tests for the Mean Matrix
+}
+\description{
+This function performs hypothesis testing for the mean matrix.
+}
+\usage{
+meanmat.ts(datamat, N, group.sizes, voi = "columns")
+}
+\arguments{
+  \item{datamat}{
+numeric matrix containing the transposable data.
+}
+  \item{N}{
+positive integer number indicating the sample size, i.e., the number of subjects.
+}
+  \item{group.sizes}{
+numeric vector indicating the group sizes under the null hypothesis.
+}
+  \item{voi}{
+character indicating if the test will be applied to the row or column variables. Options include "\code{rows}" or "\code{columns}".
+}
+}
+\details{
+It is assumed that there are \code{nrow(datamat)} row variables and \code{ncol(datamat)}/\code{N} column variables in \code{datamat}. Further, \code{datamat} should be written in such a way that every \code{ncol(datamat)}/\code{N} consecutive columns belong to the same subject and the order of the column variables in each block is preserved across subjects.
+}
+\value{
+Returns a list with components:
+\item{statistic}{the value of the test statistic.}
+\item{p.value}{the corresponding p-value.}
+\item{voi}{the set of variables that the test was applied to.}
+\item{n.groups}{the number of groups under the null hypothesis.}
+\item{group.sizes}{the size of each group under the null hypothesis.}
+\item{N}{the sample size.}
+\item{n.rows}{the number of row variables.}
+\item{n.cols}{the number of column variables.}
+}
+\author{
+Anestis Touloumis
+}
+\references{
+Touloumis, A., Tavare, S. and Marioni, J.C. (2013). Testing the Mean Matrix in High-Dimensional Transposable Data.  \url{http://arxiv.org/abs/1404.7683}. 
+}
+\examples{
+data(VEGFmouse)
+## Testing if there is no tissue effect on the mean expression level for each gene.
+tistest <- meanmat.ts(VEGFmouse,40,group.sizes=9,voi="columns")
+tistest
+## Testing if the adrenal and the cerebrum tissues have the same mean vector.
+tistest2 <- meanmat.ts(VEGFmouse,40,group.sizes=c(2,rep(1,7)),voi="columns")
+tistest2
+}

@@ -1,0 +1,51 @@
+\name{covmat.hat}
+\alias{covmat.hat}
+\alias{print.covmat.hat}
+\title{
+Estimation of the Row and of the Column Covariance Matrices.
+}
+\description{
+This function provides the row and/or column covariance matrix estimators.
+}
+\usage{
+covmat.hat(datamat, N, shrink = "both", centered = FALSE)
+}
+\arguments{
+  \item{datamat}{numeric matrix containing the transposable data.
+}
+  \item{N}{
+positive integer number indicating the sample size, i.e., the number of subjects.
+}
+  \item{shrink}{
+character indicating if shrinkage estimation should be performed. Options include "\code{rows}", "\code{columns}", "\code{both}" and "\code{none}".
+}
+  \item{centered}{
+logical indicating if the transposable data are centered. Options include \code{TRUE} or \code{FALSE}.
+}
+}
+\details{
+It is assumed that there are \code{nrow(datamat)} row variables and \code{ncol(datamat)}/\code{N} column variables in \code{datamat}. Further, \code{datamat} should be written in such a way that every \code{ncol(datamat)}/\code{N} consecutive columns belong to the same subject and the order of the column variables in each block is preserved across subjects.
+
+For identifiability reasons, the trace of the row covariance matrix is set equal to its dimension.
+}
+\value{
+Returns a list with components:
+\item{rows.covmat}{the estimated row covariance matrix.}
+\item{rows.intensity}{the estimated row intensity.}
+\item{cols.covmat}{the estimated column covariance matrix.}
+\item{cols.intensity}{the estimated column intensity.}
+\item{N}{the sample size.}
+\item{n.rows}{the number of row variables.}
+\item{n.cols}{the number of column variables.}
+\item{shrink}{character indicating if shrinkage estimation was performed.}
+\item{centered}{logical indicating if the transposable data were centered.}
+}
+\author{
+Anestis Touloumis
+}
+\examples{
+data(VEGFmouse)
+# Estimating the covariance matrices of the genes (rows) and of the tissues (columns).
+estcovmat <- covmat.hat(VEGFmouse,40,shrink="both",centered=FALSE)
+estcovmat
+}

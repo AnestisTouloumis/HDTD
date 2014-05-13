@@ -1,0 +1,28 @@
+citHeader("To cite the package 'HDTD' in publications please use:")
+
+citEntry(entry="Article",
+         title = "Testing the Mean Matrix in High-Dimensional Transposable Data",
+         author = as.person("Touloumis, A., Tavare, S. and Marioni, J.C."),
+         journal = "Submitted",
+         year = "2013",
+         URL = "http://arxiv.org/abs/1404.7683",
+         textVersion=paste("Touloumis, A., Tavare, S. and Marioni, J.C. (2013).", 
+                     "Testing the Mean Matrix in High-Dimensional Transposable Data,",
+               "http://arxiv.org/abs/1404.7683"),
+         header = "For hypothesis testing of the mean matrix"
+         )
+ 
+citEntry(entry="Article",
+         title = "Hypothesis Testing for the Covariance Matrix in High-Dimensional Transposable Data with Kronecker Product Dependence Structure",
+         author = as.person("Touloumis, A., Marioni, J.C. and Tavare, S."),
+         journal = "Submitted",
+         year = "2013",
+         URL = "http://arxiv.org/abs/1404.7684",
+         textVersion=paste("Touloumis, A., Marioni, J.C. and Tavare, S. (2013).",
+               "Hypothesis Testing for the Covariance Matrix in High-Dimensional Transposable Data with Kronecker Product Dependence Structure,",
+               "http://arxiv.org/abs/1404.7684"),
+         header = "for hypothesis testing of the covariance matrix"
+         )
+
+
+
