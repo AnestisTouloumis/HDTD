@@ -1,4 +1,4 @@
-citHeader("To cite the package 'HDTD' in publications please use:")
+citHeader("To cite package 'HDTD' in publications, please use")
 
 citEntry(entry="Article",
          title = "Testing the Mean Matrix in High-Dimensional Transposable Data",
@@ -8,8 +8,7 @@ citEntry(entry="Article",
          URL = "http://arxiv.org/abs/1404.7683",
          textVersion=paste("Touloumis, A., Tavare, S. and Marioni, J.C. (2013).", 
                      "Testing the Mean Matrix in High-Dimensional Transposable Data,",
-               "http://arxiv.org/abs/1404.7683"),
-         header = "For hypothesis testing of the mean matrix"
+               "http://arxiv.org/abs/1404.7683")
          )
  
 citEntry(entry="Article",
@@ -21,8 +20,7 @@ citEntry(entry="Article",
          textVersion=paste("Touloumis, A., Marioni, J.C. and Tavare, S. (2013).",
                "Hypothesis Testing for the Covariance Matrix in High-Dimensional Transposable Data with Kronecker Product Dependence Structure,",
                "http://arxiv.org/abs/1404.7684"),
-         header = "for hypothesis testing of the covariance matrix"
+         header = "when performing hypothesis testing of the mean matrix, and ",
+         footer = "when performing hypothesis testing of the covariance matrix."
          )
-
-
 
