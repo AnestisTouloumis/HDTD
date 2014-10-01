@@ -1,3 +1,6 @@
+Version 0.99.4 [2014-10-01]
+ * Updated CITATION file.
+
 Version 0.99.3 [2014-09-25]
  * Introduced warning messages regarding the sample size.
  * Updated the vignette file.
