@@ -1,8 +1,10 @@
 centerdata <-
 function(datamat,N)
 {
-if(!is.matrix(datamat)) datamat <- as.matrix(datamat)
+if(!is.matrix(datamat)) datamat <- as.matrix(datamat,dimnames=list(rownames(datamat),colnames(datamat)))
 datamat <- na.omit(datamat)
+row.vars.names <- rownames(datamat)
+col.vars.names <- colnames(datamat)
 N <- as.numeric(N)
 if(length(N)!=1 | ((N-round(N))!=0) | (N<=1)) 
    stop("'N' must be an integer number greater than 1")

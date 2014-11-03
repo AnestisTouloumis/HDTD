@@ -15,11 +15,11 @@ The function \code{\link{meanmat.hat}} estimates the mean matrix of the transpos
 
 The mean relationship of the row and column variables can be tested using the function \code{\link{meanmat.ts}}. The implemented test is nonparametric and not seriously restricted by the dependence structure among and/or between the row and column variables. 
 
-The function \code{\link{covmat.hat}} provides the Stein-type shrinkage estimators for the row covariance matrix and/or for the column covariance matrix under a matrix-variate normal model. 
+The function \code{\link{covmat.hat}} provides Stein-type shrinkage estimators for the row covariance matrix and/or for the column covariance matrix under a matrix-variate normal model. 
 
 The sphericity and identity hypothesis for the row or column covariance matrix can be tested using the function \code{\link{covmat.ts}}. Both tests are nonparametric, i.e., they do not rely on a normality assumption. 
 
-There are two utility functions that allow the user to center the transposable data (\code{\link{centerdata}}) or rearrange the order of the row and/or column variables (\code{\link{orderdata}}). 
+There are three utility functions that allow the user to change to interchange the role of row and column variables (\code{\link{transposedata}}), to center the transposable data (\code{\link{centerdata}}) or to rearrange the order of the row and/or column variables (\code{\link{orderdata}}). 
 }
 \author{
 Anestis Touloumis, John Marioni, Simon Tavare.
@@ -27,7 +27,7 @@ Anestis Touloumis, John Marioni, Simon Tavare.
 Maintainer: Anestis.Touloumis <Anestis.Touloumis@cruk.cam.ac.uk>
 }
 \references{
-Touloumis, A., Tavare, S. and Marioni, J.C. (2013). Testing the Mean Matrix in High-Dimensional Transposable Data.  \url{http://arxiv.org/abs/1404.7683}. 
+Touloumis, A., Tavare, S. and Marioni, J.C. (2014). Testing the Mean Matrix in High-Dimensional Transposable Data. \emph{To appear in Biometrics},  \url{http://arxiv.org/abs/1404.7683}. 
    
 Touloumis, A., Marioni, J.C. and Tavare, S. (2013). Hypothesis Testing for the Covariance Matrix in High-Dimensional Transposable Data with Kronecker Product Dependence Structure. \url{http://arxiv.org/abs/1404.7684}.
 }

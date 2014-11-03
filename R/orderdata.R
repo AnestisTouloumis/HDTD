@@ -1,7 +1,7 @@
 orderdata <-
 function(datamat,N,order.rows=NULL,order.cols=NULL)
 {
-if(is.matrix(datamat)) datamat <- as.matrix(datamat)
+if(!is.matrix(datamat)) datamat <- as.matrix(datamat,dimnames=list(rownames(datamat),colnames(datamat)))
 datamat <- na.omit(datamat)
 row.vars.names <- rownames(datamat)
 col.vars.names <- colnames(datamat)

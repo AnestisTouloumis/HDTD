@@ -26,7 +26,7 @@ logical indicating if the transposable data are centered. Options include \code{
 \details{
 It is assumed that there are \code{nrow(datamat)} row variables and \code{ncol(datamat)}/\code{N} column variables in \code{datamat}. Further, \code{datamat} should be written in such a way that every \code{ncol(datamat)}/\code{N} consecutive columns belong to the same subject and the order of the column variables in each block is preserved across subjects.
 
-For identifiability reasons, the trace of the row covariance matrix is set equal to its dimension.
+For identifiability reasons, the trace of the row covariance matrix is set equal to its dimension. If you want to place the equivalent restriction on the column covariance matrix, interchange the role of row and column variables by utilizing the function \code{\link{transposedata}}.
 }
 \value{
 Returns a list with components:

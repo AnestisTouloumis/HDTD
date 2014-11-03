@@ -42,7 +42,7 @@ Returns a list with components:
 Anestis Touloumis
 }
 \references{
-Touloumis, A., Tavare, S. and Marioni, J.C. (2013). Testing the Mean Matrix in High-Dimensional Transposable Data.  \url{http://arxiv.org/abs/1404.7683}. 
+Touloumis, A., Tavare, S. and Marioni, J.C. (2014). Testing the Mean Matrix in High-Dimensional Transposable Data. \emph{To appear in Biometrics,}  \url{http://arxiv.org/abs/1404.7683}. 
 }
 \examples{
 data(VEGFmouse)

@@ -22,7 +22,7 @@ if(voi=="rows")  datamat <- transposedata(datamat,N)
 ts <-  covmat.ts.generic(datamat,N,centered)
 ans <- list(sphericity.ts=list(statistic=ts$Utest,p.value=1-pnorm(ts$Utest)),
             identity.ts=list(statistic=ts$Vtest,p.value=1-pnorm(ts$Vtest)),
-            N=N,n.rows=p1,n.cols=p2,variables=voi,centered=centered) 
+            N=N,n.rows=p1,n.cols=p2,variables=if(voi=="rows") "Rows" else "Columns",centered=centered) 
 class(ans) <- "covmat.ts" 
 ans
 }

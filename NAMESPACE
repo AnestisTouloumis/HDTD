@@ -1,4 +1,4 @@
-export(centerdata,covmat.hat,covmat.ts,meanmat.hat,meanmat.ts,orderdata)
+export(centerdata,covmat.hat,covmat.ts,meanmat.hat,meanmat.ts,transposedata,orderdata)
 
 S3method(print,covmat.hat)
 S3method(print,covmat.ts)

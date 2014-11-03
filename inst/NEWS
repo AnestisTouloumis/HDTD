@@ -1,3 +1,10 @@
+Version 1.1.1 [2014-11-04]
+ * Added the function transposedata.
+ * Updated the vignette file.
+ * Updated the CITATION file.
+ * Updated output of the core fuctions.
+ * Updated documentation.
+
 Version 0.99.4 [2014-10-01]
  * Updated CITATION file.
 

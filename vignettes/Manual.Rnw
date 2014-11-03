@@ -72,14 +72,18 @@ The output summarizes the results but the user can recover the full covariance m
 <<>>=
 round(estcovmat$cols.covmat,4)
 @
-Moreover, the user can test gene-wise or tissue-wise correlation by using the \texttt{covmat.ts} function. For example, 
+Moreover, the user can study the gene-wise or tissue-wise correlation by using the \texttt{covmat.ts} function. For example, the identity and sphericity test 
 <<>>=
 covmat.ts(datamat = VEGFmouse, N = 40, voi = "columns", centered = FALSE)
 @
+suggest that the tissues might not be uncorrelated since the $p$-values of the sphericity and the identity test are both $<0.001$. 
+\section{Citation}
+<<>>=
+citation("HDTD")
+@
+\section{Session Info}
 <<>>=
 sessionInfo()
 @
-the tissues are not correlated since the $p$-values of the sphericity and the identity test are $<0.001$. 
 \end{document}
-
 

@@ -1,14 +1,15 @@
-citHeader("To cite package 'HDTD' in publications, please use")
+citHeader("Please use the following guidelines for citing `HDTD' in publication:")
 
 citEntry(entry="Article",
          title = "Testing the Mean Matrix in High-Dimensional Transposable Data",
          author = as.person("Touloumis, A., Tavare, S. and Marioni, J.C."),
          journal = "To appear in Biometrics",
-         year = "2013",
+         year = "2014",
          URL = "http://arxiv.org/abs/1404.7683",
-         textVersion=paste("Touloumis, A., Tavare, S. and Marioni, J.C. (2013).", 
+         textVersion=paste("Touloumis, A., Tavare, S. and Marioni, J.C. (2014).", 
                      "Testing the Mean Matrix in High-Dimensional Transposable Data,",
-               "To appear in Biometrics")
+               "To appear in Biometrics"),
+         header = "To cite the mean matrix hypothesis testing methodology, please use ",
          )
  
 citEntry(entry="Article",
@@ -20,7 +21,16 @@ citEntry(entry="Article",
          textVersion=paste("Touloumis, A., Marioni, J.C. and Tavare, S. (2013).",
                "Hypothesis Testing for the Covariance Matrix in High-Dimensional Transposable Data with Kronecker Product Dependence Structure,",
                "http://arxiv.org/abs/1404.7684"),
-         header = "when performing hypothesis testing of the mean matrix, and ",
-         footer = "when performing hypothesis testing of the covariance matrix."
+         header = "To cite the covariance matrix hypothesis testing methodology, please use ",
          )
 
+citEntry(entry="Manual",
+         title = "HDTD:Statistical Inference about the Mean Matrix and the Covariance Matrices in High-Dimensional Transposable",
+         author = as.person("Touloumis, A., Marioni, J.C. and Tavare, S."),
+         year = "2014",
+         URL = "http://www.bioconductor.org/packages/3.0/bioc/html/HDTD.html",
+         textVersion=paste("Touloumis, A., Marioni, J.C. and Tavare, S. (2014).",
+               "HDTD: Statistical Inference about the Mean Matrix and the Covariance Matrices in High-Dimensional Transposable,",
+               "URL=http://www.bioconductor.org/packages/3.0/bioc/html/HDTD.html"),
+         header = "To cite the software, please use ",
+         )
