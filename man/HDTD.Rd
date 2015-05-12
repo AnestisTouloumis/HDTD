@@ -27,7 +27,7 @@ Anestis Touloumis, John Marioni, Simon Tavare.
 Maintainer: Anestis.Touloumis <Anestis.Touloumis@cruk.cam.ac.uk>
 }
 \references{
-Touloumis, A., Tavare, S. and Marioni, J.C. (2014). Testing the Mean Matrix in High-Dimensional Transposable Data. \emph{To appear in Biometrics},  \url{http://arxiv.org/abs/1404.7683}. 
+Touloumis, A., Tavare, S. and Marioni, J.C. (2015). Testing the Mean Matrix in High-Dimensional Transposable Data. \emph{Biometrics}, 71, 157-166. 
    
 Touloumis, A., Marioni, J.C. and Tavare, S. (2013). Hypothesis Testing for the Covariance Matrix in High-Dimensional Transposable Data with Kronecker Product Dependence Structure. \url{http://arxiv.org/abs/1404.7684}.
 }

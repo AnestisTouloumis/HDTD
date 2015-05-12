@@ -42,8 +42,9 @@ Returns a list with components:
 Anestis Touloumis
 }
 \references{
-Touloumis, A., Tavare, S. and Marioni, J.C. (2014). Testing the Mean Matrix in High-Dimensional Transposable Data. \emph{To appear in Biometrics,}  \url{http://arxiv.org/abs/1404.7683}. 
+Touloumis, A., Tavare, S. and Marioni, J.C. (2015). Testing the Mean Matrix in High-Dimensional Transposable Data. \emph{Biometrics}, 71, 157-166.  
 }
+
 \examples{
 data(VEGFmouse)
 ## Testing if there is no tissue effect on the mean expression level for each gene.
