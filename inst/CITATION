@@ -6,7 +6,7 @@ citEntry(entry="Article",
          journal = "Biometrics",
          year = "2015",
          volume = "71",
-         pages = "157--166"
+         pages = "157--166",
          textVersion=paste("Touloumis, A., Tavare, S. and Marioni, J.C. (2015).", 
                      "Testing the Mean Matrix in High-Dimensional Transposable Data,",
                "Biometrics, 71, 157-166"),
