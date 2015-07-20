@@ -12,5 +12,5 @@ function (x, ...)
  if(x$n.groups==2) cat("\nThe number of",x$voi,"in each of the two predefined groups are", paste(x$group.sizes,collapse=" and "), ".\n")
  if(x$n.groups>2) cat("\nThe number of",x$voi,"in the",x$n.groups,"predefined groups are",paste(c(paste(x$group.sizes[1:(x$n.groups-1)],collapse=", "),x$group.sizes[x$n.groups]),collapse=" and ")," respectively.\n")
  if(x$p.value<0.0001) cat("\nTest statistic =",round(x$statistic,4),", p-value < 0.0001\n")
- if(x$p.value>=0.0001) cat("\nTest statistic =",round(x$statistic,4),", p-value =", x$p.value,"\n") 
+ if(x$p.value>=0.0001) cat("\nTest statistic =",round(x$statistic,4),", p-value =", round(x$p.value,4),"\n") 
 }
