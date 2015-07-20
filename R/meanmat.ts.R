@@ -4,7 +4,7 @@ meanmat.ts <-
     if(!is.matrix(datamat)) datamat <- as.matrix(datamat)
     datamat <- na.omit(datamat)
     N <- as.numeric(N)
-    if(length(N)!=1 | ((N-round(N))!=0) | (N<=4)) 
+    if(length(N)!=1 | ((N-round(N))!=0) | (N<=3)) 
       stop("'N' must be a positive integer number greater than 3")
     group.sizes <- as.numeric(group.sizes)
     if(any(group.sizes<=0) || any((group.sizes-round(group.sizes))!=0))

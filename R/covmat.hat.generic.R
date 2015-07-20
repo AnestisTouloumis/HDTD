@@ -1,23 +1,23 @@
 covmat.hat.generic <-
-  function(datamat,N,shrink,centered,p1,p2)
+  function(datamat,N,shrink,centered,p1,p2,voi)
   {
     id <- rep(1:N,each=p2)
     if(centered) {
-      Sigma <- tcrossprod(datamat)/N
+      if(voi!="columns")  Sigma <- tcrossprod(datamat)/N
       Delta <- tcrossprod(transposedata(datamat,N))/N/p1
     } else {
       datacen <- centerdata(datamat,N)
-      Sigma <- matrix(0,p1,p1)
+      if(voi!="columns") Sigma <- matrix(0,p1,p1)
       Delta <- matrix(0,p2,p2)
       for(i in 1:N) {
-        Sigma <- Sigma + tcrossprod(datacen[,id==i])
+        if(voi!="columns") Sigma <- Sigma + tcrossprod(datacen[,id==i])
         Delta <- Delta + crossprod(datacen[,id==i])    
       }
-      Sigma <- Sigma/(N-1)
+      if(voi!="columns") Sigma <- Sigma/(N-1)
       Delta <- Delta/(N-1)/p1
     }
     trDeltahat <- sum(diag(Delta)) 
-    Sigma <- Sigma/trDeltahat   
+    if(voi!="columns") Sigma <- Sigma/trDeltahat   
     if(centered) {
       if(shrink!="none"){
         trDelta2hat <- 0
@@ -167,11 +167,13 @@ covmat.hat.generic <-
       }
     }
     if(shrink=="both" | shrink=="rows"){ 
-      Sigma <- Sigma*(1-lambdaS) + diag(lambdaS,p1)
+      if(voi!="columns") Sigma <- Sigma*(1-lambdaS) + diag(lambdaS,p1) 
     }
     if(shrink=="both" | shrink=="columns"){
-        Delta <- Delta*(1-lambdaD) + diag(lambdaD*trDeltahat/p2,p2)
+      if(voi!="rows")  Delta <- Delta*(1-lambdaD) + diag(lambdaD*trDeltahat/p2,p2)
     }
-    ans <- list(rowcovmat=Sigma,lambdaS=if(shrink=="both" | shrink=="rows") lambdaS else NULL,colcovmat=Delta,lambdaD=if(shrink=="both" | shrink=="columns") lambdaD else NULL)
+    if(voi=="rows") ans <- list(rowcovmat=Sigma,lambdaS=if(shrink=="both" | shrink=="rows") lambdaS else NULL)
+    if(voi=="columns") ans <- list(colcovmat=Delta,lambdaD=if(shrink=="both" | shrink=="columns") lambdaD else NULL)
+    if(voi=="both") ans <- list(rowcovmat=Sigma,lambdaS=if(shrink=="both" | shrink=="rows") lambdaS else NULL,colcovmat=Delta,lambdaD=if(shrink=="both" | shrink=="columns") lambdaD else NULL)
     ans
   }

@@ -32,6 +32,6 @@ citEntry(entry="Manual",
          URL = "http://bioconductor.org/packages/release/bioc/html/HDTD.html",
          textVersion=paste("Touloumis, A., Marioni, J.C. and Tavare, S. (2014).",
                "HDTD: Statistical Inference about the Mean Matrix and the Covariance Matrices in High-Dimensional Transposable Data,",
-               "URL=http://bioconductor.org/packages/release/bioc/html/HDTD.html"),
+               "http://bioconductor.org/packages/release/bioc/html/HDTD.html"),
          header = "To cite the software, please use ",
          )

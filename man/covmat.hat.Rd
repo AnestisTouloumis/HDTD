@@ -8,7 +8,7 @@ Estimation of the Row and of the Column Covariance Matrices.
 This function provides the row and/or column covariance matrix estimators.
 }
 \usage{
-covmat.hat(datamat, N, shrink = "both", centered = FALSE)
+covmat.hat(datamat, N, shrink = "both", centered = FALSE, voi = "both")
 }
 \arguments{
   \item{datamat}{numeric matrix containing the transposable data.
@@ -21,6 +21,9 @@ character indicating if shrinkage estimation should be performed. Options includ
 }
   \item{centered}{
 logical indicating if the transposable data are centered. Options include \code{TRUE} or \code{FALSE}.
+}
+  \item{voi}{
+character indicating if the row, column or both covariance matrices should be printed. Options include "\code{rows}", "\code{columns}" and "\code{both}".
 }
 }
 \details{
