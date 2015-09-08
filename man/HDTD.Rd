@@ -24,7 +24,7 @@ There are three utility functions that allow the user to change to interchange t
 \author{
 Anestis Touloumis, John Marioni, Simon Tavare.
 
-Maintainer: Anestis.Touloumis <Anestis.Touloumis@cruk.cam.ac.uk>
+Maintainer: Anestis.Touloumis <A.Touloumis@brighton.ac.uk>
 }
 \references{
 Touloumis, A., Tavare, S. and Marioni, J.C. (2015). Testing the Mean Matrix in High-Dimensional Transposable Data. \emph{Biometrics}, 71, 157-166. 

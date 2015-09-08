@@ -1,6 +1,6 @@
 \documentclass{article}
 \title{Using \textbf{HDTD} to Analyze High-Dimensional Transposable Data: An Application in Genetics}
-\author{Anestis Touloumis\footnote{Anestis.Touloumis@cruk.cam.ac.uk}, John C. Marioni and Simon Tavar\'e }
+\author{Anestis Touloumis\footnote{A.Touloumis@brighton.ac.uk}, John C. Marioni and Simon Tavar\'e }
 \date{}
 \usepackage{Sweave}
 \usepackage{amsmath}

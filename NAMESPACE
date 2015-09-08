@@ -8,3 +8,5 @@ S3method(print,meanmat.ts)
 exportClasses(covman.hat,covmat.ts,meanmat.hat,meanmat.ts)
 
 exportMethods(print.covmat.hat,print.covmat.ts,print.meanmat.hat,print.meanmat.ts)
+
+importFrom("stats", "na.omit", "pnorm")
