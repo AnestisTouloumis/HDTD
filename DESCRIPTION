@@ -2,7 +2,7 @@ Package: HDTD
 Type: Package
 Title: Statistical Inference about the Mean Matrix and the Covariance
         Matrices in High-Dimensional Transposable Data (HDTD)
-Version: 1.4.0
+Version: 1.5.0
 Date: 2015-09-08
 Author: Anestis Touloumis, John C. Marioni and Simon Tavare
 Maintainer: Anestis Touloumis <A.Touloumis@brighton.ac.uk>
