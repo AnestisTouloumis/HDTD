@@ -30,7 +30,7 @@ if(!is.null(order.cols)){
       stop("'order.cols' must be a vector of positive integer numbers")
    if(!is.null(order.rows)) ans <- transposedata(ans,N)[order.cols,] else ans <- transposedata(datamat,N)[order.cols,]
    ans <- transposedata(ans,N)
-if(!is.null(col.vars.names)) colnames(ans) <- paste(col.vars.names[order.cols],rep(1:N,each=ncol(ans)/N),sep=".")
+if(!is.null(col.vars.names)) colnames(ans) <- paste(col.vars.names[order.cols],rep(seq_len(N),each=ncol(ans)/N),sep=".")
                         }
   ans 
 }

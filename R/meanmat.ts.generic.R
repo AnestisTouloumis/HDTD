@@ -7,9 +7,9 @@ datamat <- projmat%*%datamat
 datamat <- matrix(datamat,dims,N)
 dataveccen <- datamat - rowMeans(datamat)
 Gn <- helpcon <- 0
-for(i in 1:(N-1)){
- Gn <- sum(crossprod(datamat[,i],datamat[,(i+1):N])) + Gn 
- helpcon <- sum(crossprod(dataveccen[,i],dataveccen[,(i+1):N])^2) + helpcon 
+for(i in seq_len(N-1)){
+ Gn <- sum(crossprod(datamat[,i],datamat[,seq(i+1,N)])) + Gn 
+ helpcon <- sum(crossprod(dataveccen[,i],dataveccen[,seq(i+1,N)])^2) + helpcon 
                  }
 Gn <- 2*Gn/N/(N-1)
 colssums <- colSums(dataveccen^2)

@@ -2,16 +2,16 @@ covmat.ts.generic <-
   function(datamat,N,centered){ 
     p1 <- nrow(datamat)
     p2 <- ncol(datamat)/N
-    id <- rep(1:N,each=p2) 
+    id <- rep(seq_len(N),each=p2) 
     Y1 <- sum(datamat^2)/N
     Y2 <- Y3 <- Y4 <- Y5 <- 0  
     if(p1>=p2) { 
       y <- crossprod(datamat)
-      for(i in 1:(N-1))
+      for(i in seq_len(N-1))
       {
         helpmat <- y[id==i,id==i]
         sum1 <- 0 
-        for(j in (i+1):N)
+        for(j in seq(i+1,N))
         {
           sum1 <- sum1 + y[id==j,id==j]
         }
@@ -23,7 +23,7 @@ covmat.ts.generic <-
         sum41 <- sum42 <- sum43 <- 0
         sum51 <- sum52 <- sum53 <- sum54 <- sum55 <- 0
         sum541 <- sum551 <- 0
-        for(i in 1:N){
+        for(i in seq_len(N)){
           helpmat <- datamat[,id==i]
           helpmat2 <- y[id==i,id==i]
           helpmat3 <- helpmat-xmean
@@ -36,7 +36,7 @@ covmat.ts.generic <-
           sum51 <- sum51 + sum(helpmat5^2)
           sum541 <- sum541 + sum(helpmat4^2)
           sum551 <- sum551 + sum(helpmat4*t(helpmat4))
-          for(j in (i+1):N){
+          for(j in seq(i+1,N)){
             if(i!=N){
               sum52 <- sum52 + sum(y[id==i,id==j]^2)
               sum53 <- sum53 + sum(y[id==i,id==j]*y[id==j,id==i])        
@@ -52,17 +52,17 @@ covmat.ts.generic <-
       }  
     }
     else {
-      id1 <- rep(1:N,each=p1)
+      id1 <- rep(seq_len(N),each=p1)
       datamat1 <- t(transposedata(datamat,N))
       y1 <- tcrossprod(datamat1)
-      for(i in 1:(N-1))  Y2 <- sum(y1[id1==i,id1>i]^2)+Y2
+      for(i in seq_len(N-1))  Y2 <- sum(y1[id1==i,id1>i]^2)+Y2
       Y2 <- 2*Y2
       if(centered==FALSE){
         xmean <- matrix(rowMeans(matrix(datamat,p1*p2,N)),p1,p2)
         sum41 <- sum42 <- sum43 <- 0
         sum51 <- sum52 <- sum53 <- sum54 <- sum55 <- 0
         sum541 <- sum551 <- 0
-        for(i in 1:N){
+        for(i in seq_len(N)){
           Y3 <- sum(c(datamat[,id==i])*datamat[,id>i])+Y3
           helpmat <- datamat1[id1==i,]
           helpmat2 <- y1[id1==i,id1==i]
@@ -76,8 +76,8 @@ covmat.ts.generic <-
           sum51 <- sum51 + sum(helpmat5^2)
           sum541 <- sum541 + sum(helpmat6*helpmat5)
           sum551 <- sum551 + sum(helpmat4*t(helpmat4))
-          for(j in (i+1):N){
-            if(i!=N){
+          if(i!=N){
+          for(j in seq(i+1,N)){
               sum52 <- sum52 + sum(y1[id1==i,id1==i]*y1[id1==j,id1==j])
               sum53 <- sum53 + sum(y1[id1==i,id1==j]*y1[id1==j,id1==i])
             }     
@@ -101,8 +101,8 @@ covmat.ts.generic <-
     if(!centered){
       dataveccen <- dataveccen - rowMeans(dataveccen)
       helpcon <- 0
-      for(i in 1:(N-1)){
-        helpcon <- sum(crossprod(dataveccen[,i],dataveccen[,(i+1):N])^2) + helpcon 
+      for(i in seq_len(N-1)){
+        helpcon <- sum(crossprod(dataveccen[,i],dataveccen[,seq(i+1,N)])^2) + helpcon 
       }
       colssums <- colSums(dataveccen^2)
       Q <- sum(colssums^2)
@@ -112,8 +112,8 @@ covmat.ts.generic <-
       trOmega <- (N-1)/(N*(N-2)*(N-3))*((N-1)*(N-2)*trS2+tr2S-N*Q)
     } else {
       helpcon <- 0
-      for(i in 1:(N-1)){
-        helpcon <- sum(crossprod(dataveccen[,i],dataveccen[,(i+1):N])^2) + helpcon 
+      for(i in seq_len(N-1)){
+        helpcon <- sum(crossprod(dataveccen[,i],dataveccen[,seq(i+1,N)])^2) + helpcon 
       }
       trOmega <- 2*helpcon/N/(N-1)
     }

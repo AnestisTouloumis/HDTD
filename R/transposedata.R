@@ -11,11 +11,11 @@ p1 <- nrow(datamat)
 p2 <- ncol(datamat)/N
 if((p2-round(p2))!=0) 
   stop("The number of column variables in `datamat' is not a positive integer number")
-idold <- rep(1:N,each=p2)
-idnew <- rep(1:N,each=p1)
+idold <- rep(seq_len(N),each=p2)
+idnew <- rep(seq_len(N),each=p1)
 ans <- matrix(0,p2,p1*N)
 for(i in 1:N) ans[,idnew==i] <- t(datamat[,idold==i])
 rownames(ans) <- col.vars.names[1:p2]
-colnames(ans) <- paste(row.vars.names,rep(1:N,each=ncol(ans)/N),sep=".")
+colnames(ans) <- paste(row.vars.names,rep(seq_len(N),each=ncol(ans)/N),sep=".")
 ans
 }

@@ -10,7 +10,7 @@ if(length(N)!=1 | ((N-round(N))!=0) | (N<=1))
    stop("'N' must be a positive integer number greater than 1")
 p1 <- nrow(datamat)
 p2 <- ncol(datamat)/N
-colsnam <- colsnam[1:p2]
+colsnam <- colsnam[seq_len(p2)]
 if((p2-round(p2))!=0) 
    stop("The number of column variables is not a positive integer number")
 ans <- matrix(rowSums(matrix(datamat,p1*p2,N)),p1,p2)
