@@ -78,11 +78,11 @@ covmat.ts(datamat = VEGFmouse, N = 40, voi = "columns", centered = FALSE)
 @
 suggest that the tissues might not be uncorrelated since the $p$-values of the sphericity and the identity test are both $<0.001$. 
 \section{Citation}
-<<>>=
-citation("HDTD")
+<<echo=FALSE>>=
+print(citation("HDTD"),bibtex=TRUE)
 @
 \section{Session Info}
-<<>>=
+<<echo=FALSE>>=
 sessionInfo()
 @
 \end{document}
