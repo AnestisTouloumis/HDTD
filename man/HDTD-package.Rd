@@ -63,11 +63,11 @@ Mean Matrix in High-Dimensional Transposable Data. \emph{Biometrics} \bold{71},
 157--166
 
 Touloumis, A., Marioni, J. C. and Tavare, S. (2016) HDTD: Analyzing 
-multi-tissue gene expression data. \emph{Bioinformatics} \bold{21}, 2193--2195.
+multi-tissue gene expression data. \emph{Bioinformatics} \bold{32}, 2193--2195.
 
 Touloumis, A., Marioni, J. C. and Tavare, S. (2013) Hypothesis Testing for
 the Covariance Matrix in High-Dimensional Transposable Data with Kronecker
-Product Dependence Structure.\url{http://arxiv.org/abs/1404.7684}.
+Product Dependence Structure. \url{http://arxiv.org/abs/1404.7684}.
 }
 \author{
 Anestis Touloumis, John Marioni, Simon Tavare.

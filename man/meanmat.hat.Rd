@@ -46,7 +46,7 @@ sample.mean$estmeanmat
 }
 \references{
 Touloumis, A., Marioni, J. C. and Tavare, S. (2016) HDTD: Analyzing 
-multi-tissue gene expression data. \emph{Bioinformatics} \bold{21}, 2193--2195.
+multi-tissue gene expression data. \emph{Bioinformatics} \bold{32}, 2193--2195.
 }
 \author{
 Anestis Touloumis

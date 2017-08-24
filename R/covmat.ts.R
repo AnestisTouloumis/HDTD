@@ -32,8 +32,7 @@
 #' @author Anestis Touloumis
 #' @references Touloumis, A., Marioni, J.C. and Tavare, S. (2013). Hypothesis
 #' Testing for the Covariance Matrix in High-Dimensional Transposable Data with
-#' Kronecker Product Dependence Structure.
-#' \url{http://arxiv.org/abs/1404.7684}.
+#' Kronecker Product Dependence Structure. \url{http://arxiv.org/abs/1404.7684}.
 #' @examples
 #' data(VEGFmouse)
 #' ## Hypothesis tests for the covariance matrix of the genes (rows).
