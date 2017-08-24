@@ -50,7 +50,7 @@ tistest2
 }
 \references{
 Touloumis, A., Tavare, S. and Marioni, J. C. (2015) Testing the
-Mean Matrix in High-Dimensional Transposable Data. \emph{Biometrics}, \bold{71},
+Mean Matrix in High-Dimensional Transposable Data. \emph{Biometrics} \bold{71},
 157--166.
 }
 \author{
