@@ -1,0 +1,173 @@
+---
+output: github_document
+references:
+- id: Touloumis2016
+  title: "HDTD: Analyzing multi-tissue gene expression data"
+  author:
+  - family: Touloumis
+    given: Anestis
+  - family: Marioni 
+    given: John C.
+  - family: Tavaré
+    given: Simon  
+  container-title: Bioinfomatics
+  volume: 32
+  URL: 'https://doi.org/10.1093/bioinformatics/btw224'
+  issue: 14
+  page: 2193--2195
+  type: article-journal
+  issued:
+    year: 2016
+- id: Touloumis2015
+  title: "Testing the Mean Matrix in High-Dimensional Transposable Data"
+  author:
+  - family: Touloumis
+    given: Anestis
+  - family: Tavaré
+    given: Simon
+  - family: Marioni 
+    given: John C. 
+  container-title: Biometrics
+  volume: 71
+  URL: 'http://onlinelibrary.wiley.com/doi/10.1111/biom.12054/full'
+  issue: 1
+  page: 157--166
+  type: article-journal
+  issued:
+    year: 2015
+- id: Touloumis2013
+  title: "Hypothesis Testing for the Covariance Matrix in High-Dimensional Transposable Data with Kronecker Product Dependence Structure"
+  author:
+  - family: Touloumis
+    given: Anestis
+  - family: Marioni 
+    given: John C.
+  - family: Tavaré
+    given: Simon  
+  URL: 'http://arxiv.org/abs/1404.7684'
+  type: article-journal
+  issued:
+    year: 2013    
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+  library(multgee)
+knitr::opts_chunk$set(
+  tidy = TRUE,
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# HDTD: Analyzing High-Dimensional Transposable Data
+
+[![Travis-CI Build Status](https://travis-ci.org/AnestisTouloumis/HDTD.svg?branch=master)](https://travis-ci.org/AnestisTouloumis/HDTD)
+[![Project Status: Active The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) 
+
+
+## Maintainer
+
+Anestis Touloumis: <https://sites.google.com/view/atouloumis>
+
+School of Computing, Engineering and Mathematics, University of Brighton.
+
+
+## Installation
+
+You can install the release version of `HDTD`:
+
+```{r eval=FALSE}
+## try http:// if https:// URLs are not supported
+source("https://bioconductor.org/biocLite.R")
+biocLite("HDTD")
+```
+
+The source code for the release version of `HDTD` is available on CRAN at:
+
+- http://bioconductor.org/packages/HDTD/
+
+Or you can install the development version of `HDTD`:
+
+```{r eval=FALSE}
+# install.packages("devtools")
+devtools::install_github("AnestisTouloumis/HDTD")
+```
+
+The source code for the development version of `HDTD` is available on github at:
+
+- https://github.com/AnestisTouloumis/HDTD
+
+To use `HDTD`, you should load the package as follows:
+
+```{r}
+library("HDTD")
+```
+
+## Usage
+
+This package offers functions to estimate and test the matrix parameters of transposable data in high-dimensional settings. The term transposable data refers to datasets that are structured in a matrix form such that both the rows and columns correspond to variables of interest. For example, consider microarray studies in genetics where multiple RNA samples across different tissues are available per subject. In this case, a data matrix can be created with row variables the genes, column variables the tissues and measurements the corresponding expression levels. For more examples see @Touloumis2013, @Touloumis2015 and @Touloumis2016.
+
+
+There are four core functions:
+
+- `meanmat.hat` to estimate the mean matrix of the transposable data,
+- `meanmat.ts` to test the overall expression of rows (columns) across groups of columns (rows),
+- `covmat.hat` to estimate the covariance matrix of the rows and of the columns,
+- `covmat.ts` to test the sphericity and identity hypothesis for the covariance matrix of the rows and/or of the columns.
+
+
+There are also three utility functions:
+
+- `transposedata` for interchanching the role of rows and columns,
+- `centerdata` for centering the transposable data around their mean matrix,
+- `orderdata` for rearranging the order of the the row and/or column variables.
+
+## Example
+We replicate the analysis that can be found in the vignette based on the mouse dataset: 
+```{r}
+data(VEGFmouse)
+```
+One can estimate the mean relationship of the gene expression levels across tissues
+```{r}
+sample.mean <- meanmat.hat(VEGFmouse,40)
+sample.mean
+```
+and test whether the overall gene expression is constant across the $9$ tissues:
+```{r}
+tistest <- meanmat.ts(VEGFmouse,40,group.sizes=9,voi="columns")
+tistest
+```
+To analyze the gene-wise and tissue-wise dependence structure, one needs to estimate the two covariance matrices:
+```{r}
+estcovmat <- covmat.hat(VEGFmouse,40,shrink="both",centered=FALSE)
+estcovmat
+```
+Finally, the package allows users to perform hypothesis tests for the covariance matrix of the genes
+```{r}
+genestest <- covmat.ts(VEGFmouse,40,"rows",FALSE)
+genestest
+```
+and of the tissues:
+```{r}
+tissuestest <- covmat.ts(VEGFmouse,40,"columns",FALSE)
+tissuestest
+```
+
+## Getting help
+The statistical methods implemented in `HDTD` are described in @Touloumis2013, @Touloumis2015 and @Touloumis2016. A detailed example of `HDTD` can be found in @Touloumis2016 or in the vignette: 
+
+```{r, eval=FALSE}
+browseVignettes("HDTD")
+```
+
+
+## How to cite
+
+```{r, echo=FALSE, comment=""}
+print(citation("HDTD"),bibtex=TRUE)
+```
+
+# References

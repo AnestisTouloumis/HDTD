@@ -2,3 +2,5 @@
 ^\.Rproj\.user$
 ^BioconductorCheck\.R$
 ^\.travis\.yml$
+^README\.Rmd$
+^README-.*\.png$
