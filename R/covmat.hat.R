@@ -34,6 +34,9 @@
 #' of column variables.} \item{shrink}{character indicating if shrinkage
 #' estimation was performed.} \item{centered}{logical indicating if the
 #' transposable data were centered.}
+#' 
+#' @references  Touloumis, A., Marioni, J. C. and Tavare, S. (2016) HDTD: Analyzing 
+#' multi-tissue gene expression data, \emph{Bioinformatics} \bold{21}, 2193--2195.
 #' @author Anestis Touloumis
 #' @examples
 #' data(VEGFmouse)

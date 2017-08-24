@@ -38,13 +38,16 @@
 #' @author Anestis Touloumis, John Marioni, Simon Tavare.
 #' 
 #' Maintainer: Anestis.Touloumis <A.Touloumis@@brighton.ac.uk>
-#' @references Touloumis, A., Tavare, S. and Marioni, J.C. (2015). Testing the
-#' Mean Matrix in High-Dimensional Transposable Data. \emph{Biometrics}, 71,
-#' 157-166.
+#' @references Touloumis, A., Tavare, S. and Marioni, J. C. (2015) Testing the
+#' Mean Matrix in High-Dimensional Transposable Data. \emph{Biometrics} \bold{71},
+#' 157--166
 #' 
-#' Touloumis, A., Marioni, J.C. and Tavare, S. (2013). Hypothesis Testing for
+#' Touloumis, A., Marioni, J. C. and Tavare, S. (2016) HDTD: Analyzing 
+#' multi-tissue gene expression data. \emph{Bioinformatics} \bold{21}, 2193--2195.
+#' 
+#' Touloumis, A., Marioni, J. C. and Tavare, S. (2013) Hypothesis Testing for
 #' the Covariance Matrix in High-Dimensional Transposable Data with Kronecker
-#' Product Dependence Structure. \url{http://arxiv.org/abs/1404.7684}.
+#' Product Dependence Structure.\url{http://arxiv.org/abs/1404.7684}.
 #' @keywords package
 #' @examples
 #' data(VEGFmouse)
@@ -64,5 +67,4 @@
 #' tissuestest <- covmat.ts(VEGFmouse,40,"columns",FALSE)
 #' tissuestest
 #' @importFrom stats na.omit pnorm
-"_PACKAGE"
-#> [1] "_PACKAGE"
+NULL

@@ -56,6 +56,10 @@ data(VEGFmouse)
 estcovmat <- covmat.hat(VEGFmouse,40,shrink="both",centered=FALSE)
 estcovmat
 }
+\references{
+Touloumis, A., Marioni, J. C. and Tavare, S. (2016) HDTD: Analyzing 
+multi-tissue gene expression data, \emph{Bioinformatics} \bold{21}, 2193--2195.
+}
 \author{
 Anestis Touloumis
 }

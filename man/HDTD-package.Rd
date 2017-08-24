@@ -3,7 +3,6 @@
 \docType{package}
 \name{HDTD-package}
 \alias{HDTD-package}
-\alias{_PACKAGE}
 \alias{HDTD}
 \title{Estimation and Hypothesis Testing in High-Dimensional Transposable Data}
 \description{
@@ -59,21 +58,16 @@ tissuestest <- covmat.ts(VEGFmouse,40,"columns",FALSE)
 tissuestest
 }
 \references{
-Touloumis, A., Tavare, S. and Marioni, J.C. (2015). Testing the
-Mean Matrix in High-Dimensional Transposable Data. \emph{Biometrics}, 71,
-157-166.
+Touloumis, A., Tavare, S. and Marioni, J. C. (2015) Testing the
+Mean Matrix in High-Dimensional Transposable Data. \emph{Biometrics} \bold{71},
+157--166
 
-Touloumis, A., Marioni, J.C. and Tavare, S. (2013). Hypothesis Testing for
+Touloumis, A., Marioni, J. C. and Tavare, S. (2016) HDTD: Analyzing 
+multi-tissue gene expression data. \emph{Bioinformatics} \bold{21}, 2193--2195.
+
+Touloumis, A., Marioni, J. C. and Tavare, S. (2013) Hypothesis Testing for
 the Covariance Matrix in High-Dimensional Transposable Data with Kronecker
-Product Dependence Structure. \url{http://arxiv.org/abs/1404.7684}.
-}
-\seealso{
-Useful links:
-\itemize{
-  \item \url{http://github.com/AnestisTouloumis/HDTD}
-  \item Report bugs at \url{http://github.com/AnestisTouloumis/HDTD/issues}
-}
-
+Product Dependence Structure.\url{http://arxiv.org/abs/1404.7684}.
 }
 \author{
 Anestis Touloumis, John Marioni, Simon Tavare.

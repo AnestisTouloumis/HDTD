@@ -16,8 +16,7 @@ citEntry(entry="Article",
          )
  
 citEntry(entry="Article",
-         title = "Hypothesis Testing for the Covariance Matrix in High-Dimensional Transposable Data 
-         with Kronecker Product Dependence Structure",
+         title = "Hypothesis Testing for the Covariance Matrix in High-Dimensional Transposable Data with Kronecker Product Dependence Structure",
          author = personList(as.person("Anestis Touloumis"),as.person("John C. Marioni"),as.person("Simon Tavare")),
          journal = "Submitted",
          year = "2013",
@@ -40,5 +39,5 @@ citEntry(entry="Article",
          textVersion=paste("Touloumis, A., Marioni, J.C. and Tavare, S. (2016).",
                "HDTD: Analyzing multi-tissue gene expression data,",
                "Bioinformatics, 21 (14), 2193-2195"),
-         header = "To cite the software HDTD, please use ",
+         header = "To cite HDTD or the estimation method for the covariance matrices, please use ",
          )

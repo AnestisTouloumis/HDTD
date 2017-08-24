@@ -25,9 +25,9 @@
 #' \item{n.rows}{the number of row variables.} \item{n.cols}{the number of
 #' column variables.}
 #' @author Anestis Touloumis
-#' @references Touloumis, A., Tavare, S. and Marioni, J.C. (2015). Testing the
-#' Mean Matrix in High-Dimensional Transposable Data. \emph{Biometrics}, 71,
-#' 157-166.
+#' @references Touloumis, A., Tavare, S. and Marioni, J. C. (2015) Testing the
+#' Mean Matrix in High-Dimensional Transposable Data. \emph{Biometrics}, \bold{71},
+#' 157--166.
 #' @examples
 #' data(VEGFmouse)
 #' ## Testing if there is no tissue effect on the mean expression level for each gene.
