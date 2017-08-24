@@ -67,6 +67,14 @@ Touloumis, A., Marioni, J.C. and Tavare, S. (2013). Hypothesis Testing for
 the Covariance Matrix in High-Dimensional Transposable Data with Kronecker
 Product Dependence Structure. \url{http://arxiv.org/abs/1404.7684}.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{http://github.com/AnestisTouloumis/HDTD}
+  \item Report bugs at \url{http://github.com/AnestisTouloumis/HDTD/issues}
+}
+
+}
 \author{
 Anestis Touloumis, John Marioni, Simon Tavare.
 

@@ -10,5 +10,7 @@ Description: Characterization of intra-individual variability using physiologica
 License: GPL-3
 biocViews: DifferentialExpression, Genetics, GeneExpression, Microarray, Sequencing, StatisticalMethod, Software
 VignetteBuilder: knitr
+URL: http://github.com/AnestisTouloumis/HDTD
+BugReports: http://github.com/AnestisTouloumis/HDTD/issues
 NeedsCompilation: no
 RoxygenNote: 6.0.1
