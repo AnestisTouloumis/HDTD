@@ -68,13 +68,6 @@ knitr::opts_chunk$set(
 [![Project Status: Active The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) 
 
 
-## Maintainer
-
-Anestis Touloumis: <https://sites.google.com/view/atouloumis>
-
-School of Computing, Engineering and Mathematics, University of Brighton.
-
-
 ## Installation
 
 You can install the release version of `HDTD`:
@@ -114,7 +107,7 @@ This package offers functions to estimate and test the matrix parameters of tran
 There are four core functions:
 
 - `meanmat.hat` to estimate the mean matrix of the transposable data,
-- `meanmat.ts` to test the overall expression of rows (columns) across groups of columns (rows),
+- `meanmat.ts` to test the overall mean of the row (column) varibles across groups of column (rows) variables,
 - `covmat.hat` to estimate the covariance matrix of the rows and of the columns,
 - `covmat.ts` to test the sphericity and identity hypothesis for the covariance matrix of the rows and/or of the columns.
 
@@ -157,7 +150,7 @@ tissuestest
 ```
 
 ## Getting help
-The statistical methods implemented in `HDTD` are described in @Touloumis2013, @Touloumis2015 and @Touloumis2016. A detailed example of `HDTD` can be found in @Touloumis2016 or in the vignette: 
+The statistical methods implemented in `HDTD` are described in @Touloumis2013, @Touloumis2015 and @Touloumis2016 (supplementary material). A detailed example of `HDTD` can be found in @Touloumis2016 or in the vignette: 
 
 ```{r, eval=FALSE}
 browseVignettes("HDTD")

@@ -5,13 +5,6 @@ HDTD: Analyzing High-Dimensional Transposable Data
 
 [![Travis-CI Build Status](https://travis-ci.org/AnestisTouloumis/HDTD.svg?branch=master)](https://travis-ci.org/AnestisTouloumis/HDTD) [![Project Status: Active The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 
-Maintainer
-----------
-
-Anestis Touloumis: <https://sites.google.com/view/atouloumis>
-
-School of Computing, Engineering and Mathematics, University of Brighton.
-
 Installation
 ------------
 
@@ -52,7 +45,7 @@ This package offers functions to estimate and test the matrix parameters of tran
 There are four core functions:
 
 -   `meanmat.hat` to estimate the mean matrix of the transposable data,
--   `meanmat.ts` to test the overall expression of rows (columns) across groups of columns (rows),
+-   `meanmat.ts` to test the overall mean of the row (column) varibles across groups of column (rows) variables,
 -   `covmat.hat` to estimate the covariance matrix of the rows and of the columns,
 -   `covmat.ts` to test the sphericity and identity hypothesis for the covariance matrix of the rows and/or of the columns.
 
@@ -182,7 +175,7 @@ tissuestest
 Getting help
 ------------
 
-The statistical methods implemented in `HDTD` are described in Touloumis, Marioni, and Tavaré (2013), Touloumis, Tavaré, and Marioni (2015) and Touloumis, Marioni, and Tavaré (2016). A detailed example of `HDTD` can be found in Touloumis, Marioni, and Tavaré (2016) or in the vignette:
+The statistical methods implemented in `HDTD` are described in Touloumis, Marioni, and Tavaré (2013), Touloumis, Tavaré, and Marioni (2015) and Touloumis, Marioni, and Tavaré (2016) (supplementary material). A detailed example of `HDTD` can be found in Touloumis, Marioni, and Tavaré (2016) or in the vignette:
 
 ``` r
 browseVignettes("HDTD")
@@ -225,7 +218,8 @@ How to cite
     A BibTeX entry for LaTeX users is
 
       @Article{,
-        title = {Hypothesis Testing for the Covariance Matrix in High-Dimensional Transposable Data with Kronecker Product Dependence Structure},
+        title = {Hypothesis Testing for the Covariance Matrix in 
+             High-Dimensional Transposable Data with Kronecker Product Dependence Structure},
         author = {Anestis Touloumis and John C. Marioni and Simon Tavare},
         journal = {Submitted},
         year = {2013},
