@@ -6,6 +6,8 @@ Authors@R: c(
     person("Anestis", "Touloumis", email = "A.Touloumis@brighton.ac.uk", role = c("cre","aut")),
     person("John C.", "Marioni", role = "aut"),
     person("Simon", "Tavare", role = "aut"))
+Depends: 
+    R (>= 3.4)
 Suggests: 
     knitr,
     markdown
