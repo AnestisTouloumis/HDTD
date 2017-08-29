@@ -27,7 +27,7 @@ The R/Bioconductor package `HDTD` is designed to analyze high-dimensional transp
   
 The term high-dimensional implies that the sample size (e.g., the number of subjects/patients) is a lot smaller than the total number of row and column variables.
 
-Since the statistical methods implemented in `HDTD` were primarly motivated by studies in genetics, a microarray dataset is utilized to illustrate the functionality of the package. However, the use of `HDTD` is not limited to gene-expression experiments and we emphasize that it is suitable for analyzing datasets that satisfy the high-dimensional transposable data definition.
+Since the statistical methods implemented in `HDTD` were primarily motivated by studies in genetics, a microarray dataset is utilized to illustrate the functionality of the package. However, the use of `HDTD` is not limited to gene-expression experiments and we emphasize that it is suitable for analyzing datasets that satisfy the high-dimensional transposable data definition.
 
 # Mouse Dataset
 `HDTD` includes a subset of the tissue study described in Zahn et al. (2007). This dataset contains expression levels for $40$ mice. For each mouse, the expression levels of $46$ genes that belong to the vascular endothelial growth factor signalling pathway were measured across $9$ tissues (adrenal gland, cerebrum, hippocampus, kidney, lung, muscle, spinal cord, spleen and thymus). The experimental design satisfies the definition of transposable data because: i) the data for each mouse can be written in a matrix form, ii) the rows correspond to genes and the columns to multiple tissues, and iii) we do not expect the gene expression levels across the multiple tissues to vary independently.
