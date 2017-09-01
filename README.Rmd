@@ -2,7 +2,7 @@
 output: github_document
 references:
 - id: Touloumis2016
-  title: "HDTD: Analyzing multi-tissue gene expression data"
+  title: "HDTD: Analyzing Multi-tissue Gene Expression Data"
   author:
   - family: Touloumis
     given: Anestis

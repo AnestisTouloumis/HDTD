@@ -245,6 +245,6 @@ References
 
 Touloumis, A., Marioni, J.C. and Tavaré, S. (2013) Hypothesis Testing for the Covariance Matrix in High-Dimensional Transposable Data with Kronecker Product Dependence Structure.
 
-Touloumis, A., Marioni, J.C. and Tavaré, S. (2016) HDTD: Analyzing multi-tissue gene expression data. *Bioinfomatics*, **32**, 2193–2195.
+Touloumis, A., Marioni, J.C. and Tavaré, S. (2016) HDTD: Analyzing Multi-tissue Gene Expression Data. *Bioinfomatics*, **32**, 2193–2195.
 
 Touloumis, A., Tavaré, S. and Marioni, J.C. (2015) Testing the Mean Matrix in High-Dimensional Transposable Data. *Biometrics*, **71**, 157–166.
