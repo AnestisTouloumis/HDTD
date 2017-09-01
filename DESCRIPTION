@@ -1,5 +1,6 @@
 Package: HDTD
 Type: Package
+<<<<<<< HEAD
 Title: Statistical Inference about the Mean Matrix and the Covariance Matrices in High-Dimensional Transposable Data (HDTD)
 Version: 1.11.1
 Authors@R: c(
@@ -13,6 +14,15 @@ Suggests:
     markdown
 Imports: 
     stats
+=======
+Title: Statistical Inference about the Mean Matrix and the Covariance
+        Matrices in High-Dimensional Transposable Data (HDTD)
+Version: 1.11.0.9
+Date: 2016-09-15
+Author: Anestis Touloumis, John C. Marioni and Simon Tavare
+Maintainer: Anestis Touloumis <A.Touloumis@brighton.ac.uk>
+Imports: stats
+>>>>>>> upstream/master
 Description: Characterization of intra-individual variability using physiologically relevant measurements provides important insights into fundamental biological questions ranging from cell type identity to tumor development. For each individual, the data measurements can be written as a matrix with the different subsamples of the individual recorded in the columns and the different phenotypic units recorded in the rows. Datasets of this type are called high-dimensional transposable data. The HDTD package provides functions for conducting statistical inference for the mean relationship between the row and column variables and for the covariance structure within and between the row and column variables.
 License: GPL-3
 biocViews: DifferentialExpression, Genetics, GeneExpression, Microarray, Sequencing, StatisticalMethod, Software
