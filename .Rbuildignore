@@ -1,10 +1,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-<<<<<<< HEAD
 ^BioconductorCheck\.R$
 ^\.travis\.yml$
 ^README\.Rmd$
 ^README-.*\.png$
 ^Biometrics\.csl$
-=======
->>>>>>> upstream/master
