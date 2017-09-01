@@ -47,7 +47,8 @@ references:
   URL: 'http://arxiv.org/abs/1404.7684'
   type: article-journal
   issued:
-    year: 2013    
+    year: 2013 
+csl: Biometrics.csl  
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -78,7 +79,7 @@ source("https://bioconductor.org/biocLite.R")
 biocLite("HDTD")
 ```
 
-The source code for the release version of `HDTD` is available on CRAN at:
+The source code for the release version of `HDTD` is available on Bioconductor at:
 
 - http://bioconductor.org/packages/HDTD/
 

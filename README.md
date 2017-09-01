@@ -16,7 +16,7 @@ source("https://bioconductor.org/biocLite.R")
 biocLite("HDTD")
 ```
 
-The source code for the release version of `HDTD` is available on CRAN at:
+The source code for the release version of `HDTD` is available on Bioconductor at:
 
 -   <http://bioconductor.org/packages/HDTD/>
 
@@ -40,7 +40,7 @@ library("HDTD")
 Usage
 -----
 
-This package offers functions to estimate and test the matrix parameters of transposable data in high-dimensional settings. The term transposable data refers to datasets that are structured in a matrix form such that both the rows and columns correspond to variables of interest. For example, consider microarray studies in genetics where multiple RNA samples across different tissues are available per subject. In this case, a data matrix can be created with row variables the genes, column variables the tissues and measurements the corresponding expression levels. For more examples see Touloumis, Marioni, and Tavaré (2013), Touloumis, Tavaré, and Marioni (2015) and Touloumis, Marioni, and Tavaré (2016).
+This package offers functions to estimate and test the matrix parameters of transposable data in high-dimensional settings. The term transposable data refers to datasets that are structured in a matrix form such that both the rows and columns correspond to variables of interest. For example, consider microarray studies in genetics where multiple RNA samples across different tissues are available per subject. In this case, a data matrix can be created with row variables the genes, column variables the tissues and measurements the corresponding expression levels. For more examples see Touloumis, Marioni and Tavaré (2013), Touloumis, Tavaré and Marioni (2015) and Touloumis, Marioni and Tavaré (2016).
 
 There are four core functions:
 
@@ -175,7 +175,7 @@ tissuestest
 Getting help
 ------------
 
-The statistical methods implemented in `HDTD` are described in Touloumis, Marioni, and Tavaré (2013), Touloumis, Tavaré, and Marioni (2015) and Touloumis, Marioni, and Tavaré (2016) (supplementary material). A detailed example of `HDTD` can be found in Touloumis, Marioni, and Tavaré (2016) or in the vignette:
+The statistical methods implemented in `HDTD` are described in Touloumis et al. (2013), Touloumis et al. (2015) and Touloumis et al. (2016) (supplementary material). A detailed example of `HDTD` can be found in Touloumis et al. (2016) or in the vignette:
 
 ``` r
 browseVignettes("HDTD")
@@ -191,20 +191,18 @@ How to cite
     To cite the mean matrix hypothesis testing methodology, please use
 
       Touloumis, A., Tavare, S. and Marioni, J.C. (2015). Testing the
-      Mean Matrix in High-Dimensional Transposable Data. Biometrics 71
-      (1), 157-166
+      Mean Matrix in High-Dimensional Transposable Data, Biometrics,
+      71, 157-166
 
     A BibTeX entry for LaTeX users is
 
       @Article{,
         title = {Testing the Mean Matrix in High-Dimensional Transposable Data},
-        author = {Anestis Touloumis and Simon Tavare and John C. Marioni},
+        author = {{Touloumis} and {A.} and {Tavare} and {S.} and {Marioni} and {J.C.}},
         journal = {Biometrics},
         year = {2015},
         volume = {71},
-        issue = {1},
         pages = {157--166},
-        url = {http://onlinelibrary.wiley.com/doi/10.1111/biom.12257/full},
       }
 
     To cite the covariance matrix hypothesis testing methodology,
@@ -212,45 +210,41 @@ How to cite
 
       Touloumis, A., Marioni, J.C. and Tavare, S. (2013). Hypothesis
       Testing for the Covariance Matrix in High-Dimensional
-      Transposable Data with Kronecker Product Dependence Structure.
+      Transposable Data with Kronecker Product Dependence Structure,
       http://arxiv.org/abs/1404.7684
 
     A BibTeX entry for LaTeX users is
 
       @Article{,
-        title = {Hypothesis Testing for the Covariance Matrix in 
-             High-Dimensional Transposable Data with Kronecker Product Dependence Structure},
-        author = {Anestis Touloumis and John C. Marioni and Simon Tavare},
+        title = {Hypothesis Testing for the Covariance Matrix in High-Dimensional Transposable Data with Kronecker Product Dependence Structure},
+        author = {{Touloumis} and {A.} and {Marioni} and {J.C.} and {Tavare} and {S.}},
         journal = {Submitted},
         year = {2013},
         url = {http://arxiv.org/abs/1404.7684},
       }
 
-    To cite HDTD or the estimation method for the covariance matrices,
-    please use
+    To cite the software HDTD, please use
 
       Touloumis, A., Marioni, J.C. and Tavare, S. (2016). HDTD:
-      Analyzing multi-tissue gene expression data. Bioinformatics 32
-      (14), 2193-2195
+      Analyzing multi-tissue gene expression data, Bioinformatics, 21,
+      2193-2195
 
     A BibTeX entry for LaTeX users is
 
       @Article{,
         title = {HDTD: Analyzing multi-tissue gene expression data},
-        author = {Anestis Touloumis and John C. Marioni and Simon Tavare},
+        author = {{Touloumis} and {A.} and {Marioni} and {J.C.} and {Tavare} and {S.}},
         journal = {Bioinformatics},
         year = {2016},
         volume = {32},
-        issue = {14},
         pages = {2193--2195},
-        url = {https://doi.org/10.1093/bioinformatics/btw224},
       }
 
 References
 ==========
 
-Touloumis, Anestis, John C. Marioni, and Simon Tavaré. 2013. “Hypothesis Testing for the Covariance Matrix in High-Dimensional Transposable Data with Kronecker Product Dependence Structure.” <http://arxiv.org/abs/1404.7684>.
+Touloumis, A., Marioni, J.C. and Tavaré, S. (2013) Hypothesis Testing for the Covariance Matrix in High-Dimensional Transposable Data with Kronecker Product Dependence Structure.
 
-———. 2016. “HDTD: Analyzing Multi-Tissue Gene Expression Data.” *Bioinfomatics* 32 (14): 2193–5. <https://doi.org/10.1093/bioinformatics/btw224>.
+Touloumis, A., Marioni, J.C. and Tavaré, S. (2016) HDTD: Analyzing multi-tissue gene expression data. *Bioinfomatics*, **32**, 2193–2195.
 
-Touloumis, Anestis, Simon Tavaré, and John C. Marioni. 2015. “Testing the Mean Matrix in High-Dimensional Transposable Data.” *Biometrics* 71 (1): 157–66. <http://onlinelibrary.wiley.com/doi/10.1111/biom.12054/full>.
+Touloumis, A., Tavaré, S. and Marioni, J.C. (2015) Testing the Mean Matrix in High-Dimensional Transposable Data. *Biometrics*, **71**, 157–166.
