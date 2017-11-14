@@ -1,26 +1,9 @@
 meanmat.ts.generic <- function(datamat, N, projmat, voi) {
     dims <- prod(dim(datamat))/N
     if (voi == "columns") 
-        datamat <- transposedata(datamat, N)
+        datamat <- transposedatamatrix(datamat, N)
     datamat <- projmat %*% datamat
-    datamat <- matrix(datamat, dims, N)
-    dataveccen <- datamat - rowMeans(datamat)
-    Gn <- helpcon <- 0
-    for (i in seq_len(N - 1)) {
-        Gn <- sum(crossprod(datamat[, i], datamat[, seq(i + 1, 
-            N)])) + Gn
-        helpcon <- sum(crossprod(dataveccen[, i], dataveccen[, 
-            seq(i + 1, N)])^2) + helpcon
-    }
-    Gn <- 2 * Gn/N/(N - 1)
-    colssums <- colSums(dataveccen^2)
-    Q <- sum(colssums^2)
-    tr2S <- (sum(colssums)/(N - 1))^2
-    trS2 <- (helpcon * 2 + Q)/(N - 1)^2
-    Q <- Q/(N - 1)
-    trOmega <- (N - 1)/(N * (N - 2) * (N - 3)) * ((N - 1) * (N - 
-        2) * trS2 + tr2S - N * Q)
-    sdGn <- sqrt(2 * trOmega/(N - 1)/N)
-    ans <- Gn/sdGn
+    test_stats <- meanmatts_statistics(datamat, N)
+    ans <- test_stats[1]/sqrt(2 * test_stats[2]/N/(N - 1))
     ans
 }

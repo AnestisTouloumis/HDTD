@@ -15,10 +15,10 @@
 #' number of subjects.
 #' @param group.sizes numeric vector indicating the size of the row or column
 #' groups that share the same mean vector. It should be used only when
-#' \code{group.vars=}"\code{rows}" or "\code{columns}".
+#' \code{group.vars=}'\code{rows}' or '\code{columns}'.
 #' @param group.vars character indicating that the mean matrix can be
-#' simplified over the row or column variables. Options include "\code{rows}"
-#' or "\code{columns}".
+#' simplified over the row or column variables. Options include '\code{rows}'
+#' or '\code{columns}'.
 #' @return Returns a list with components: \item{estmeanmat}{the estimated mean
 #' matrix.} \item{N}{the sample size.} \item{n.rows}{the number of row
 #' variables.} \item{n.cols}{the number of column variables.}
@@ -34,8 +34,7 @@
 #' @export
 meanmat.hat <- function(datamat, N, group.sizes = NULL, group.vars = NULL) {
     if (!is.matrix(datamat)) 
-        datamat <- as.matrix(datamat, dimnames = list(rownames(datamat), 
-            colnames(datamat)))
+        datamat <- as.matrix(datamat, dimnames = list(rownames(datamat), colnames(datamat)))
     datamat <- na.omit(datamat)
     rowsnam <- rownames(datamat)
     colsnam <- colnames(datamat)
@@ -47,19 +46,18 @@ meanmat.hat <- function(datamat, N, group.sizes = NULL, group.vars = NULL) {
     colsnam <- colsnam[seq_len(p2)]
     if ((p2 - round(p2)) != 0) 
         stop("The number of column variables is not a positive integer number")
-    ans <- matrix(rowSums(matrix(datamat, p1 * p2, N)), p1, p2)
+    ans <- sumdatamatrix(datamat, N)
     if (!is.null(group.sizes)) {
         group.sizes <- as.numeric(group.sizes)
-        if (any(group.sizes <= 0) | any((group.sizes - round(group.sizes)) != 
-            0)) 
+        if (any(group.sizes <= 0) | any((group.sizes - round(group.sizes)) != 0)) 
             stop("'group.sizes' must be a vector of positive integer numbers")
         if (group.vars != "columns" & group.vars != "rows") 
             stop("'group.vars' must be either 'rows' or 'columns'")
         if (group.vars == "columns" & sum(group.sizes) != p2) 
-        stop("The number of variables in the column groups is less than the number of column variables")
+            stop("The number of variables in the column groups is less than the number of column variables")
         if (group.vars == "rows" & sum(group.sizes) != p1) 
-        stop("The number of variables in the row groups is less than the number of row variables")
-        projmat <- projmatrix(cumsum(group.sizes))
+            stop("The number of variables in the row groups is less than the number of row variables")
+        projmat <- projectionmatrix(cumsum(group.sizes))
         ans <- if (group.vars == "columns") 
             ans %*% (diag(p2) - projmat) else (diag(p1) - projmat) %*% ans
     }

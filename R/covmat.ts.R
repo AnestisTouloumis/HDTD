@@ -18,7 +18,7 @@
 #' @param N positive integer number indicating the sample size, i.e., the
 #' number of subjects.
 #' @param voi character indicating if the test should be applied on the row or
-#' column covariance matrix. Options include "\code{rows}" or "\code{columns}".
+#' column covariance matrix. Options include '\code{rows}' or '\code{columns}'.
 #' @param centered logical indicating if the transposable data are centered.
 #' Options include \code{TRUE} or \code{FALSE}.
 #' @return It returns a list with components: \item{sphericity.ts}{a list
@@ -36,14 +36,13 @@
 #' @examples
 #' data(VEGFmouse)
 #' ## Hypothesis tests for the covariance matrix of the genes (rows).
-#' genestest <- covmat.ts(VEGFmouse,40,"rows",FALSE)
+#' genestest <- covmat.ts(VEGFmouse,40,'rows',FALSE)
 #' genestest
 #' ## Hypothesis tests for the covariance matrix of the tissues (columns).
-#' tissuestest <- covmat.ts(VEGFmouse,40,"columns",FALSE)
+#' tissuestest <- covmat.ts(VEGFmouse,40,'columns',FALSE)
 #' tissuestest
 #' @export covmat.ts
-covmat.ts <- function(datamat = datamat, N = N, voi = "rows", 
-    centered = FALSE) {
+covmat.ts <- function(datamat = datamat, N = N, voi = "rows", centered = FALSE) {
     if (!is.matrix(datamat)) 
         datamat <- as.matrix(datamat)
     datamat <- na.omit(datamat)
@@ -62,13 +61,13 @@ covmat.ts <- function(datamat = datamat, N = N, voi = "rows",
     p2 <- ncol(datamat)/N
     if ((p2 - round(p2)) != 0) 
         stop("The number of column variables is not a positive integer number")
-    if (voi == "rows") 
+    if (voi == "columns") 
         datamat <- transposedata(datamat, N)
     ts <- covmat.ts.generic(datamat, N, centered)
-    ans <- list(sphericity.ts = list(statistic = ts$Utest, p.value = 1 - 
-        pnorm(ts$Utest)), identity.ts = list(statistic = ts$Vtest, 
-        p.value = 1 - pnorm(ts$Vtest)), N = N, n.rows = p1, n.cols = p2, 
-        variables = if (voi == "rows") "Rows" else "Columns", 
+    ans <- list(diagonality.ts = list(statistic = ts$Dtest, p.value = 1 - pnorm(ts$Dtest)), 
+        sphericity.ts = list(statistic = ts$Utest, p.value = 1 - pnorm(ts$Utest)), 
+        identity.ts = list(statistic = ts$Vtest, p.value = 1 - pnorm(ts$Vtest)), 
+        N = N, n.rows = p1, n.cols = p2, variables = if (voi == "rows") "Rows" else "Columns", 
         centered = centered)
     class(ans) <- "covmat.ts"
     ans

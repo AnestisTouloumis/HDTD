@@ -19,13 +19,13 @@
 #' @param N positive integer number indicating the sample size, i.e., the
 #' number of subjects.
 #' @param shrink character indicating if shrinkage estimation should be
-#' performed. Options include "\code{rows}", "\code{columns}", "\code{both}"
-#' and "\code{none}".
+#' performed. Options include '\code{rows}', '\code{columns}', '\code{both}'
+#' and '\code{none}'.
 #' @param centered logical indicating if the transposable data are centered.
 #' Options include \code{TRUE} or \code{FALSE}.
 #' @param voi character indicating if the row, column or both covariance
-#' matrices should be printed. Options include "\code{rows}", "\code{columns}"
-#' and "\code{both}".
+#' matrices should be printed. Options include '\code{rows}', '\code{columns}'
+#' and '\code{both}'.
 #' @return Returns a list with components: \item{rows.covmat}{the estimated row
 #' covariance matrix.} \item{rows.intensity}{the estimated row intensity.}
 #' \item{cols.covmat}{the estimated column covariance matrix.}
@@ -41,14 +41,12 @@
 #' @examples
 #' data(VEGFmouse)
 #' # Estimating the covariance matrices of the genes (rows) and of the tissues (columns).
-#' estcovmat <- covmat.hat(VEGFmouse,40,shrink="both",centered=FALSE)
+#' estcovmat <- covmat.hat(VEGFmouse,40,shrink='both',centered=FALSE)
 #' estcovmat
 #' @export covmat.hat
-covmat.hat <- function(datamat, N, shrink = "both", centered = FALSE, 
-    voi = "both") {
+covmat.hat <- function(datamat, N, shrink = "both", centered = FALSE, voi = "both") {
     if (!is.matrix(datamat)) 
-        datamat <- as.matrix(datamat, dimnames = list(rownames(datamat), 
-            colnames(datamat)))
+        datamat <- as.matrix(datamat, dimnames = list(rownames(datamat), colnames(datamat)))
     datamat <- na.omit(datamat)
     N <- as.numeric(N)
     if (length(N) != 1 | ((N - round(N)) != 0) | (N <= 0)) 
@@ -72,13 +70,12 @@ covmat.hat <- function(datamat, N, shrink = "both", centered = FALSE,
     p2 <- ncol(datamat)/N
     if ((p2 - round(p2)) != 0) 
         stop(" The number of column variables is not a positive integer number")
-    pars <- covmat.hat.generic(datamat, N, shrink, centered, 
-        p1, p2, voi)
-    shrink <- switch(shrink, none = "None", both = "Both sets of variables", 
-        rows = "Row variables", columns = "Column variables")
-    ans <- list(rows.covmat = pars$rowcovmat, rows.intensity = pars$lambdaS, 
-        cols.covmat = pars$colcovmat, cols.intensity = pars$lambdaD, 
-        N = N, n.rows = p1, n.cols = p2, shrink = shrink, centered = centered)
+    pars <- covmat.hat.generic(datamat, N, shrink, centered, p1, p2, voi)
+    shrink <- switch(shrink, none = "None", both = "Both sets of variables", rows = "Row variables", 
+        columns = "Column variables")
+    ans <- list(rows.covmat = pars$rowcovmat, rows.intensity = pars$lambdaS, cols.covmat = pars$colcovmat, 
+        cols.intensity = pars$lambdaD, N = N, n.rows = p1, n.cols = p2, shrink = shrink, 
+        centered = centered)
     class(ans) <- "covmat.hat"
     ans
 }

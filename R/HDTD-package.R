@@ -55,16 +55,18 @@
 #' sample.mean <- meanmat.hat(VEGFmouse,40)
 #' sample.mean
 #' ## Testing if there is no tissue effect on the mean expression level for each gene.
-#' tistest <- meanmat.ts(VEGFmouse,40,group.sizes=9,voi="columns")
+#' tistest <- meanmat.ts(VEGFmouse,40,group.sizes=9,voi='columns')
 #' tistest
 #' # Estimating the covariance matrices of the genes (rows) and of the tissues (columns).
-#' estcovmat <- covmat.hat(VEGFmouse,40,shrink="both",centered=FALSE)
+#' estcovmat <- covmat.hat(VEGFmouse,40,shrink='both',centered=FALSE)
 #' estcovmat
 #' ## Hypothesis tests for the covariance matrix of the genes (rows).
-#' genestest <- covmat.ts(VEGFmouse,40,"rows",FALSE)
+#' genestest <- covmat.ts(VEGFmouse,40,'rows',FALSE)
 #' genestest
 #' ## Hypothesis tests for the covariance matrix of the tissues (columns).
-#' tissuestest <- covmat.ts(VEGFmouse,40,"columns",FALSE)
+#' tissuestest <- covmat.ts(VEGFmouse,40,'columns',FALSE)
 #' tissuestest
+#' @useDynLib HDTD, .registration = TRUE  
+#' @import Rcpp
 #' @importFrom stats na.omit pnorm
 NULL

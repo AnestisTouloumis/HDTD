@@ -34,8 +34,7 @@
 #' @export orderdata
 orderdata <- function(datamat, N, order.rows = NULL, order.cols = NULL) {
     if (!is.matrix(datamat)) 
-        datamat <- as.matrix(datamat, dimnames = list(rownames(datamat), 
-            colnames(datamat)))
+        datamat <- as.matrix(datamat, dimnames = list(rownames(datamat), colnames(datamat)))
     datamat <- na.omit(datamat)
     row.vars.names <- rownames(datamat)
     col.vars.names <- colnames(datamat)
@@ -52,8 +51,7 @@ orderdata <- function(datamat, N, order.rows = NULL, order.cols = NULL) {
             order.rows <- as.numeric(order.rows)
         if (length(unique(order.rows)) > length(order.rows)) 
             stop("'order.rows' contains duplicated row variables")
-        if (((order.rows - round(order.rows)) != 0) || any(order.rows <= 
-            0)) 
+        if (((order.rows - round(order.rows)) != 0) || any(order.rows <= 0)) 
             stop("'order.rows' must be a vector of positive integer numbers")
         ans <- datamat[order.rows, ]
         if (!is.null(row.vars.names)) 
@@ -64,15 +62,14 @@ orderdata <- function(datamat, N, order.rows = NULL, order.cols = NULL) {
             order.cols <- as.numeric(order.cols)
         if (length(unique(order.cols)) > length(order.cols)) 
             stop("'order.cols' contains duplicated column variables")
-        if (((order.cols - round(order.cols)) != 0) || any(order.cols <= 
-            0)) 
+        if (((order.cols - round(order.cols)) != 0) || any(order.cols <= 0)) 
             stop("'order.cols' must be a vector of positive integer numbers")
         if (!is.null(order.rows)) 
             ans <- transposedata(ans, N)[order.cols, ] else ans <- transposedata(datamat, N)[order.cols, ]
         ans <- transposedata(ans, N)
         if (!is.null(col.vars.names)) 
-            colnames(ans) <- paste(col.vars.names[order.cols], 
-                rep(seq_len(N), each = ncol(ans)/N), sep = ".")
+            colnames(ans) <- paste(col.vars.names[order.cols], rep(seq_len(N), each = ncol(ans)/N), 
+                sep = ".")
     }
     ans
 }

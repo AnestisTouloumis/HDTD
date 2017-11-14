@@ -16,7 +16,7 @@
 #' @param group.sizes numeric vector indicating the group sizes under the null
 #' hypothesis.
 #' @param voi character indicating if the test will be applied to the row or
-#' column variables. Options include "\code{rows}" or "\code{columns}".
+#' column variables. Options include '\code{rows}' or '\code{columns}'.
 #' @return Returns a list with components: \item{statistic}{the value of the
 #' test statistic.} \item{p.value}{the corresponding p-value.} \item{voi}{the
 #' set of variables that the test was applied to.} \item{n.groups}{the number
@@ -31,10 +31,10 @@
 #' @examples
 #' data(VEGFmouse)
 #' ## Testing if there is no tissue effect on the mean expression level for each gene.
-#' tistest <- meanmat.ts(VEGFmouse,40,group.sizes=9,voi="columns")
+#' tistest <- meanmat.ts(VEGFmouse,40,group.sizes=9,voi='columns')
 #' tistest
 #' ## Testing if the adrenal and the cerebrum tissues have the same mean vector.
-#' tistest2 <- meanmat.ts(VEGFmouse,40,group.sizes=c(2,rep(1,7)),voi="columns")
+#' tistest2 <- meanmat.ts(VEGFmouse,40,group.sizes=c(2,rep(1,7)),voi='columns')
 #' tistest2
 #' @export
 meanmat.ts <- function(datamat, N, group.sizes, voi = "columns") {
@@ -45,8 +45,7 @@ meanmat.ts <- function(datamat, N, group.sizes, voi = "columns") {
     if (length(N) != 1 | ((N - round(N)) != 0) | (N <= 3)) 
         stop("'N' must be a positive integer number greater than 3")
     group.sizes <- as.numeric(group.sizes)
-    if (any(group.sizes <= 0) || any((group.sizes - round(group.sizes)) != 
-        0)) 
+    if (any(group.sizes <= 0) || any((group.sizes - round(group.sizes)) != 0)) 
         stop("'group.sizes' must be a vector of positive integer numbers")
     voi <- as.character(voi)
     if (voi != "columns" & voi != "rows") 
@@ -68,12 +67,11 @@ meanmat.ts <- function(datamat, N, group.sizes, voi = "columns") {
             order.rows <- (1:p1)[-rmvars] else order.cols <- (1:p2)[-rmvars]
         datamat <- orderdata(datamat, N, order.rows, order.cols)
         group.sizes1 <- group.sizes[group.sizes != 1]
-        projmat <- projmatrix(cumsum(group.sizes1))
-    } else projmat <- projmatrix(cumsum(group.sizes))
+        projmat <- projectionmatrix(cumsum(group.sizes1))
+    } else projmat <- projectionmatrix(cumsum(group.sizes))
     ts <- meanmat.ts.generic(datamat, N, projmat, voi)
-    ans <- list(statistic = ts, p.value = 1 - pnorm(ts), voi = voi, 
-        n.groups = length(group.sizes), group.sizes = group.sizes, 
-        N = N, n.rows = p1, n.cols = p2)
+    ans <- list(statistic = ts, p.value = 1 - pnorm(ts), voi = voi, n.groups = length(group.sizes), 
+        group.sizes = group.sizes, N = N, n.rows = p1, n.cols = p2)
     class(ans) <- "meanmat.ts"
     ans
 }
