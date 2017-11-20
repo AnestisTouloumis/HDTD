@@ -34,19 +34,22 @@
 #' of column variables.} \item{shrink}{character indicating if shrinkage
 #' estimation was performed.} \item{centered}{logical indicating if the
 #' transposable data were centered.}
-#' 
-#' @references  Touloumis, A., Marioni, J. C. and Tavare, S. (2016) HDTD: Analyzing 
-#' multi-tissue gene expression data, \emph{Bioinformatics} \bold{32}, 2193--2195.
+#' @references  Touloumis, A., Marioni, J. C. and Tavare, S. (2016) 
+#' HDTD: Analyzing  multi-tissue gene expression data, 
+#' \emph{Bioinformatics} \bold{32}, 2193--2195.
 #' @author Anestis Touloumis
 #' @examples
 #' data(VEGFmouse)
-#' # Estimating the covariance matrices of the genes (rows) and of the tissues (columns).
-#' est_cov_mat <- covmat.hat(VEGFmouse, N = 40, shrink = 'both', centered = FALSE)
+#' # Estimating the gene and tissue covariance matrices.
+#' est_cov_mat <- covmat.hat(datamat = VEGFmouse, N = 40)
 #' est_cov_mat
 #' @export covmat.hat
-covmat.hat <- function(datamat, N, shrink = "both", centered = FALSE, voi = "both") {
+covmat.hat <- function(datamat, N, shrink = "both", centered = FALSE, 
+                        voi = "both"){
     if (!is.matrix(datamat)) 
-        datamat <- as.matrix(datamat, dimnames = list(rownames(datamat), colnames(datamat)))
+        datamat <- as.matrix(datamat, 
+                            dimnames = 
+                                list(rownames(datamat), colnames(datamat)))
     datamat <- na.omit(datamat)
     N <- as.numeric(N)
     if (length(N) != 1 | ((N - round(N)) != 0) | (N <= 0)) 
@@ -71,11 +74,12 @@ covmat.hat <- function(datamat, N, shrink = "both", centered = FALSE, voi = "bot
     if ((p2 - round(p2)) != 0) 
         stop(" The number of column variables is not a positive integer number")
     pars <- covmat.hat.generic(datamat, N, shrink, centered, p1, p2, voi)
-    shrink <- switch(shrink, none = "None", both = "Both sets of variables", rows = "Row variables", 
-        columns = "Column variables")
-    ans <- list(rows.covmat = pars$rowcovmat, rows.intensity = pars$lambdaS, cols.covmat = pars$colcovmat, 
-        cols.intensity = pars$lambdaD, N = N, n.rows = p1, n.cols = p2, shrink = shrink, 
-        centered = centered)
+    shrink <- switch(shrink, none = "None", both = "Both sets of variables", 
+                        rows = "Row variables", columns = "Column variables")
+    ans <- list(rows.covmat = pars$rowcovmat, rows.intensity = pars$lambdaS, 
+                cols.covmat = pars$colcovmat, cols.intensity = pars$lambdaD, 
+                N = N, n.rows = p1, n.cols = p2, shrink = shrink,
+                centered = centered)
     class(ans) <- "covmat.hat"
     ans
 }

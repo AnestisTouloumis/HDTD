@@ -32,7 +32,7 @@ subjects.
 \examples{
 data(VEGFmouse)
 ## Transposing the VEGF dataset.
-VEGFtr <- transposedata(VEGFmouse, N = 40)
+VEGFtr <- transposedata(datamat = VEGFmouse, N = 40)
 }
 \seealso{
 \code{\link{centerdata}} and \code{\link{orderdata}}.

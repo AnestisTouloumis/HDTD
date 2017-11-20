@@ -23,18 +23,21 @@
 #' matrix.} \item{N}{the sample size.} \item{n.rows}{the number of row
 #' variables.} \item{n.cols}{the number of column variables.}
 #' @author Anestis Touloumis
-#' @references  Touloumis, A., Marioni, J. C. and Tavare, S. (2016) HDTD: Analyzing 
-#' multi-tissue gene expression data. \emph{Bioinformatics} \bold{32}, 2193--2195.
+#' @references  Touloumis, A., Marioni, J. C. and Tavare, S. (2016) 
+#' HDTD: Analyzing multi-tissue gene expression data. 
+#' \emph{Bioinformatics} \bold{32}, 2193--2195.
 #' @examples
 #' data(VEGFmouse)
 #' ## The sample mean matrix of the VEGF mouse data.
-#' sample_mean <- meanmat.hat(VEGFmouse, N = 40)
+#' sample_mean <- meanmat.hat(datamat = VEGFmouse, N = 40)
 #' sample_mean
 #' sample_mean$estmeanmat
 #' @export
 meanmat.hat <- function(datamat, N, group.sizes = NULL, group.vars = NULL) {
     if (!is.matrix(datamat)) 
-        datamat <- as.matrix(datamat, dimnames = list(rownames(datamat), colnames(datamat)))
+        datamat <- as.matrix(datamat, 
+                            dimnames = 
+                                list(rownames(datamat), colnames(datamat)))
     datamat <- na.omit(datamat)
     rowsnam <- rownames(datamat)
     colsnam <- colnames(datamat)
@@ -49,14 +52,14 @@ meanmat.hat <- function(datamat, N, group.sizes = NULL, group.vars = NULL) {
     ans <- sumdatamatrix(datamat, N)
     if (!is.null(group.sizes)) {
         group.sizes <- as.numeric(group.sizes)
-        if (any(group.sizes <= 0) | any((group.sizes - round(group.sizes)) != 0)) 
+        if (any(group.sizes <= 0 | (group.sizes - round(group.sizes)) != 0)) 
             stop("'group.sizes' must be a vector of positive integer numbers")
         if (group.vars != "columns" & group.vars != "rows") 
             stop("'group.vars' must be either 'rows' or 'columns'")
         if (group.vars == "columns" & sum(group.sizes) != p2) 
-            stop("The number of variables in the column groups is less than the number of column variables")
+            stop("Total group sizes does not match number of column variables")
         if (group.vars == "rows" & sum(group.sizes) != p1) 
-            stop("The number of variables in the row groups is less than the number of row variables")
+            stop("Total group sizes does not match number of row variables")
         projmat <- projectionmatrix(cumsum(group.sizes))
         ans <- if (group.vars == "columns") 
             ans %*% (diag(p2) - projmat) else (diag(p1) - projmat) %*% ans

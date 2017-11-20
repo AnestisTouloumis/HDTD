@@ -28,13 +28,15 @@
 #' tissuesnew <- colnames(VEGFmouse[,1:9])[sample(9)]
 #' tissuesnew
 #' ## To do this, create a numeric vector with the desired order.
-#' ordtissues <- pmatch(tissuesnew, tissuesold)
-#' VEGFmousenew <- orderdata(VEGFmouse, N = 40, order.cols=ordtissues)
+#' ordtis <- pmatch(tissuesnew, tissuesold)
+#' VEGFmousenew <- orderdata(datamat = VEGFmouse, N = 40, order.cols = ordtis)
 #' colnames(VEGFmousenew)[1:9] 
 #' @export orderdata
 orderdata <- function(datamat, N, order.rows = NULL, order.cols = NULL) {
     if (!is.matrix(datamat)) 
-        datamat <- as.matrix(datamat, dimnames = list(rownames(datamat), colnames(datamat)))
+        datamat <- as.matrix(datamat, 
+                                dimnames = 
+                                    list(rownames(datamat), colnames(datamat)))
     datamat <- na.omit(datamat)
     row.vars.names <- rownames(datamat)
     col.vars.names <- colnames(datamat)
@@ -45,7 +47,7 @@ orderdata <- function(datamat, N, order.rows = NULL, order.cols = NULL) {
     if ((p2 - round(p2)) != 0) 
         stop("The number of column variables is not a positive integer number")
     if ((is.null(order.rows) & is.null(order.cols))) 
-        stop("At least one of 'order.rows' and/or 'order.cols' must be provided")
+        stop("At least one of 'order.rows' or 'order.cols' must be provided")
     if (!is.null(order.rows)) {
         if (!is.numeric(order.rows)) 
             order.rows <- as.numeric(order.rows)
@@ -64,11 +66,15 @@ orderdata <- function(datamat, N, order.rows = NULL, order.cols = NULL) {
             stop("'order.cols' contains duplicated column variables")
         if (((order.cols - round(order.cols)) != 0) || any(order.cols <= 0)) 
             stop("'order.cols' must be a vector of positive integer numbers")
-        if (!is.null(order.rows)) 
-            ans <- transposedata(ans, N)[order.cols, ] else ans <- transposedata(datamat, N)[order.cols, ]
+        if (!is.null(order.rows)){
+            ans <- transposedata(ans, N)[order.cols, ]
+            } else {
+                ans <- transposedata(datamat, N)[order.cols, ]
+                }
         ans <- transposedata(ans, N)
         if (!is.null(col.vars.names)) 
-            colnames(ans) <- paste(col.vars.names[order.cols], rep(seq_len(N), each = ncol(ans)/N), 
+            colnames(ans) <- paste(col.vars.names[order.cols], 
+                                    rep(seq_len(N), each = ncol(ans)/N), 
                 sep = ".")
     }
     ans

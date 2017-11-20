@@ -52,13 +52,14 @@ variables by utilizing the function \code{\link{transposedata}}.
 }
 \examples{
 data(VEGFmouse)
-# Estimating the covariance matrices of the genes (rows) and of the tissues (columns).
-est_cov_mat <- covmat.hat(VEGFmouse, N = 40, shrink = 'both', centered = FALSE)
+# Estimating the gene and tissue covariance matrices.
+est_cov_mat <- covmat.hat(datamat = VEGFmouse, N = 40)
 est_cov_mat
 }
 \references{
-Touloumis, A., Marioni, J. C. and Tavare, S. (2016) HDTD: Analyzing 
-multi-tissue gene expression data, \emph{Bioinformatics} \bold{32}, 2193--2195.
+Touloumis, A., Marioni, J. C. and Tavare, S. (2016) 
+HDTD: Analyzing  multi-tissue gene expression data, 
+\emph{Bioinformatics} \bold{32}, 2193--2195.
 }
 \author{
 Anestis Touloumis

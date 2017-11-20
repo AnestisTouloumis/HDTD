@@ -1,21 +1,18 @@
 covmat.hat.generic <- function(datamat, N, shrink, centered, p1, p2, voi) {
     lambdaS <- lambdaD <- 0
     if (shrink != "none") {
+        datamat1 <- transposedatamatrix(datamat, N)
         if (!centered) {
             if (p1 < p2) {
-                shrink_stats <- covmathat_statistics(transposedatamatrix(datamat, 
-                  N), N)
+                shrink_stats <- covmathat_statistics(datamat1, N)
             } else {
-                shrink_stats <- covmathat_statistics_trans(transposedatamatrix(datamat, 
-                  N), N)
+                shrink_stats <- covmathat_statistics_trans(datamat1, N)
             }
         } else {
             if (p1 < p2) {
-                shrink_stats <- covmathat_statistics_centered(transposedatamatrix(datamat, 
-                  N), N)
+                shrink_stats <- covmathat_statistics_centered(datamat1, N)
             } else {
-                shrink_stats <- covmathat_statistics_trans_centered(transposedatamatrix(datamat, 
-                  N), N)
+                shrink_stats <- covmathat_statistics_trans_centered(datamat1, N)
             }
         }
         trDeltahat <- shrink_stats[1]
@@ -68,7 +65,7 @@ covmat.hat.generic <- function(datamat, N, shrink, centered, p1, p2, voi) {
         lambdaD <- NULL
     if ((shrink == "none" | shrink == "columns") | voi == "columns") 
         lambdaS <- NULL
-    ans <- list(rowcovmat = rowcovmat, lambdaS = lambdaS, colcovmat = colcovmat, 
-        lambdaD = lambdaD)
+    ans <- list(rowcovmat = rowcovmat, lambdaS = lambdaS,
+                colcovmat = colcovmat, lambdaD = lambdaD)
     ans
 }

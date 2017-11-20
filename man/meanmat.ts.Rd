@@ -41,17 +41,17 @@ subjects.
 }
 \examples{
 data(VEGFmouse)
-## Testing if there is no tissue effect on the mean expression level for each gene.
-tis_test <- meanmat.ts(VEGFmouse, N = 40, group.sizes = 9, voi = 'columns')
+## Testing conservation of the overall gene expression across tissues. 
+tis_test <- meanmat.ts(VEGFmouse, N = 40, group.sizes = 9)
 tis_test
 ## Testing if the adrenal and the cerebrum tissues have the same mean vector.
-tis_test2 <- meanmat.ts(VEGFmouse, N = 40, group.sizes = c(2, rep(1,7)), voi = 'columns')
+tis_test2 <- meanmat.ts(VEGFmouse, N = 40, group.sizes = c(2, rep(1,7)))
 tis_test2
 }
 \references{
 Touloumis, A., Tavare, S. and Marioni, J. C. (2015) Testing the
-Mean Matrix in High-Dimensional Transposable Data. \emph{Biometrics} \bold{71},
-157--166.
+Mean Matrix in High-Dimensional Transposable Data. 
+\emph{Biometrics} \bold{71}, 157--166.
 }
 \author{
 Anestis Touloumis

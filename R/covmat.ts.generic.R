@@ -4,8 +4,12 @@ covmat.ts.generic <- function(datamat, N, centered) {
     if (!centered) {
         test_statistics <- if (p1 <= p2) 
             statistics(datamat, N) else statistics_trans(datamat, N)
-    } else test_statistics <- if (p1 <= p2) 
-        statistics_centered(datamat, N) else statistics_trans_centered(datamat, N)
+        } else test_statistics <- 
+        if (p1 <= p2){
+            statistics_centered(datamat, N)
+            } else {
+            statistics_trans_centered(datamat, N)
+            }
     Ustat <- p1 * test_statistics[2]/(test_statistics[1]^2) - 1
     Vstat <- test_statistics[2] - 2 * test_statistics[1] + p1
     Dstat <- test_statistics[2] - test_statistics[3]

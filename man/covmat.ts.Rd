@@ -30,8 +30,8 @@ or column covariance matrix.} \item{centered}{logical indicating if the
 transposable data were centered.}
 }
 \description{
-Testing the sphericity, identity and diagonality hypotheses for the row or column
-covariance matrix.
+Testing the sphericity, identity and diagonality hypotheses for 
+the row or column covariance matrix.
 }
 \details{
 It is assumed that there are \code{nrow(datamat)} row variables and
@@ -47,10 +47,10 @@ matrix-variate normal model.
 \examples{
 data(VEGFmouse)
 ## Hypothesis tests for the covariance matrix of the genes (rows).
-genes_test <- covmat.ts(VEGFmouse, N = 40, voi = 'rows', centered = FALSE)
+genes_test <- covmat.ts(datamat = VEGFmouse, N = 40)
 genes_test
 ## Hypothesis tests for the covariance matrix of the tissues (columns).
-tis_test <- covmat.ts(VEGFmouse, N = 40, voi = 'columns', centered = FALSE)
+tis_test <- covmat.ts(datamat = VEGFmouse, N = 40, voi = 'columns')
 tis_test
 }
 \references{

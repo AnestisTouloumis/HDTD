@@ -40,13 +40,14 @@ subjects.
 \examples{
 data(VEGFmouse)
 ## The sample mean matrix of the VEGF mouse data.
-sample_mean <- meanmat.hat(VEGFmouse, N = 40)
+sample_mean <- meanmat.hat(datamat = VEGFmouse, N = 40)
 sample_mean
 sample_mean$estmeanmat
 }
 \references{
-Touloumis, A., Marioni, J. C. and Tavare, S. (2016) HDTD: Analyzing 
-multi-tissue gene expression data. \emph{Bioinformatics} \bold{32}, 2193--2195.
+Touloumis, A., Marioni, J. C. and Tavare, S. (2016) 
+HDTD: Analyzing multi-tissue gene expression data. 
+\emph{Bioinformatics} \bold{32}, 2193--2195.
 }
 \author{
 Anestis Touloumis

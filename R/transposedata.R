@@ -21,11 +21,13 @@
 #' @examples
 #' data(VEGFmouse)
 #' ## Transposing the VEGF dataset.
-#' VEGFtr <- transposedata(VEGFmouse, N = 40)
+#' VEGFtr <- transposedata(datamat = VEGFmouse, N = 40)
 #' @export transposedata
 transposedata <- function(datamat, N) {
     if (!is.matrix(datamat)) 
-        datamat <- as.matrix(datamat, dimnames = list(rownames(datamat), colnames(datamat)))
+        datamat <- as.matrix(datamat,
+                            dimnames = 
+                                list(rownames(datamat), colnames(datamat)))
     datamat <- na.omit(datamat)
     row.vars.names <- rownames(datamat)
     col.vars.names <- colnames(datamat)
@@ -38,6 +40,7 @@ transposedata <- function(datamat, N) {
         stop("The number of column variables is not a positive integer number")
     ans <- transposedatamatrix(datamat, N)
     rownames(ans) <- col.vars.names[1:p2]
-    colnames(ans) <- paste(row.vars.names, rep(seq_len(N), each = ncol(ans)/N), sep = ".")
+    colnames(ans) <- paste(row.vars.names,
+                            rep(seq_len(N), each = ncol(ans)/N), sep = ".")
     ans
 }

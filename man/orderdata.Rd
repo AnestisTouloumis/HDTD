@@ -41,8 +41,8 @@ tissuesold <-  colnames(VEGFmouse[,1:9])
 tissuesnew <- colnames(VEGFmouse[,1:9])[sample(9)]
 tissuesnew
 ## To do this, create a numeric vector with the desired order.
-ordtissues <- pmatch(tissuesnew, tissuesold)
-VEGFmousenew <- orderdata(VEGFmouse, N = 40, order.cols=ordtissues)
+ordtis <- pmatch(tissuesnew, tissuesold)
+VEGFmousenew <- orderdata(datamat = VEGFmouse, N = 40, order.cols = ordtis)
 colnames(VEGFmousenew)[1:9] 
 }
 \seealso{

@@ -67,7 +67,7 @@ data(VEGFmouse)
 One can estimate the mean relationship of the gene expression levels across the 9 tissues
 
 ``` r
-sample_mean <- meanmat.hat(VEGFmouse, N = 40)
+sample_mean <- meanmat.hat(datamat = VEGFmouse, N = 40)
 sample_mean
 #> ESTIMATION OF THE MEAN MATRIX 
 #> Sample size           =  40 
@@ -86,7 +86,7 @@ sample_mean
 and test whether the overall gene expression is constant across the 9 tissues:
 
 ``` r
-tissue_test <- meanmat.ts(VEGFmouse, N = 40, group.sizes = 9, voi = "columns")
+tissue_test <- meanmat.ts(datamat = VEGFmouse, N = 40, group.sizes = 9)
 tissue_test
 #> MEAN MATRIX TEST 
 #> Sample size       = 40 
@@ -106,7 +106,7 @@ In this case, the overall gene expression is not conserved.
 To analyze the gene-wise and tissue-wise dependence structure, one needs to estimate the two covariance matrices:
 
 ``` r
-est_cov_mat <- covmat.hat(VEGFmouse, N = 40, shrink = "both", centered = FALSE)
+est_cov_mat <- covmat.hat(datamat = VEGFmouse, N = 40)
 est_cov_mat
 #> ESTIMATION OF THE ROW AND/OR THE COLUMN COVARIANCE MATRIX 
 #> Sample size           =  40 
@@ -116,7 +116,7 @@ est_cov_mat
 #> Centered data         =  FALSE 
 #> 
 #> ROW VARIABLES
-#> Estimated shrinkage intensity = 0.0115 
+#> Estimated optimal intensity = 0.0115 
 #> Estimated covariance matrix [1:5,1:5] =
 #>         [,1]    [,2]    [,3]    [,4]    [,5]
 #> [1,]  0.4139 -0.0248  0.0420 -0.0010  0.1084
@@ -126,7 +126,7 @@ est_cov_mat
 #> [5,]  0.1084 -0.0151 -0.0168  0.0850  0.5337
 #> 
 #> COLUMN VARIABLES
-#> Estimated shrinkage intensity = 0.3341 
+#> Estimated optimal intensity = 0.3341 
 #> Estimated covariance matrix [1:5,1:5] =
 #>         [,1]    [,2]    [,3]    [,4]    [,5]
 #> [1,]  0.0368 -0.0006  0.0001 -0.0006  0.0010
@@ -139,7 +139,7 @@ est_cov_mat
 Finally, the package allows users to perform hypothesis tests for the covariance matrix of the genes
 
 ``` r
-genes_cov_test <- covmat.ts(VEGFmouse, N = 40, voi = "rows", centered = FALSE)
+genes_cov_test <- covmat.ts(VEGFmouse, N = 40)
 genes_cov_test
 #> COVARIANCE TESTS FOR THE ROW OR COLUMN VARIABLES 
 #> Sample size           =  40 
@@ -161,7 +161,7 @@ genes_cov_test
 and of the tissues:
 
 ``` r
-tissues_cov_test <- covmat.ts(VEGFmouse, N = 40, voi = "columns", centered = FALSE)
+tissues_cov_test <- covmat.ts(VEGFmouse, N = 40, voi = "columns")
 tissues_cov_test
 #> COVARIANCE TESTS FOR THE ROW OR COLUMN VARIABLES 
 #> Sample size           =  40 

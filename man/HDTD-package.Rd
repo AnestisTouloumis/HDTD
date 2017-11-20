@@ -42,28 +42,29 @@ column variables (\code{\link{orderdata}}).
 \examples{
 data(VEGFmouse)
 ## The sample mean matrix.
-sample_mean <- meanmat.hat(VEGFmouse,40)
+sample_mean <- meanmat.hat(datamat = VEGFmouse, N = 40)
 sample_mean
-## Testing if there is no tissue effect on the mean expression level for each gene.
-tis_test <- meanmat.ts(VEGFmouse,40,group.sizes=9,voi='columns')
+## Testing conservation of the overall gene expression across tissues. 
+tis_test <- meanmat.ts(datamat = VEGFmouse, N = 40, group.sizes = 9)
 tis_test
-# Estimating the covariance matrices of the genes (rows) and of the tissues (columns).
-est_cov_mat <- covmat.hat(VEGFmouse,40,shrink='both',centered=FALSE)
+# Estimating the gene and column covariance matrices.
+est_cov_mat <- covmat.hat(datamat = VEGFmouse, N = 40)
 est_cov_mat
 ## Hypothesis tests for the covariance matrix of the genes (rows).
-genes_test <- covmat.ts(VEGFmouse,40,'rows',FALSE)
+genes_test <- covmat.ts(datamat = VEGFmouse, N = 40)
 genes_test
 ## Hypothesis tests for the covariance matrix of the tissues (columns).
-tissues_test <- covmat.ts(VEGFmouse,40,'columns',FALSE)
+tissues_test <- covmat.ts(datamat = VEGFmouse, N = 40, voi = 'columns')
 tissues_test
 }
 \references{
 Touloumis, A., Tavare, S. and Marioni, J. C. (2015) Testing the
-Mean Matrix in High-Dimensional Transposable Data. \emph{Biometrics} \bold{71},
-157--166
+Mean Matrix in High-Dimensional Transposable Data. 
+\emph{Biometrics} \bold{71}, 157--166
 
 Touloumis, A., Marioni, J. C. and Tavare, S. (2016) HDTD: Analyzing 
-multi-tissue gene expression data. \emph{Bioinformatics} \bold{32}, 2193--2195.
+multi-tissue gene expression data. \emph{Bioinformatics}
+\bold{32}, 2193--2195.
 
 Touloumis, A., Marioni, J. C. and Tavare, S. (2017) Hypothesis Testing for
 the Covariance Matrix in High-Dimensional Transposable Data with Kronecker

@@ -26,15 +26,16 @@
 #' column variables.}
 #' @author Anestis Touloumis
 #' @references Touloumis, A., Tavare, S. and Marioni, J. C. (2015) Testing the
-#' Mean Matrix in High-Dimensional Transposable Data. \emph{Biometrics} \bold{71},
-#' 157--166.
+#' Mean Matrix in High-Dimensional Transposable Data. 
+#' \emph{Biometrics} \bold{71}, 157--166.
+#' 
 #' @examples
 #' data(VEGFmouse)
-#' ## Testing if there is no tissue effect on the mean expression level for each gene.
-#' tis_test <- meanmat.ts(VEGFmouse, N = 40, group.sizes = 9, voi = 'columns')
+#' ## Testing conservation of the overall gene expression across tissues. 
+#' tis_test <- meanmat.ts(VEGFmouse, N = 40, group.sizes = 9)
 #' tis_test
 #' ## Testing if the adrenal and the cerebrum tissues have the same mean vector.
-#' tis_test2 <- meanmat.ts(VEGFmouse, N = 40, group.sizes = c(2, rep(1,7)), voi = 'columns')
+#' tis_test2 <- meanmat.ts(VEGFmouse, N = 40, group.sizes = c(2, rep(1,7)))
 #' tis_test2
 #' @export
 meanmat.ts <- function(datamat, N, group.sizes, voi = "columns") {
@@ -55,11 +56,11 @@ meanmat.ts <- function(datamat, N, group.sizes, voi = "columns") {
     if ((p2 - round(p2)) != 0) 
         stop("The number of column variables is not a positive integer number")
     if (voi == "columns" & sum(group.sizes) != p2) 
-        stop("The total number of variables in the prespecified groups is less than the number of column variables")
+        stop("Total group sizes is less than the number of column variables")
     if (voi == "rows" & sum(group.sizes) != p1) 
-        stop("The total number of variables in the prespecified groups is less than the number of row variables")
+        stop("Total group sizes is less than the number of row variables")
     if (all(group.sizes == 1)) 
-        stop("The size of at least one of the prespecified groups needs to be greater than one")
+        stop("The size of at least one group must be greater than one")
     if (any(group.sizes == 1)) {
         rmvars <- cumsum(group.sizes)[group.sizes == 1]
         order.rows <- order.cols <- NULL
@@ -70,8 +71,9 @@ meanmat.ts <- function(datamat, N, group.sizes, voi = "columns") {
         projmat <- projectionmatrix(cumsum(group.sizes1))
     } else projmat <- projectionmatrix(cumsum(group.sizes))
     ts <- meanmat.ts.generic(datamat, N, projmat, voi)
-    ans <- list(statistic = ts, p.value = 1 - pnorm(ts), voi = voi, n.groups = length(group.sizes), 
-        group.sizes = group.sizes, N = N, n.rows = p1, n.cols = p2)
+    ans <- list(statistic = ts, p.value = 1 - pnorm(ts), voi = voi, 
+                n.groups = length(group.sizes), group.sizes = group.sizes,
+                N = N, n.rows = p1, n.cols = p2)
     class(ans) <- "meanmat.ts"
     ans
 }
