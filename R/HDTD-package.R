@@ -45,27 +45,27 @@
 #' Touloumis, A., Marioni, J. C. and Tavare, S. (2016) HDTD: Analyzing 
 #' multi-tissue gene expression data. \emph{Bioinformatics} \bold{32}, 2193--2195.
 #' 
-#' Touloumis, A., Marioni, J. C. and Tavare, S. (2013) Hypothesis Testing for
+#' Touloumis, A., Marioni, J. C. and Tavare, S. (2017) Hypothesis Testing for
 #' the Covariance Matrix in High-Dimensional Transposable Data with Kronecker
-#' Product Dependence Structure. \url{http://arxiv.org/abs/1404.7684}.
+#' Product Dependence Structure.  
 #' @keywords package
 #' @examples
 #' data(VEGFmouse)
 #' ## The sample mean matrix.
-#' sample.mean <- meanmat.hat(VEGFmouse,40)
-#' sample.mean
+#' sample_mean <- meanmat.hat(VEGFmouse,40)
+#' sample_mean
 #' ## Testing if there is no tissue effect on the mean expression level for each gene.
-#' tistest <- meanmat.ts(VEGFmouse,40,group.sizes=9,voi='columns')
-#' tistest
+#' tis_test <- meanmat.ts(VEGFmouse,40,group.sizes=9,voi='columns')
+#' tis_test
 #' # Estimating the covariance matrices of the genes (rows) and of the tissues (columns).
-#' estcovmat <- covmat.hat(VEGFmouse,40,shrink='both',centered=FALSE)
-#' estcovmat
+#' est_cov_mat <- covmat.hat(VEGFmouse,40,shrink='both',centered=FALSE)
+#' est_cov_mat
 #' ## Hypothesis tests for the covariance matrix of the genes (rows).
-#' genestest <- covmat.ts(VEGFmouse,40,'rows',FALSE)
-#' genestest
+#' genes_test <- covmat.ts(VEGFmouse,40,'rows',FALSE)
+#' genes_test
 #' ## Hypothesis tests for the covariance matrix of the tissues (columns).
-#' tissuestest <- covmat.ts(VEGFmouse,40,'columns',FALSE)
-#' tissuestest
+#' tissues_test <- covmat.ts(VEGFmouse,40,'columns',FALSE)
+#' tissues_test
 #' @useDynLib HDTD, .registration = TRUE  
 #' @import Rcpp
 #' @importFrom stats na.omit pnorm

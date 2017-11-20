@@ -28,9 +28,9 @@
 #' @examples
 #' data(VEGFmouse)
 #' ## The sample mean matrix of the VEGF mouse data.
-#' sample.mean <- meanmat.hat(VEGFmouse,40)
-#' sample.mean
-#' sample.mean$estmeanmat
+#' sample_mean <- meanmat.hat(VEGFmouse, N = 40)
+#' sample_mean
+#' sample_mean$estmeanmat
 #' @export
 meanmat.hat <- function(datamat, N, group.sizes = NULL, group.vars = NULL) {
     if (!is.matrix(datamat)) 

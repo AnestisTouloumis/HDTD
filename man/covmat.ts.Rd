@@ -14,7 +14,7 @@ covmat.ts(datamat = datamat, N = N, voi = "rows", centered = FALSE)
 number of subjects.}
 
 \item{voi}{character indicating if the test should be applied on the row or
-column covariance matrix. Options include "\code{rows}" or "\code{columns}".}
+column covariance matrix. Options include '\code{rows}' or '\code{columns}'.}
 
 \item{centered}{logical indicating if the transposable data are centered.
 Options include \code{TRUE} or \code{FALSE}.}
@@ -30,7 +30,7 @@ or column covariance matrix.} \item{centered}{logical indicating if the
 transposable data were centered.}
 }
 \description{
-Testing the sphericity and identity hypotheses for the row or column
+Testing the sphericity, identity and diagonality hypotheses for the row or column
 covariance matrix.
 }
 \details{
@@ -47,16 +47,16 @@ matrix-variate normal model.
 \examples{
 data(VEGFmouse)
 ## Hypothesis tests for the covariance matrix of the genes (rows).
-genestest <- covmat.ts(VEGFmouse,40,"rows",FALSE)
-genestest
+genes_test <- covmat.ts(VEGFmouse, N = 40, voi = 'rows', centered = FALSE)
+genes_test
 ## Hypothesis tests for the covariance matrix of the tissues (columns).
-tissuestest <- covmat.ts(VEGFmouse,40,"columns",FALSE)
-tissuestest
+tis_test <- covmat.ts(VEGFmouse, N = 40, voi = 'columns', centered = FALSE)
+tis_test
 }
 \references{
-Touloumis, A., Marioni, J.C. and Tavare, S. (2013). Hypothesis
+Touloumis, A., Marioni, J.C. and Tavare, S. (2017). Hypothesis
 Testing for the Covariance Matrix in High-Dimensional Transposable Data with
-Kronecker Product Dependence Structure. \url{http://arxiv.org/abs/1404.7684}.
+Kronecker Product Dependence Structure.
 }
 \author{
 Anestis Touloumis

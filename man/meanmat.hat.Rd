@@ -15,11 +15,11 @@ number of subjects.}
 
 \item{group.sizes}{numeric vector indicating the size of the row or column
 groups that share the same mean vector. It should be used only when
-\code{group.vars=}"\code{rows}" or "\code{columns}".}
+\code{group.vars=}'\code{rows}' or '\code{columns}'.}
 
 \item{group.vars}{character indicating that the mean matrix can be
-simplified over the row or column variables. Options include "\code{rows}"
-or "\code{columns}".}
+simplified over the row or column variables. Options include '\code{rows}'
+or '\code{columns}'.}
 }
 \value{
 Returns a list with components: \item{estmeanmat}{the estimated mean
@@ -40,9 +40,9 @@ subjects.
 \examples{
 data(VEGFmouse)
 ## The sample mean matrix of the VEGF mouse data.
-sample.mean <- meanmat.hat(VEGFmouse,40)
-sample.mean
-sample.mean$estmeanmat
+sample_mean <- meanmat.hat(VEGFmouse, N = 40)
+sample_mean
+sample_mean$estmeanmat
 }
 \references{
 Touloumis, A., Marioni, J. C. and Tavare, S. (2016) HDTD: Analyzing 

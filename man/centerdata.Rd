@@ -29,7 +29,7 @@ subjects.
 \examples{
 data(VEGFmouse)
 ## Centering the VEGF dataset around the sample mean matrix.
-VEGFcen <- centerdata(VEGFmouse,40)
+VEGFcen <- centerdata(VEGFmouse, N = 40)
 }
 \seealso{
 \code{\link{covmat.hat}} and \code{\link{covmat.ts}}.

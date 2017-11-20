@@ -1,6 +1,6 @@
 #' Nonparametric Tests for the Row or Column Covariance Matrix
 #' 
-#' Testing the sphericity and identity hypotheses for the row or column
+#' Testing the sphericity, identity and diagonality hypotheses for the row or column
 #' covariance matrix.
 #' 
 #' It is assumed that there are \code{nrow(datamat)} row variables and
@@ -30,17 +30,17 @@
 #' or column covariance matrix.} \item{centered}{logical indicating if the
 #' transposable data were centered.}
 #' @author Anestis Touloumis
-#' @references Touloumis, A., Marioni, J.C. and Tavare, S. (2013). Hypothesis
+#' @references Touloumis, A., Marioni, J.C. and Tavare, S. (2017). Hypothesis
 #' Testing for the Covariance Matrix in High-Dimensional Transposable Data with
-#' Kronecker Product Dependence Structure. \url{http://arxiv.org/abs/1404.7684}.
+#' Kronecker Product Dependence Structure.
 #' @examples
 #' data(VEGFmouse)
 #' ## Hypothesis tests for the covariance matrix of the genes (rows).
-#' genestest <- covmat.ts(VEGFmouse,40,'rows',FALSE)
-#' genestest
+#' genes_test <- covmat.ts(VEGFmouse, N = 40, voi = 'rows', centered = FALSE)
+#' genes_test
 #' ## Hypothesis tests for the covariance matrix of the tissues (columns).
-#' tissuestest <- covmat.ts(VEGFmouse,40,'columns',FALSE)
-#' tissuestest
+#' tis_test <- covmat.ts(VEGFmouse, N = 40, voi = 'columns', centered = FALSE)
+#' tis_test
 #' @export covmat.ts
 covmat.ts <- function(datamat = datamat, N = N, voi = "rows", centered = FALSE) {
     if (!is.matrix(datamat)) 

@@ -17,7 +17,7 @@ number of subjects.}
 hypothesis.}
 
 \item{voi}{character indicating if the test will be applied to the row or
-column variables. Options include "\code{rows}" or "\code{columns}".}
+column variables. Options include '\code{rows}' or '\code{columns}'.}
 }
 \value{
 Returns a list with components: \item{statistic}{the value of the
@@ -42,11 +42,11 @@ subjects.
 \examples{
 data(VEGFmouse)
 ## Testing if there is no tissue effect on the mean expression level for each gene.
-tistest <- meanmat.ts(VEGFmouse,40,group.sizes=9,voi="columns")
-tistest
+tis_test <- meanmat.ts(VEGFmouse, N = 40, group.sizes = 9, voi = 'columns')
+tis_test
 ## Testing if the adrenal and the cerebrum tissues have the same mean vector.
-tistest2 <- meanmat.ts(VEGFmouse,40,group.sizes=c(2,rep(1,7)),voi="columns")
-tistest2
+tis_test2 <- meanmat.ts(VEGFmouse, N = 40, group.sizes = c(2, rep(1,7)), voi = 'columns')
+tis_test2
 }
 \references{
 Touloumis, A., Tavare, S. and Marioni, J. C. (2015) Testing the

@@ -18,7 +18,7 @@
 #' @examples
 #' data(VEGFmouse)
 #' ## Centering the VEGF dataset around the sample mean matrix.
-#' VEGFcen <- centerdata(VEGFmouse,40)
+#' VEGFcen <- centerdata(VEGFmouse, N = 40)
 #' @export centerdata
 centerdata <- function(datamat, N) {
     if (!is.matrix(datamat)) 

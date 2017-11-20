@@ -5,7 +5,7 @@ Version: 1.13.1
 Authors@R: c(
     person("Anestis", "Touloumis", email = "A.Touloumis@brighton.ac.uk", role = c("cre","aut")),
     person("John C.", "Marioni", role = "aut"),
-    person("Simon", "Tavare", role = "aut"))
+    person("Simon", "Tavar\\'{e}", role = "aut"))
 Depends: 
     R (>= 3.4)
 Suggests: 

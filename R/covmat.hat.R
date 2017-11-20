@@ -41,8 +41,8 @@
 #' @examples
 #' data(VEGFmouse)
 #' # Estimating the covariance matrices of the genes (rows) and of the tissues (columns).
-#' estcovmat <- covmat.hat(VEGFmouse,40,shrink='both',centered=FALSE)
-#' estcovmat
+#' est_cov_mat <- covmat.hat(VEGFmouse, N = 40, shrink = 'both', centered = FALSE)
+#' est_cov_mat
 #' @export covmat.hat
 covmat.hat <- function(datamat, N, shrink = "both", centered = FALSE, voi = "both") {
     if (!is.matrix(datamat)) 

@@ -21,7 +21,7 @@
 #' @examples
 #' data(VEGFmouse)
 #' ## Transposing the VEGF dataset.
-#' VEGFtr <- transposedata(VEGFmouse,40)
+#' VEGFtr <- transposedata(VEGFmouse, N = 40)
 #' @export transposedata
 transposedata <- function(datamat, N) {
     if (!is.matrix(datamat)) 

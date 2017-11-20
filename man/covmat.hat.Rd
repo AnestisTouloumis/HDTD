@@ -14,15 +14,15 @@ covmat.hat(datamat, N, shrink = "both", centered = FALSE, voi = "both")
 number of subjects.}
 
 \item{shrink}{character indicating if shrinkage estimation should be
-performed. Options include "\code{rows}", "\code{columns}", "\code{both}"
-and "\code{none}".}
+performed. Options include '\code{rows}', '\code{columns}', '\code{both}'
+and '\code{none}'.}
 
 \item{centered}{logical indicating if the transposable data are centered.
 Options include \code{TRUE} or \code{FALSE}.}
 
 \item{voi}{character indicating if the row, column or both covariance
-matrices should be printed. Options include "\code{rows}", "\code{columns}"
-and "\code{both}".}
+matrices should be printed. Options include '\code{rows}', '\code{columns}'
+and '\code{both}'.}
 }
 \value{
 Returns a list with components: \item{rows.covmat}{the estimated row
@@ -53,8 +53,8 @@ variables by utilizing the function \code{\link{transposedata}}.
 \examples{
 data(VEGFmouse)
 # Estimating the covariance matrices of the genes (rows) and of the tissues (columns).
-estcovmat <- covmat.hat(VEGFmouse,40,shrink="both",centered=FALSE)
-estcovmat
+est_cov_mat <- covmat.hat(VEGFmouse, N = 40, shrink = 'both', centered = FALSE)
+est_cov_mat
 }
 \references{
 Touloumis, A., Marioni, J. C. and Tavare, S. (2016) HDTD: Analyzing 
