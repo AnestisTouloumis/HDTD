@@ -141,21 +141,20 @@ Finally, the package allows users to perform hypothesis tests for the covariance
 ``` r
 genes_cov_test <- covmat.ts(VEGFmouse, N = 40)
 genes_cov_test
-#> COVARIANCE TESTS FOR THE ROW OR COLUMN VARIABLES 
+#> HYPOTHESES TESTS FOR THE ROW COVARIANCE MATRIX 
 #> Sample size           =  40 
 #> Row variables         =  46 
 #> Column variables      =  9 
-#> Variables tested      =  Rows 
 #> Centered data         =  FALSE 
 #> 
-#> Diagonality test for the covariance matrix of the Rows 
-#> Test Statistic = 8.6324 , p-value < 0.0001
+#> Diagonality hypothesis test
+#> Test Statistic = 8.6324, p-value < 0.0001
 #> 
-#> Sphericity test for the covariance matrix of the Rows 
-#> Test Statistic = 132.8086 , p-value < 0.0001
+#> Sphericity hypothesis test
+#> Test Statistic = 132.8086, p-value < 0.0001
 #> 
-#> Identity test for the covariance matrix of the Rows 
-#> Test Statistic = 30.3864 , p-value < 0.0001
+#> Identity hypothesis test
+#> Test Statistic = 30.3864, p-value < 0.0001
 ```
 
 and of the tissues:
@@ -163,21 +162,20 @@ and of the tissues:
 ``` r
 tissues_cov_test <- covmat.ts(VEGFmouse, N = 40, voi = "columns")
 tissues_cov_test
-#> COVARIANCE TESTS FOR THE ROW OR COLUMN VARIABLES 
+#> HYPOTHESES TESTS FOR THE COLUMN COVARIANCE MATRIX 
 #> Sample size           =  40 
 #> Row variables         =  46 
 #> Column variables      =  9 
-#> Variables tested      =  Columns 
 #> Centered data         =  FALSE 
 #> 
-#> Diagonality test for the covariance matrix of the Columns 
-#> Test Statistic = 1.4866 , p-value = 0.0686 
+#> Diagonality hypothesis test
+#> Test Statistic = 1.4866, p-value = 0.0686
 #> 
-#> Sphericity test for the covariance matrix of the Columns 
-#> Test Statistic = 10.2122 , p-value < 0.0001
+#> Sphericity hypothesis test
+#> Test Statistic = 10.2122, p-value < 0.0001
 #> 
-#> Identity test for the covariance matrix of the Columns 
-#> Test Statistic = 38.0811 , p-value < 0.0001
+#> Identity hypothesis test
+#> Test Statistic = 38.0811, p-value < 0.0001
 ```
 
 At a 5% significance level, it appears that the genes are correlated but we do not have enough evidence to reject the hypothesis that the tissues are uncorrelated.

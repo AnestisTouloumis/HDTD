@@ -10,7 +10,7 @@
 #' and the order of the column variables in each block is preserved across
 #' subjects.
 #' 
-#' The tests are nonparametric and thus robust to departures from the
+#' The tests are nonparametric and thus robust to some departures from the
 #' matrix-variate normal model.
 #' 
 #' @aliases covmat.ts print.covmat.ts
@@ -21,13 +21,22 @@
 #' column covariance matrix. Options include '\code{rows}' or '\code{columns}'.
 #' @param centered logical indicating if the transposable data are centered.
 #' Options include \code{TRUE} or \code{FALSE}.
-#' @return It returns a list with components: \item{sphericity.ts}{a list
-#' containing the test statistic and p-value of the sphericity test.}
+#' @return It returns a list with components:
+#' #'\item{diagonality.ts}{a list
+#' containing the test statistic and p-value of the 
+#' diagonality hypothesis test.}
+#'\item{sphericity.ts}{a list
+#' containing the test statistic and p-value of the 
+#' sphericity hypothesis test.}
 #' \item{identity.ts}{a list containing the test statistic and p-value of the
-#' identity test.} \item{N}{the sample size.} \item{n.rows}{the number of row
-#' variables.} \item{n.cols}{the number of column variables.}
+#' identity hypothesis test.} 
+#' \item{N}{the sample size.}
+#'\item{n.rows}{the number of row
+#' variables.} 
+#' \item{n.cols}{the number of column variables.}
 #' \item{variables}{character indicating if the tests were applied to the row
-#' or column covariance matrix.} \item{centered}{logical indicating if the
+#' or column covariance matrix.} 
+#' \item{centered}{logical indicating if the
 #' transposable data were centered.}
 #' @author Anestis Touloumis
 #' @references Touloumis, A., Marioni, J.C. and Tavare, S. (2017). Hypothesis
