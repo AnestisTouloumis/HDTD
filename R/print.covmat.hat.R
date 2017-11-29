@@ -4,8 +4,8 @@ print.covmat.hat <- function(x, ...) {
     cat("Sample size      =", x$N, "\n")
     cat("Row variables    =", x$n.rows, "\n")
     cat("Column variables =", x$n.cols, "\n")
-    cat("Shrinking        :", x$shrink, "\n")
-    cat("Centered data    :", x$centered, "\n")
+    cat("Shrinking        =", x$shrink, "\n")
+    cat("Centered data    =", x$centered, "\n")
     if (!is.null(x$rows.covmat)) {
         cat("\nROW VARIABLES\n")
         if (!is.null(x$rows.intensity)) 

@@ -110,8 +110,8 @@ est_cov_mat
 #> Sample size      = 40 
 #> Row variables    = 46 
 #> Column variables = 9 
-#> Shrinking        : Both sets of variables 
-#> Centered data    : FALSE 
+#> Shrinking        = Both sets of variables 
+#> Centered data    = FALSE 
 #> 
 #> ROW VARIABLES
 #> Estimated optimal intensity = 0.0115 
