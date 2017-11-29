@@ -70,11 +70,11 @@ One can estimate the mean relationship of the gene expression levels across the 
 sample_mean <- meanmat.hat(datamat = VEGFmouse, N = 40)
 sample_mean
 #> ESTIMATION OF THE MEAN MATRIX 
-#> Sample size           =  40 
-#> Row variables         =  46 
-#> Column variables      =  9 
+#> Sample size      = 40 
+#> Row variables    = 46 
+#> Column variables = 9 
 #> 
-#> Estimated mean matrix [1:5,1:5] =
+#> Estimated mean matrix [1:5, 1:5] =
 #>       adrenal.1 cerebrum.1 hippocampus.1 kidney.1  lung.1
 #> Akt1     0.8399     1.2157        1.0597   1.1469  1.2673
 #> Akt2    -0.2333    -0.6201       -0.3881  -0.5524 -0.5359
@@ -86,19 +86,17 @@ sample_mean
 and test whether the overall gene expression is constant across the 9 tissues:
 
 ``` r
-tissue_test <- meanmat.ts(datamat = VEGFmouse, N = 40, group.sizes = 9)
-tissue_test
+tissue_mean_test <- meanmat.ts(datamat = VEGFmouse, N = 40, group.sizes = 9)
+tissue_mean_test
 #> MEAN MATRIX TEST 
-#> Sample size       = 40 
-#> Row variables     = 46 
-#> Column variables  = 9 
+#> Sample size      = 40 
+#> Row variables    = 46 
+#> Column variables = 9 
 #> 
-#> Hypothesis test
-#> H_0: 1 prespecified group(s) of columns with the same mean vector
-#> vs.
+#> H_0: a constant mean vector across columns 
 #> H_1: not H_0 
 #> 
-#> Test statistic = 373.5277 , p-value < 0.0001
+#> Test statistic = 373.5277, p-value < 0.0001
 ```
 
 In this case, the overall gene expression is not conserved.
@@ -108,32 +106,32 @@ To analyze the gene-wise and tissue-wise dependence structure, one needs to esti
 ``` r
 est_cov_mat <- covmat.hat(datamat = VEGFmouse, N = 40)
 est_cov_mat
-#> ESTIMATION OF THE ROW AND/OR THE COLUMN COVARIANCE MATRIX 
-#> Sample size           =  40 
-#> Row variables         =  46 
-#> Column variables      =  9 
-#> Shrinking             =  Both sets of variables 
-#> Centered data         =  FALSE 
+#> ESTIMATION OF THE ROW AND/OR COLUMN COVARIANCE MATRIX 
+#> Sample size      = 40 
+#> Row variables    = 46 
+#> Column variables = 9 
+#> Shrinking        : Both sets of variables 
+#> Centered data    : FALSE 
 #> 
 #> ROW VARIABLES
 #> Estimated optimal intensity = 0.0115 
-#> Estimated covariance matrix [1:5,1:5] =
-#>         [,1]    [,2]    [,3]    [,4]    [,5]
-#> [1,]  0.4139 -0.0248  0.0420 -0.0010  0.1084
-#> [2,] -0.0248  0.3341 -0.0240 -0.0029 -0.0151
-#> [3,]  0.0420 -0.0240  0.6954  0.1733 -0.0168
-#> [4,] -0.0010 -0.0029  0.1733  0.4746  0.0850
-#> [5,]  0.1084 -0.0151 -0.0168  0.0850  0.5337
+#> Estimated covariance matrix [1:5, 1:5] =
+#>          Akt1    Akt2    Akt3    Arnt   Casp9
+#> Akt1   0.4139 -0.0248  0.0420 -0.0010  0.1084
+#> Akt2  -0.0248  0.3341 -0.0240 -0.0029 -0.0151
+#> Akt3   0.0420 -0.0240  0.6954  0.1733 -0.0168
+#> Arnt  -0.0010 -0.0029  0.1733  0.4746  0.0850
+#> Casp9  0.1084 -0.0151 -0.0168  0.0850  0.5337
 #> 
 #> COLUMN VARIABLES
 #> Estimated optimal intensity = 0.3341 
-#> Estimated covariance matrix [1:5,1:5] =
-#>         [,1]    [,2]    [,3]    [,4]    [,5]
-#> [1,]  0.0368 -0.0006  0.0001 -0.0006  0.0010
-#> [2,] -0.0006  0.0432 -0.0002  0.0000 -0.0034
-#> [3,]  0.0001 -0.0002  0.0266  0.0019  0.0000
-#> [4,] -0.0006  0.0000  0.0019  0.0317  0.0012
-#> [5,]  0.0010 -0.0034  0.0000  0.0012  0.0809
+#> Estimated covariance matrix [1:5, 1:5] =
+#>               adrenal.1 cerebrum.1 hippocampus.1 kidney.1  lung.1
+#> adrenal.1        0.0368    -0.0006        0.0001  -0.0006  0.0010
+#> cerebrum.1      -0.0006     0.0432       -0.0002   0.0000 -0.0034
+#> hippocampus.1    0.0001    -0.0002        0.0266   0.0019  0.0000
+#> kidney.1        -0.0006     0.0000        0.0019   0.0317  0.0012
+#> lung.1           0.0010    -0.0034        0.0000   0.0012  0.0809
 ```
 
 Finally, the package allows users to perform hypothesis tests for the covariance matrix of the genes
@@ -142,18 +140,18 @@ Finally, the package allows users to perform hypothesis tests for the covariance
 genes_cov_test <- covmat.ts(VEGFmouse, N = 40)
 genes_cov_test
 #> HYPOTHESES TESTS FOR THE ROW COVARIANCE MATRIX 
-#> Sample size           =  40 
-#> Row variables         =  46 
-#> Column variables      =  9 
-#> Centered data         =  FALSE 
+#> Sample size      = 40 
+#> Row variables    = 46 
+#> Column variables = 9 
+#> Centered data    = FALSE 
 #> 
-#> Diagonality hypothesis test
+#> Diagonality hypothesis test:
 #> Test Statistic = 8.6324, p-value < 0.0001
 #> 
-#> Sphericity hypothesis test
+#> Sphericity hypothesis test:
 #> Test Statistic = 132.8086, p-value < 0.0001
 #> 
-#> Identity hypothesis test
+#> Identity hypothesis test:
 #> Test Statistic = 30.3864, p-value < 0.0001
 ```
 
@@ -163,18 +161,18 @@ and of the tissues:
 tissues_cov_test <- covmat.ts(VEGFmouse, N = 40, voi = "columns")
 tissues_cov_test
 #> HYPOTHESES TESTS FOR THE COLUMN COVARIANCE MATRIX 
-#> Sample size           =  40 
-#> Row variables         =  46 
-#> Column variables      =  9 
-#> Centered data         =  FALSE 
+#> Sample size      = 40 
+#> Row variables    = 46 
+#> Column variables = 9 
+#> Centered data    = FALSE 
 #> 
-#> Diagonality hypothesis test
+#> Diagonality hypothesis test:
 #> Test Statistic = 1.4866, p-value = 0.0686
 #> 
-#> Sphericity hypothesis test
+#> Sphericity hypothesis test:
 #> Test Statistic = 10.2122, p-value < 0.0001
 #> 
-#> Identity hypothesis test
+#> Identity hypothesis test:
 #> Test Statistic = 38.0811, p-value < 0.0001
 ```
 

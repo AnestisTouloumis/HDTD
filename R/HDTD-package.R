@@ -16,15 +16,18 @@
 #' The mean relationship of the row and column variables can be tested using
 #' the function \code{\link{meanmat.ts}}. The implemented test is nonparametric
 #' and not seriously restricted by the dependence structure among and/or
-#' between the row and column variables.
+#' between the row and column variables. 
+#' See \cite{Touloumis et al. (2015)} for more details.
 #' 
 #' The function \code{\link{covmat.hat}} provides Stein-type shrinkage
 #' estimators for the row covariance matrix and/or for the column covariance
 #' matrix under a matrix-variate normal model.
+#' See \cite{Touloumis et al. (2016)} for more details.
 #' 
 #' The sphericity and identity hypothesis for the row or column covariance
 #' matrix can be tested using the function \code{\link{covmat.ts}}. Both tests
 #' are nonparametric, i.e., they do not rely on a normality assumption.
+#' See \cite{Touloumis et al. (2017)} for more details.
 #' 
 #' There are three utility functions that allow the user to change to
 #' interchange the role of row and column variables
@@ -56,17 +59,17 @@
 #' sample_mean <- meanmat.hat(datamat = VEGFmouse, N = 40)
 #' sample_mean
 #' ## Testing conservation of the overall gene expression across tissues. 
-#' tis_test <- meanmat.ts(datamat = VEGFmouse, N = 40, group.sizes = 9)
-#' tis_test
+#' tissues_mean_test <- meanmat.ts(datamat = VEGFmouse, N = 40, group.sizes = 9)
+#' tissues_mean_test
 #' # Estimating the gene and column covariance matrices.
 #' est_cov_mat <- covmat.hat(datamat = VEGFmouse, N = 40)
 #' est_cov_mat
 #' ## Hypothesis tests for the covariance matrix of the genes (rows).
-#' genes_test <- covmat.ts(datamat = VEGFmouse, N = 40)
-#' genes_test
+#' genes_cov_test <- covmat.ts(datamat = VEGFmouse, N = 40)
+#' genes_cov_test
 #' ## Hypothesis tests for the covariance matrix of the tissues (columns).
-#' tissues_test <- covmat.ts(datamat = VEGFmouse, N = 40, voi = 'columns')
-#' tissues_test
+#' tissues_cov_test <- covmat.ts(datamat = VEGFmouse, N = 40, voi = 'columns')
+#' tissues_cov_test
 #' @useDynLib HDTD, .registration = TRUE  
 #' @import Rcpp
 #' @importFrom stats na.omit pnorm

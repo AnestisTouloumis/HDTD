@@ -1,39 +1,37 @@
 covmat.hat.generic <- function(datamat, N, shrink, centered, p1, p2, voi) {
     lambdaS <- lambdaD <- 0
-    if (shrink != "none") {
-        datamat1 <- transposedatamatrix(datamat, N)
-        if (!centered) {
-            if (p1 < p2) {
-                shrink_stats <- covmathat_statistics(datamat1, N)
+    datamat1 <- transposedatamatrix(datamat, N)
+    if (!centered) {
+        if (p1 < p2) {
+            shrink_stats <- covmathat_statistics(datamat1, N)
             } else {
                 shrink_stats <- covmathat_statistics_trans(datamat1, N)
-            }
+                }
         } else {
             if (p1 < p2) {
                 shrink_stats <- covmathat_statistics_centered(datamat1, N)
-            } else {
+                } else {
                 shrink_stats <- covmathat_statistics_trans_centered(datamat1, N)
+                }
             }
+    trDeltahat <- shrink_stats[1]
+    trDelta2hat <- shrink_stats[2]
+    trOmega2hat <- shrink_stats[3]
+    trSigma2hat <- trOmega2hat/trDelta2hat
+    if (centered) 
+        n <- N else n <- N - 1
+    if (shrink == "both" | shrink == "columns") {
+        lambdaD_a <- trSigma2hat/(p1^2)/n * (trDeltahat^2 + trDelta2hat)
+        lambdaD_b <- trDelta2hat - trDeltahat^2/p2
+        lambdaD <- lambdaD_a/(lambdaD_a + lambdaD_b)
+        lambdaD <- max(0, min(1, lambdaD))
         }
-        trDeltahat <- shrink_stats[1]
-        trDelta2hat <- shrink_stats[2]
-        trOmega2hat <- shrink_stats[3]
-        trSigma2hat <- trOmega2hat/trDelta2hat
-        if (centered) 
-            n <- N else n <- N - 1
-        if (shrink == "both" | shrink == "columns") {
-            lambdaD_a <- trSigma2hat/(p1^2)/n * (trDeltahat^2 + trDelta2hat)
-            lambdaD_b <- trDelta2hat - trDeltahat^2/p2
-            lambdaD <- lambdaD_a/(lambdaD_a + lambdaD_b)
-            lambdaD <- max(0, min(1, lambdaD))
+    if (shrink == "both" | shrink == "rows") {
+        lambdaS_a <- trDelta2hat/trDeltahat^2/n * (p1^2 + trSigma2hat)
+        lambdaS_b <- trSigma2hat - p1
+        lambdaS <- lambdaS_a/(lambdaS_a + lambdaS_b)
+        lambdaS <- max(min(1, lambdaS), 0)
         }
-        if (shrink == "both" | shrink == "rows") {
-            lambdaS_a <- trDelta2hat/trDeltahat^2/n * (p1^2 + trSigma2hat)
-            lambdaS_b <- trSigma2hat - p1
-            lambdaS <- lambdaS_a/(lambdaS_a + lambdaS_b)
-            lambdaS <- max(min(1, lambdaS), 0)
-        }
-    }
     if (centered) {
         if (voi != "columns") 
             Sigma <- tcrossprod(datamat)/N

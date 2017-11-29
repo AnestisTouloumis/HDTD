@@ -32,11 +32,11 @@
 #' @examples
 #' data(VEGFmouse)
 #' ## Testing conservation of the overall gene expression across tissues. 
-#' tis_test <- meanmat.ts(VEGFmouse, N = 40, group.sizes = 9)
-#' tis_test
+#' tissues_mean_test <- meanmat.ts(datamat = VEGFmouse, N = 40, group.sizes = 9)
+#' tissues_mean_test
 #' ## Testing if the adrenal and the cerebrum tissues have the same mean vector.
-#' tis_test2 <- meanmat.ts(VEGFmouse, N = 40, group.sizes = c(2, rep(1,7)))
-#' tis_test2
+#' test2 <- meanmat.ts(VEGFmouse, N = 40, group.sizes = c(2, rep(1,7)))
+#' test2
 #' @export
 meanmat.ts <- function(datamat, N, group.sizes, voi = "columns") {
     if (!is.matrix(datamat)) 

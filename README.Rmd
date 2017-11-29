@@ -131,8 +131,8 @@ sample_mean
 ```
 and test whether the overall gene expression is constant across the $9$ tissues:
 ```{r}
-tissue_test <- meanmat.ts(datamat = VEGFmouse,N=40,group.sizes=9)
-tissue_test
+tissue_mean_test <- meanmat.ts(datamat = VEGFmouse,N=40,group.sizes=9)
+tissue_mean_test
 ```
 In this case, the overall gene expression is not conserved. 
 

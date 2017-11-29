@@ -22,7 +22,7 @@
 #' @param centered logical indicating if the transposable data are centered.
 #' Options include \code{TRUE} or \code{FALSE}.
 #' @return It returns a list with components:
-#' #'\item{diagonality.ts}{a list
+#' \item{diagonality.ts}{a list
 #' containing the test statistic and p-value of the 
 #' diagonality hypothesis test.}
 #'\item{sphericity.ts}{a list
@@ -45,11 +45,11 @@
 #' @examples
 #' data(VEGFmouse)
 #' ## Hypothesis tests for the covariance matrix of the genes (rows).
-#' genes_test <- covmat.ts(datamat = VEGFmouse, N = 40)
-#' genes_test
+#' genes_cov_test <- covmat.ts(datamat = VEGFmouse, N = 40)
+#' genes_cov_test
 #' ## Hypothesis tests for the covariance matrix of the tissues (columns).
-#' tis_test <- covmat.ts(datamat = VEGFmouse, N = 40, voi = 'columns')
-#' tis_test
+#' tissues_cov_test <- covmat.ts(datamat = VEGFmouse, N = 40, voi = 'columns')
+#' tissues_cov_test
 #' @export covmat.ts
 covmat.ts <- function(datamat = datamat, N = N, voi = "rows", 
                         centered = FALSE) {

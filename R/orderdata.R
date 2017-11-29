@@ -23,9 +23,9 @@
 #' @examples
 #' data(VEGFmouse)
 #' set.seed(1)
-#' tissuesold <-  colnames(VEGFmouse[,1:9])
+#' tissuesold <-  colnames(VEGFmouse[ ,1:9])
 #' ## Suppose that you want to order the tissues in the folowing order.
-#' tissuesnew <- colnames(VEGFmouse[,1:9])[sample(9)]
+#' tissuesnew <- colnames(VEGFmouse[ ,1:9])[sample(9)]
 #' tissuesnew
 #' ## To do this, create a numeric vector with the desired order.
 #' ordtis <- pmatch(tissuesnew, tissuesold)

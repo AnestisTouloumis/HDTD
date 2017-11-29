@@ -10,7 +10,7 @@
 #' subjects.
 #' 
 #' @param datamat numeric matrix containing the transposable data.
-#' @param N positive integer number indicating the sample size, i.e., the
+#' @param N positive integer number indicating the sample size, e.g., the
 #' number of subjects.
 #' @return Returns a matrix of the same size as \code{datamat}.
 #' @author Anestis Touloumis

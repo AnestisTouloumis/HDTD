@@ -21,7 +21,7 @@ Options include \code{TRUE} or \code{FALSE}.}
 }
 \value{
 It returns a list with components:
-#'\item{diagonality.ts}{a list
+\item{diagonality.ts}{a list
 containing the test statistic and p-value of the 
 diagonality hypothesis test.}
 \item{sphericity.ts}{a list
@@ -56,11 +56,11 @@ matrix-variate normal model.
 \examples{
 data(VEGFmouse)
 ## Hypothesis tests for the covariance matrix of the genes (rows).
-genes_test <- covmat.ts(datamat = VEGFmouse, N = 40)
-genes_test
+genes_cov_test <- covmat.ts(datamat = VEGFmouse, N = 40)
+genes_cov_test
 ## Hypothesis tests for the covariance matrix of the tissues (columns).
-tis_test <- covmat.ts(datamat = VEGFmouse, N = 40, voi = 'columns')
-tis_test
+tissues_cov_test <- covmat.ts(datamat = VEGFmouse, N = 40, voi = 'columns')
+tissues_cov_test
 }
 \references{
 Touloumis, A., Marioni, J.C. and Tavare, S. (2017). Hypothesis

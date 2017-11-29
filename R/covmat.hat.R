@@ -51,6 +51,8 @@ covmat.hat <- function(datamat, N, shrink = "both", centered = FALSE,
                             dimnames = 
                                 list(rownames(datamat), colnames(datamat)))
     datamat <- na.omit(datamat)
+    rowsnam <- rownames(datamat)
+    colsnam <- colnames(datamat)
     N <- as.numeric(N)
     if (length(N) != 1 | ((N - round(N)) != 0) | (N <= 0)) 
         stop("'N' must be a positive integer number")
@@ -73,6 +75,7 @@ covmat.hat <- function(datamat, N, shrink = "both", centered = FALSE,
     p2 <- ncol(datamat)/N
     if ((p2 - round(p2)) != 0) 
         stop(" The number of column variables is not a positive integer number")
+    colsnam <- colsnam[seq_len(p2)]
     pars <- covmat.hat.generic(datamat, N, shrink, centered, p1, p2, voi)
     shrink <- switch(shrink, none = "None", both = "Both sets of variables", 
                         rows = "Row variables", columns = "Column variables")
@@ -80,6 +83,10 @@ covmat.hat <- function(datamat, N, shrink = "both", centered = FALSE,
                 cols.covmat = pars$colcovmat, cols.intensity = pars$lambdaD, 
                 N = N, n.rows = p1, n.cols = p2, shrink = shrink,
                 centered = centered)
+    if(!is.null(ans$rows.covmat)) 
+        dimnames(ans$rows.covmat) <- list(rowsnam, rowsnam)
+    if(!is.null(ans$cols.covmat)) 
+        dimnames(ans$cols.covmat) <- list(colsnam, colsnam)
     class(ans) <- "covmat.hat"
     ans
 }

@@ -9,7 +9,7 @@ centerdata(datamat, N)
 \arguments{
 \item{datamat}{numeric matrix containing the transposable data.}
 
-\item{N}{positive integer number indicating the sample size, i.e., the
+\item{N}{positive integer number indicating the sample size, e.g., the
 number of subjects.}
 }
 \value{
