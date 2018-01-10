@@ -90,10 +90,6 @@ Or you can install the development version of `HDTD`:
 devtools::install_github("AnestisTouloumis/HDTD")
 ```
 
-The source code for the development version of `HDTD` is available on Bioconductor at:
-
-- http://bioconductor.org/packages/devel/bioc/html/HDTD.html
-
 To use `HDTD`, you should load the package as follows:
 
 ``` r
@@ -102,15 +98,15 @@ library("HDTD")
 
 ## Usage
 
-This package offers functions to estimate and test the matrix parameters of transposable data in high-dimensional settings. The term _transposable data_ refers to datasets that are structured in a matrix form such that both the rows and columns correspond to variables of interest. For example, consider microarray studies in genetics where multiple RNA samples across different tissues are available per subject. In this case, a data matrix can be created with row variables the genes, column variables the tissues and measurements the corresponding expression levels. For more examples see references in @Touloumis2013, @Touloumis2015 and @Touloumis2016.
+This package offers functions to estimate and test the matrix parameters of transposable data in high-dimensional settings. The term _transposable data_ refers to datasets that are structured in a matrix form such that both the rows and columns correspond to variables of interest and dependencies are expected to occur _among_ rows, _among_ columns and _between_ rows and columns. For example, consider microarray studies in genetics where multiple RNA samples across different tissues are available per subject. In this case, a data matrix can be created with row variables the genes, column variables the tissues and measurements the corresponding expression levels. We expect dependencies to occur among genes, among tissues and between genes and tissues. For more examples of trasposable data see references in @Touloumis2013, @Touloumis2015 and @Touloumis2016.
 
 
 There are four core functions:
 
 - `meanmat.hat` to estimate the mean matrix of the transposable data,
-- `meanmat.ts` to test the overall mean of the row (column) variables across groups of column (rows) variables,
+- `meanmat.ts` to test the overall mean of the row (column) variables across groups of column (row) variables,
 - `covmat.hat` to estimate the row and column covariance matrix,
-- `covmat.ts` to test the sphericity, identity and diagonality hypothesis for the row/column covariance matrix.
+- `covmat.ts` to test the sphericity, identity and diagonality hypothesis test for the row/column covariance matrix.
 
 
 There are also three utility functions:
@@ -124,6 +120,8 @@ We replicate the analysis that can be found in the vignette based on the mouse d
 ```{r}
 data(VEGFmouse)
 ```
+This dataset contains expression levels for $40$ mice. For each mouse, the expression levels of $46$ genes (rows) that belong to the vascular endothelial growth factor signalling pathway were measured across $9$ tissues (adrenal gland, cerebrum, hippocampus, kidney, lung, muscle, spinal cord, spleen and thymus) that are displayed in the columns.
+
 One can estimate the mean relationship of the gene expression levels across the $9$ tissues
 ```{r}
 sample_mean <- meanmat.hat(datamat = VEGFmouse,N=40)
