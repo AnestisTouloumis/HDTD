@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Introduction</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: #990073
+   }
+
+   pre .number {
+     color: #099;
+   }
+
+   pre .comment {
+     color: #998;
+     font-style: italic
+   }
+
+   pre .keyword {
+     color: #900;
+     font-weight: bold
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: #d14;
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<h1>Introduction</h1>
+
+<p>The R/Bioconductor package <code>HDTD</code> is designed to analyze high-dimensional transposable data. The term transposable data implies the following structural information in the dataset: </p>
+
+<ul>
+<li>the data for each sampling unit (e.g., subject/patient) can be written in a matrix,</li>
+<li>the rows and the columns in each matrix correspond to two distinct sets of variables,</li>
+<li>dependencies might occur among and/or between the row and column variables.</li>
+</ul>
+
+<p>The term high-dimensional implies that the sample size (e.g., the number of subjects/patients) is a lot smaller than the total number of row and column variables.</p>
+
+<p>Since the statistical methods implemented in <code>HDTD</code> were primarily motivated by studies in genetics, a microarray dataset is utilized to illustrate the functionality of the package. However, the use of <code>HDTD</code> is not limited to gene-expression experiments and we emphasize that it is suitable for analyzing datasets that satisfy the high-dimensional transposable data definition.</p>
+
+<h1>Mouse aging dataset</h1>
+
+<p><code>HDTD</code> includes a subset of the tissue study described in Zahn et al. (2007). This dataset contains expression levels for \(40\) mice. For each mouse, the expression levels of \(46\) genes that belong to the vascular endothelial growth factor signalling pathway were measured across \(9\) tissues (adrenal gland, cerebrum, hippocampus, kidney, lung, muscle, spinal cord, spleen and thymus). The experimental design satisfies the definition of transposable data because: </p>
+
+<ul>
+<li>the data for each mouse can be written in a matrix form, </li>
+<li>the rows correspond to genes and the columns to multiple tissues, and </li>
+<li>we expect dependencies among genes, among tissues and between genes and tissues. </li>
+</ul>
+
+<p>The dataset is formatted as a single matrix with rows the \(46\) genes and columns the \(9 \times 40=360\) tissues.</p>
+
+<pre><code class="r">library(&quot;HDTD&quot;)
+data(VEGFmouse)
+dim(VEGFmouse)
+#&gt; [1]  46 360
+rownames(VEGFmouse)
+#&gt;  [1] &quot;Akt1&quot;     &quot;Akt2&quot;     &quot;Akt3&quot;     &quot;Arnt&quot;     &quot;Casp9&quot;    &quot;Cdc42&quot;   
+#&gt;  [7] &quot;Grb2&quot;     &quot;Hif1a&quot;    &quot;Hras1&quot;    &quot;Hsp90aa1&quot; &quot;Hspb1&quot;    &quot;Map2k1&quot;  
+#&gt; [13] &quot;Map2k2&quot;   &quot;Mapk1&quot;    &quot;Mapk13&quot;   &quot;Mapk14&quot;   &quot;Mapk3&quot;    &quot;Mapkapk2&quot;
+#&gt; [19] &quot;Nfat5&quot;    &quot;Nfatc3&quot;   &quot;Nfatc4&quot;   &quot;Nos3&quot;     &quot;Nras&quot;     &quot;Nrp1&quot;    
+#&gt; [25] &quot;Pdgfc&quot;    &quot;Pik3ca&quot;   &quot;Pik3cb&quot;   &quot;Pik3cd&quot;   &quot;Pik3r1&quot;   &quot;Pik3r3&quot;  
+#&gt; [31] &quot;Pla2g12b&quot; &quot;Pla2g4a&quot;  &quot;Pla2g4c&quot;  &quot;Pla2g5&quot;   &quot;Pla2g6&quot;   &quot;Plcg1&quot;   
+#&gt; [37] &quot;Plcg2&quot;    &quot;Ppp3ca&quot;   &quot;Ppp3cb&quot;   &quot;Ppp3r1&quot;   &quot;Prkca&quot;    &quot;Ptk2&quot;    
+#&gt; [43] &quot;Rac1&quot;     &quot;Rac2&quot;     &quot;Raf1&quot;     &quot;Sphk2&quot;
+</code></pre>
+
+<p>Further, every 9 consecutive columns belong to the same mouse and the tissues are ordered in the same way for each mouse. For example, we can check the column variables for the first two subjects:</p>
+
+<pre><code class="r">colnames(VEGFmouse)[1:18]
+#&gt;  [1] &quot;adrenal.1&quot;     &quot;cerebrum.1&quot;    &quot;hippocampus.1&quot; &quot;kidney.1&quot;     
+#&gt;  [5] &quot;lung.1&quot;        &quot;muscle.1&quot;      &quot;spinal.1&quot;      &quot;spleen.1&quot;     
+#&gt;  [9] &quot;thymus.1&quot;      &quot;adrenal.2&quot;     &quot;cerebrum.2&quot;    &quot;hippocampus.2&quot;
+#&gt; [13] &quot;kidney.2&quot;      &quot;lung.2&quot;        &quot;muscle.2&quot;      &quot;spinal.2&quot;     
+#&gt; [17] &quot;spleen.2&quot;      &quot;thymus.2&quot;
+</code></pre>
+
+<p>It is crucial to import the data in a particular format when using <code>HDTD</code>. In particular, first write the data for each subject (mouse) in a matrix form while preserving the order of the row (genes) and column (tissues) variables within each subject-specific matrix. Then, create a single matrix by stacking column-wise the subject-specific matrices the one after the other. Finally, read the datafile in <code>HDTD</code>.</p>
+
+<h1>Mean relationship of genes across tissues</h1>
+
+<p>The user can determine the mean relationship of the genes across tissues by testing and estimating the mean matrix. One interesting hypothesis to be tested is conservation of the gene expression levels across tissues, i.e., if the mean gene expression levels vector in the VEGF signaling pathway changes across the \(9\) tissues:</p>
+
+<pre><code class="r">meanmat.ts(VEGFmouse, N = 40, group.sizes = 9)
+#&gt; MEAN MATRIX TEST 
+#&gt; Sample size      = 40 
+#&gt; Row variables    = 46 
+#&gt; Column variables = 9 
+#&gt; 
+#&gt; H_0: a constant mean vector across columns 
+#&gt; H_1: not H_0 
+#&gt; 
+#&gt; Test statistic = 373.5277, p-value &lt; 0.0001
+</code></pre>
+
+<p>Since \(p\)-value \(<0.001\), we have strong evidence against the null hypothesis that there is no tissue effect in the gene expression levels. To explore further the mean gene expression level pattern across tissues, additional tests can be carried out. We illustrate a more complicated hypothesis that also requires data manipulation. Consider testing the hypothesis that the mean gene expression levels vector is constant only across the adrenal glands, the spleen, the kidney and the lung. To do this, we first need to place these \(4\) tissues in a successive order in the dataset,   </p>
+
+<pre><code class="r">colnames(VEGFmouse)[1:9]
+#&gt; [1] &quot;adrenal.1&quot;     &quot;cerebrum.1&quot;    &quot;hippocampus.1&quot; &quot;kidney.1&quot;     
+#&gt; [5] &quot;lung.1&quot;        &quot;muscle.1&quot;      &quot;spinal.1&quot;      &quot;spleen.1&quot;     
+#&gt; [9] &quot;thymus.1&quot;
+columnorder &lt;- c(1, 4, 5, 8, 2, 3, 6, 7, 9)
+VEGForder &lt;- orderdata(VEGFmouse, N = 40, order.cols = columnorder) 
+colnames(VEGForder)[1:9]
+#&gt; [1] &quot;adrenal.1.1&quot;     &quot;kidney.1.1&quot;      &quot;lung.1.1&quot;        &quot;spleen.1.1&quot;     
+#&gt; [5] &quot;cerebrum.1.1&quot;    &quot;hippocampus.1.1&quot; &quot;muscle.1.1&quot;      &quot;spinal.1.1&quot;     
+#&gt; [9] &quot;thymus.1.1&quot;
+</code></pre>
+
+<p>and then to perform the test using the ordered dataset</p>
+
+<pre><code class="r">meanmat.ts(VEGForder, N = 40, group.sizes = c(4, 1, 1, 1, 1, 1))
+#&gt; MEAN MATRIX TEST 
+#&gt; Sample size      = 40 
+#&gt; Row variables    = 46 
+#&gt; Column variables = 9 
+#&gt; 
+#&gt; H_0: 6 groups of columns with a constant mean vector within each group 
+#&gt; H_1: not H_0 
+#&gt; 
+#&gt; The number of columns in the 6 successive groups are 4, 1, 1, 1, 1 and 1 respectively.
+#&gt; 
+#&gt; Test statistic = 218.5071, p-value &lt; 0.0001
+</code></pre>
+
+<p>Note that we have included \(5\) additional column groups of size one in the <code>group.sizes</code> argument to reflect the fact that the mean gene expression levels vector in each of the remaining \(5\) tissues remained unspecified. The null hypothesis is rejected, and hence we may conclude that the mean gene expression levels vector is not constant in the adrenal glands, the spleen, the kidney and the lung.</p>
+
+<p>Apart from hypothesis testing, one can estimate the mean relationship between the genes and the tissues. In this example, the mean matrix seems to be unstructured and thus the mean gene expression levels in the \(9\) tissues can be estimated via the sample mean matrix </p>
+
+<pre><code class="r">sample_mean &lt;- meanmat.hat(VEGFmouse, N = 40)
+sample_mean
+#&gt; ESTIMATION OF THE MEAN MATRIX 
+#&gt; Sample size      = 40 
+#&gt; Row variables    = 46 
+#&gt; Column variables = 9 
+#&gt; 
+#&gt; Estimated mean matrix [1:5, 1:5] =
+#&gt;       adrenal.1 cerebrum.1 hippocampus.1 kidney.1  lung.1
+#&gt; Akt1     0.8399     1.2157        1.0597   1.1469  1.2673
+#&gt; Akt2    -0.2333    -0.6201       -0.3881  -0.5524 -0.5359
+#&gt; Akt3    -1.0856    -0.4351       -0.5490  -0.2534 -0.6091
+#&gt; Arnt     0.1089     0.1898        0.0968   0.2551 -0.1171
+#&gt; Casp9    0.0877     0.2600        0.4812   0.3203  0.7416
+</code></pre>
+
+<p>Note that the output preserves the order of the genes and the columns. For example, \(0.8399\) is the average \(\log_2\) intensity for gene &ldquo;Akt1&rdquo; in the adrenal gland based on \(40\) mice. The mean matrix for the first 10 genes across the \(9\) tissues is</p>
+
+<pre><code class="r">head(round(sample_mean$estmeanmat, 4), n = 10)
+#&gt;          adrenal.1 cerebrum.1 hippocampus.1 kidney.1  lung.1 muscle.1
+#&gt; Akt1        0.8399     1.2157        1.0597   1.1469  1.2673   0.8459
+#&gt; Akt2       -0.2333    -0.6201       -0.3881  -0.5524 -0.5359  -0.2082
+#&gt; Akt3       -1.0856    -0.4351       -0.5490  -0.2534 -0.6091  -1.1794
+#&gt; Arnt        0.1089     0.1898        0.0968   0.2551 -0.1171  -0.2919
+#&gt; Casp9       0.0877     0.2600        0.4812   0.3203  0.7416  -0.2492
+#&gt; Cdc42      -0.0538     0.1657       -0.1516  -0.0548  0.0254  -0.3577
+#&gt; Grb2       -0.2765    -0.5322        0.0948   0.0162 -0.1499   0.3015
+#&gt; Hif1a      -0.5760     1.3233       -3.5652   1.5485  1.0256  -0.1264
+#&gt; Hras1      -0.8040    -0.5952       -0.4063  -0.4964 -0.4997  -0.4900
+#&gt; Hsp90aa1   -0.3007     0.1292        0.7474   0.5589  0.2163   0.2634
+#&gt;          spinal.1 spleen.1 thymus.1
+#&gt; Akt1       1.2201   1.2142   1.2025
+#&gt; Akt2      -0.3877  -0.5154  -0.6836
+#&gt; Akt3      -0.7467  -0.8073  -0.4024
+#&gt; Arnt      -0.0861  -0.5188  -0.2219
+#&gt; Casp9      0.3691   0.5682   0.0726
+#&gt; Cdc42     -0.0816  -0.0888   0.1986
+#&gt; Grb2       0.2385  -0.4664  -0.3850
+#&gt; Hif1a      1.1011  -2.5046   0.3866
+#&gt; Hras1     -0.4475  -0.8511  -0.7226
+#&gt; Hsp90aa1   0.7414  -0.2552  -0.2784
+</code></pre>
+
+<h1>Dependence structure of the genes and of the tissues</h1>
+
+<p>The user can estimate two covariance matrices, one for the genes (rows) and the other for the multiple tissues (columns). We have developed shrinkage estimators for both covariance matrices but we let the user decide if shrinkage is required to both, one or neither of these matrices. In principle, we recommend shrinking both covariance matrices in order to obtain well-defined and invertible covariance matrix estimators. The <code>covmat.hat</code> function provides the corresponding covariance estimators: </p>
+
+<pre><code class="r">est_cov_mat &lt;- covmat.hat(datamat = VEGFmouse, N = 40)
+est_cov_mat
+#&gt; ESTIMATION OF THE ROW AND/OR COLUMN COVARIANCE MATRIX 
+#&gt; Sample size      = 40 
+#&gt; Row variables    = 46 
+#&gt; Column variables = 9 
+#&gt; Shrinking        = Both sets of variables 
+#&gt; Centered data    = FALSE 
+#&gt; 
+#&gt; ROW VARIABLES
+#&gt; Estimated optimal intensity = 0.0115 
+#&gt; Estimated covariance matrix [1:5, 1:5] =
+#&gt;          Akt1    Akt2    Akt3    Arnt   Casp9
+#&gt; Akt1   0.4139 -0.0248  0.0420 -0.0010  0.1084
+#&gt; Akt2  -0.0248  0.3341 -0.0240 -0.0029 -0.0151
+#&gt; Akt3   0.0420 -0.0240  0.6954  0.1733 -0.0168
+#&gt; Arnt  -0.0010 -0.0029  0.1733  0.4746  0.0850
+#&gt; Casp9  0.1084 -0.0151 -0.0168  0.0850  0.5337
+#&gt; 
+#&gt; COLUMN VARIABLES
+#&gt; Estimated optimal intensity = 0.3341 
+#&gt; Estimated covariance matrix [1:5, 1:5] =
+#&gt;               adrenal.1 cerebrum.1 hippocampus.1 kidney.1  lung.1
+#&gt; adrenal.1        0.0368    -0.0006        0.0001  -0.0006  0.0010
+#&gt; cerebrum.1      -0.0006     0.0432       -0.0002   0.0000 -0.0034
+#&gt; hippocampus.1    0.0001    -0.0002        0.0266   0.0019  0.0000
+#&gt; kidney.1        -0.0006     0.0000        0.0019   0.0317  0.0012
+#&gt; lung.1           0.0010    -0.0034        0.0000   0.0012  0.0809
+</code></pre>
+
+<p>The output summarizes the results but the user can recover the full covariance matrix estimators. For example, the covariance matrix of the tissues is</p>
+
+<pre><code class="r">round(est_cov_mat$cols.covmat, 3)
+#&gt;               adrenal.1 cerebrum.1 hippocampus.1 kidney.1 lung.1 muscle.1
+#&gt; adrenal.1         0.037     -0.001         0.000   -0.001  0.001    0.001
+#&gt; cerebrum.1       -0.001      0.043         0.000    0.000 -0.003    0.001
+#&gt; hippocampus.1     0.000      0.000         0.027    0.002  0.000    0.000
+#&gt; kidney.1         -0.001      0.000         0.002    0.032  0.001   -0.001
+#&gt; lung.1            0.001     -0.003         0.000    0.001  0.081    0.001
+#&gt; muscle.1          0.001      0.001         0.000   -0.001  0.001    0.030
+#&gt; spinal.1          0.000     -0.001         0.000    0.000  0.016    0.001
+#&gt; spleen.1         -0.001     -0.004         0.000   -0.001  0.001    0.000
+#&gt; thymus.1         -0.001      0.000         0.001    0.003  0.001    0.000
+#&gt;               spinal.1 spleen.1 thymus.1
+#&gt; adrenal.1        0.000   -0.001   -0.001
+#&gt; cerebrum.1      -0.001   -0.004    0.000
+#&gt; hippocampus.1    0.000    0.000    0.001
+#&gt; kidney.1         0.000   -0.001    0.003
+#&gt; lung.1           0.016    0.001    0.001
+#&gt; muscle.1         0.001    0.000    0.000
+#&gt; spinal.1         0.039   -0.001    0.001
+#&gt; spleen.1        -0.001    0.039   -0.001
+#&gt; thymus.1         0.001   -0.001    0.041
+</code></pre>
+
+<p>Moreover, the user can study the gene-wise or tissue-wise correlation by using the <code>covmat.ts</code> function. For example, the results from the identity, sphericity and diagonality hypothesis tests applied on the column variables</p>
+
+<pre><code class="r">covmat.ts(datamat = VEGFmouse, N = 40, voi = &quot;columns&quot;)
+#&gt; HYPOTHESES TESTS FOR THE COLUMN COVARIANCE MATRIX 
+#&gt; Sample size      = 40 
+#&gt; Row variables    = 46 
+#&gt; Column variables = 9 
+#&gt; Centered data    = FALSE 
+#&gt; 
+#&gt; Diagonality hypothesis test:
+#&gt; Test Statistic = 1.4866, p-value = 0.0686
+#&gt; 
+#&gt; Sphericity hypothesis test:
+#&gt; Test Statistic = 10.2122, p-value &lt; 0.0001
+#&gt; 
+#&gt; Identity hypothesis test:
+#&gt; Test Statistic = 38.0811, p-value &lt; 0.0001
+</code></pre>
+
+<p>suggest that the tissues might be uncorrelated at a \(5\%\) significance level. </p>
+
+<h1>How to cite</h1>
+
+<pre><code class="r">print(citation(&quot;HDTD&quot;), bibtex = TRUE)
+#&gt; 
+#&gt; Please use the following guidelines for citing `HDTD&#39; in
+#&gt; publication:
+#&gt; 
+#&gt; To cite the mean matrix hypothesis testing methodology, please use
+#&gt; 
+#&gt;   Touloumis, A., Tavar\&#39;{e}, S. and Marioni, J.C. (2015). Testing
+#&gt;   the Mean Matrix in High-Dimensional Transposable Data.
+#&gt;   Biometrics 71 (1), 157-166
+#&gt; 
+#&gt; A BibTeX entry for LaTeX users is
+#&gt; 
+#&gt;   @Article{,
+#&gt;     title = {Testing the Mean Matrix in High-Dimensional Transposable Data},
+#&gt;     author = {Anestis Touloumis and Simon Tavar\&#39;{e} and John C. Marioni},
+#&gt;     journal = {Biometrics},
+#&gt;     year = {2015},
+#&gt;     volume = {71},
+#&gt;     issue = {1},
+#&gt;     pages = {157--166},
+#&gt;     url = {http://onlinelibrary.wiley.com/doi/10.1111/biom.12257/full},
+#&gt;   }
+#&gt; 
+#&gt; To cite the covariance matrix hypothesis testing methodology,
+#&gt; please use
+#&gt; 
+#&gt;   Touloumis, A., Marioni, J.C. and Tavar\&#39;{e}, S. (2017).
+#&gt;   Hypothesis Testing for the Covariance Matrix in High-Dimensional
+#&gt;   Transposable Data with Kronecker Product Dependence Structure.
+#&gt; 
+#&gt; A BibTeX entry for LaTeX users is
+#&gt; 
+#&gt;   @Article{,
+#&gt;     title = {Hypothesis Testing for the Covariance Matrix in 
+#&gt;          High-Dimensional Transposable Data with Kronecker Product Dependence Structure},
+#&gt;     author = {Anestis Touloumis and John C. Marioni and Simon Tavar\&#39;{e}},
+#&gt;     journal = {Submitted},
+#&gt;     year = {2017},
+#&gt;   }
+#&gt; 
+#&gt; To cite HDTD or the estimation method for the covariance matrices,
+#&gt; please use
+#&gt; 
+#&gt;   Touloumis, A., Marioni, J.C. and Tavar\&#39;{e}, S. (2016). HDTD:
+#&gt;   Analyzing multi-tissue gene expression data. Bioinformatics 32
+#&gt;   (14), 2193-2195
+#&gt; 
+#&gt; A BibTeX entry for LaTeX users is
+#&gt; 
+#&gt;   @Article{,
+#&gt;     title = {HDTD: Analyzing multi-tissue gene expression data},
+#&gt;     author = {Anestis Touloumis and John C. Marioni and Simon Tavar\&#39;{e}},
+#&gt;     journal = {Bioinformatics},
+#&gt;     year = {2016},
+#&gt;     volume = {32},
+#&gt;     issue = {14},
+#&gt;     pages = {2193--2195},
+#&gt;     url = {https://doi.org/10.1093/bioinformatics/btw224},
+#&gt;   }
+</code></pre>
+
+</body>
+
+</html>
