@@ -1,4 +1,5 @@
-source("https://bioconductor.org/biocLite.R")
-biocLite("BiocCheck")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("BiocCheck")
 library(BiocCheck)
 BiocCheck(".")
