@@ -22,24 +22,24 @@ Options include \code{TRUE} or \code{FALSE}.}
 \value{
 It returns a list with components:
 \item{diagonality.ts}{a list
-containing the test statistic and p-value of the 
+containing the test statistic and p-value of the
 diagonality hypothesis test.}
 \item{sphericity.ts}{a list
-containing the test statistic and p-value of the 
+containing the test statistic and p-value of the
 sphericity hypothesis test.}
 \item{identity.ts}{a list containing the test statistic and p-value of the
-identity hypothesis test.} 
+identity hypothesis test.}
 \item{N}{the sample size.}
 \item{n.rows}{the number of row
-variables.} 
+variables.}
 \item{n.cols}{the number of column variables.}
 \item{variables}{character indicating if the tests were applied to the row
-or column covariance matrix.} 
+or column covariance matrix.}
 \item{centered}{logical indicating if the
 transposable data were centered.}
 }
 \description{
-Testing the sphericity, identity and diagonality hypotheses for 
+Testing the sphericity, identity and diagonality hypotheses for
 the row or column covariance matrix.
 }
 \details{

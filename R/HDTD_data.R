@@ -1,9 +1,9 @@
 #' Vascular Endothelial Growth Factor Mouse Dataset
-#' 
+#'
 #' Log2 normalized mouse gene expression data in the vascular endothelial
 #' growth factor signalling pathway across multiple tissues.
-#' 
-#' 
+#'
+#'
 #' @name VEGFmouse
 #' @docType data
 #' @format A data frame with 46 rows and 360 columns. The rows corresponds to
@@ -18,5 +18,5 @@
 #' @examples
 #' data(VEGFmouse)
 #' ## Check the order of the tissues from the first mouse.
-#' colnames(VEGFmouse[,1:9]) 
+#' colnames(VEGFmouse[,1:9])
 NULL

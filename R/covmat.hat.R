@@ -1,19 +1,19 @@
 #' Estimation of the Row and of the Column Covariance Matrices.
-#' 
+#'
 #' This function provides the row and/or column covariance matrix estimators.
-#' 
+#'
 #' It is assumed that there are \code{nrow(datamat)} row variables and
 #' \code{ncol(datamat)}/\code{N} column variables in \code{datamat}. Further,
 #' \code{datamat} should be written in such a way that every
 #' \code{ncol(datamat)}/\code{N} consecutive columns belong to the same subject
 #' and the order of the column variables in each block is preserved across
 #' subjects.
-#' 
+#'
 #' For identifiability reasons, the trace of the row covariance matrix is set
 #' equal to its dimension. If you want to place the equivalent restriction on
 #' the column covariance matrix, interchange the role of row and column
 #' variables by utilizing the function \code{\link{transposedata}}.
-#' 
+#'
 #' @aliases covmat.hat print.covmat.hat
 #' @param datamat numeric matrix containing the transposable data.
 #' @param N positive integer number indicating the sample size, i.e., the
@@ -34,8 +34,8 @@
 #' of column variables.} \item{shrink}{character indicating if shrinkage
 #' estimation was performed.} \item{centered}{logical indicating if the
 #' transposable data were centered.}
-#' @references  Touloumis, A., Marioni, J. C. and Tavare, S. (2016) 
-#' HDTD: Analyzing  multi-tissue gene expression data, 
+#' @references  Touloumis, A., Marioni, J. C. and Tavare, S. (2016)
+#' HDTD: Analyzing  multi-tissue gene expression data,
 #' \emph{Bioinformatics} \bold{32}, 2193--2195.
 #' @author Anestis Touloumis
 #' @examples
@@ -44,48 +44,48 @@
 #' est_cov_mat <- covmat.hat(datamat = VEGFmouse, N = 40)
 #' est_cov_mat
 #' @export covmat.hat
-covmat.hat <- function(datamat, N, shrink = "both", centered = FALSE, 
-                        voi = "both"){
-    if (!is.matrix(datamat)) 
-        datamat <- as.matrix(datamat, 
-                            dimnames = 
+covmat.hat <- function(datamat, N, shrink = "both", centered = FALSE,
+                        voi = "both") {
+    if (!is.matrix(datamat))
+        datamat <- as.matrix(datamat,
+                            dimnames =
                                 list(rownames(datamat), colnames(datamat)))
     datamat <- na.omit(datamat)
     rowsnam <- rownames(datamat)
     colsnam <- colnames(datamat)
     N <- as.numeric(N)
-    if (length(N) != 1 | ((N - round(N)) != 0) | (N <= 0)) 
+    if (length(N) != 1 | ((N - round(N)) != 0) | (N <= 0))
         stop("'N' must be a positive integer number")
     shrink <- as.character(shrink)
     shrinks <- c("none", "rows", "columns", "both")
     icheck <- as.integer(match(shrink, shrinks, -1))
-    if (icheck < 1) 
+    if (icheck < 1)
         stop("'shrink' must be one of 'rows', 'columns', 'none', 'both'")
     centered <- as.logical(centered)
-    if (centered != TRUE & centered != FALSE) 
+    if (centered != TRUE & centered != FALSE)
         stop("'centered' must be either 'TRUE' or 'FALSE'")
-    if (!centered & N <= 3) 
+    if (!centered & N <= 3)
         stop("'N' must be greater than or equal to 4")
     voi <- as.character(voi)
     vois <- c("rows", "columns", "both")
     icheck <- as.integer(match(voi, vois, -1))
-    if (icheck < 1) 
+    if (icheck < 1)
         stop(" 'voi' must be one of 'rows', 'columns', 'both'")
     p1 <- nrow(datamat)
-    p2 <- ncol(datamat)/N
-    if ((p2 - round(p2)) != 0) 
+    p2 <- ncol(datamat) / N
+    if ((p2 - round(p2)) != 0)
         stop(" The number of column variables is not a positive integer number")
     colsnam <- colsnam[seq_len(p2)]
     pars <- covmat.hat.generic(datamat, N, shrink, centered, p1, p2, voi)
-    shrink <- switch(shrink, none = "None", both = "Both sets of variables", 
+    shrink <- switch(shrink, none = "None", both = "Both sets of variables",
                         rows = "Row variables", columns = "Column variables")
-    ans <- list(rows.covmat = pars$rowcovmat, rows.intensity = pars$lambdaS, 
-                cols.covmat = pars$colcovmat, cols.intensity = pars$lambdaD, 
+    ans <- list(rows.covmat = pars$rowcovmat, rows.intensity = pars$lambdaS,
+                cols.covmat = pars$colcovmat, cols.intensity = pars$lambdaD,
                 N = N, n.rows = p1, n.cols = p2, shrink = shrink,
                 centered = centered)
-    if(!is.null(ans$rows.covmat)) 
+    if (!is.null(ans$rows.covmat))
         dimnames(ans$rows.covmat) <- list(rowsnam, rowsnam)
-    if(!is.null(ans$cols.covmat)) 
+    if (!is.null(ans$cols.covmat))
         dimnames(ans$cols.covmat) <- list(colsnam, colsnam)
     class(ans) <- "covmat.hat"
     ans

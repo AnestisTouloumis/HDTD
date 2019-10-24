@@ -21,6 +21,6 @@ growth factor signalling pathway across multiple tissues.
 \examples{
 data(VEGFmouse)
 ## Check the order of the tissues from the first mouse.
-colnames(VEGFmouse[,1:9]) 
+colnames(VEGFmouse[,1:9])
 }
 \keyword{datasets}

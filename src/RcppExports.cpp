@@ -230,3 +230,31 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+
+static const R_CallMethodDef CallEntries[] = {
+    {"_HDTD_pmat", (DL_FUNC) &_HDTD_pmat, 1},
+    {"_HDTD_projectionmatrix", (DL_FUNC) &_HDTD_projectionmatrix, 1},
+    {"_HDTD_sumdatamatrix", (DL_FUNC) &_HDTD_sumdatamatrix, 2},
+    {"_HDTD_centerdatamatrix", (DL_FUNC) &_HDTD_centerdatamatrix, 2},
+    {"_HDTD_transposedatamatrix", (DL_FUNC) &_HDTD_transposedatamatrix, 2},
+    {"_HDTD_tcrossprodcpp", (DL_FUNC) &_HDTD_tcrossprodcpp, 1},
+    {"_HDTD_tcrossprod2cpp", (DL_FUNC) &_HDTD_tcrossprod2cpp, 2},
+    {"_HDTD_crossprodcpp", (DL_FUNC) &_HDTD_crossprodcpp, 1},
+    {"_HDTD_crossprod2cpp", (DL_FUNC) &_HDTD_crossprod2cpp, 2},
+    {"_HDTD_sampleSigmaR", (DL_FUNC) &_HDTD_sampleSigmaR, 2},
+    {"_HDTD_statistics_centered", (DL_FUNC) &_HDTD_statistics_centered, 2},
+    {"_HDTD_statistics_trans_centered", (DL_FUNC) &_HDTD_statistics_trans_centered, 2},
+    {"_HDTD_statistics", (DL_FUNC) &_HDTD_statistics, 2},
+    {"_HDTD_statistics_trans", (DL_FUNC) &_HDTD_statistics_trans, 2},
+    {"_HDTD_covmathat_statistics_centered", (DL_FUNC) &_HDTD_covmathat_statistics_centered, 2},
+    {"_HDTD_covmathat_statistics_trans_centered", (DL_FUNC) &_HDTD_covmathat_statistics_trans_centered, 2},
+    {"_HDTD_covmathat_statistics", (DL_FUNC) &_HDTD_covmathat_statistics, 2},
+    {"_HDTD_covmathat_statistics_trans", (DL_FUNC) &_HDTD_covmathat_statistics_trans, 2},
+    {"_HDTD_meanmatts_statistics", (DL_FUNC) &_HDTD_meanmatts_statistics, 2},
+    {NULL, NULL, 0}
+};
+
+RcppExport void R_init_HDTD(DllInfo *dll) {
+    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
+}

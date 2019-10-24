@@ -41,7 +41,7 @@ subjects.
 }
 \examples{
 data(VEGFmouse)
-## Testing conservation of the overall gene expression across tissues. 
+## Testing conservation of the overall gene expression across tissues.
 tissues_mean_test <- meanmat.ts(datamat = VEGFmouse, N = 40, group.sizes = 9)
 tissues_mean_test
 ## Testing if the adrenal and the cerebrum tissues have the same mean vector.
@@ -50,7 +50,7 @@ test2
 }
 \references{
 Touloumis, A., Tavare, S. and Marioni, J. C. (2015) Testing the
-Mean Matrix in High-Dimensional Transposable Data. 
+Mean Matrix in High-Dimensional Transposable Data.
 \emph{Biometrics} \bold{71}, 157--166.
 }
 \author{

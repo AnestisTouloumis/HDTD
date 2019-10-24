@@ -43,7 +43,7 @@ tissuesnew
 ## To do this, create a numeric vector with the desired order.
 ordtis <- pmatch(tissuesnew, tissuesold)
 VEGFmousenew <- orderdata(datamat = VEGFmouse, N = 40, order.cols = ordtis)
-colnames(VEGFmousenew)[1:9] 
+colnames(VEGFmousenew)[1:9]
 }
 \seealso{
 \code{\link{meanmat.ts}} and \code{\link{meanmat.hat}}.

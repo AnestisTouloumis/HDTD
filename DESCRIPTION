@@ -13,7 +13,7 @@ Suggests:
     markdown
 Imports: 
     stats,
-    Rcpp (>= 0.12.13)
+    Rcpp (>= 1.0.1)
 LinkingTo: 
     Rcpp, 
     RcppArmadillo    

@@ -23,7 +23,7 @@ transposable data.
 The mean relationship of the row and column variables can be tested using
 the function \code{\link{meanmat.ts}}. The implemented test is nonparametric
 and not seriously restricted by the dependence structure among and/or
-between the row and column variables. 
+between the row and column variables.
 See \cite{Touloumis et al. (2015)} for more details.
 
 The function \code{\link{covmat.hat}} provides Stein-type shrinkage
@@ -47,7 +47,7 @@ data(VEGFmouse)
 ## The sample mean matrix.
 sample_mean <- meanmat.hat(datamat = VEGFmouse, N = 40)
 sample_mean
-## Testing conservation of the overall gene expression across tissues. 
+## Testing conservation of the overall gene expression across tissues.
 tissues_mean_test <- meanmat.ts(datamat = VEGFmouse, N = 40, group.sizes = 9)
 tissues_mean_test
 # Estimating the gene and column covariance matrices.
@@ -62,10 +62,10 @@ tissues_cov_test
 }
 \references{
 Touloumis, A., Tavare, S. and Marioni, J. C. (2015) Testing the
-Mean Matrix in High-Dimensional Transposable Data. 
+Mean Matrix in High-Dimensional Transposable Data.
 \emph{Biometrics} \bold{71}, 157--166
 
-Touloumis, A., Marioni, J. C. and Tavare, S. (2016) HDTD: Analyzing 
+Touloumis, A., Marioni, J. C. and Tavare, S. (2016) HDTD: Analyzing
 multi-tissue gene expression data. \emph{Bioinformatics}
 \bold{32}, 2193--2195.
 

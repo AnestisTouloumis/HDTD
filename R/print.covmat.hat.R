@@ -8,7 +8,7 @@ print.covmat.hat <- function(x, ...) {
     cat("Centered data    =", x$centered, "\n")
     if (!is.null(x$rows.covmat)) {
         cat("\nROW VARIABLES\n")
-        if (!is.null(x$rows.intensity)) 
+        if (!is.null(x$rows.intensity))
             cat("Estimated optimal intensity =",
                 round(x$rows.intensity, 4), "\n")
         cat("Estimated covariance matrix [1:5, 1:5] =\n")
@@ -16,8 +16,8 @@ print.covmat.hat <- function(x, ...) {
     }
     if (!is.null(x$cols.covmat)) {
         cat("\nCOLUMN VARIABLES\n")
-        if (!is.null(x$cols.intensity)) 
-            cat("Estimated optimal intensity =", 
+        if (!is.null(x$cols.intensity))
+            cat("Estimated optimal intensity =",
                 round(x$cols.intensity, 4), "\n")
         cat("Estimated covariance matrix [1:5, 1:5] =\n")
         print(round(x$cols.covmat[1:min(5, x$n.cols), 1:min(5, x$n.cols)], 4))
