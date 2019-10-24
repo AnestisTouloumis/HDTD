@@ -44,10 +44,10 @@ references:
     given: John C.
   - family: Tavaré
     given: Simon  
-  container-title: Submitted
+  container-title: Statistica Sinica
   type: article-journal
   issued:
-    year: 2017 
+    year: 2019 
 csl: Biometrics.csl  
 ---
 

@@ -69,9 +69,9 @@ Touloumis, A., Marioni, J. C. and Tavare, S. (2016) HDTD: Analyzing
 multi-tissue gene expression data. \emph{Bioinformatics}
 \bold{32}, 2193--2195.
 
-Touloumis, A., Marioni, J. C. and Tavare, S. (2017) Hypothesis Testing for
+Touloumis, A., Marioni, J. C. and Tavare, S. (2019+) Hypothesis Testing for
 the Covariance Matrix in High-Dimensional Transposable Data with Kronecker
-Product Dependence Structure.
+Product Dependence Structure. \emph{Statistica Sinica}.
 }
 \author{
 Anestis Touloumis, John Marioni, Simon Tavare.

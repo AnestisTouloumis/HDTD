@@ -19,10 +19,11 @@ citEntry(entry="Article",
          title = "Hypothesis Testing for the Covariance Matrix in 
          High-Dimensional Transposable Data with Kronecker Product Dependence Structure",
          author = personList(as.person("Anestis Touloumis"),as.person("John C. Marioni"),as.person("Simon Tavar\\'{e}")),
-         journal = "Submitted",
-         year = "2017",
-         textVersion=paste("Touloumis, A., Marioni, J.C. and Tavar\\'{e}, S. (2017).",
-               "Hypothesis Testing for the Covariance Matrix in High-Dimensional Transposable Data with Kronecker Product Dependence Structure."),
+         journal = "Statistica Sinica",
+         year = "2019+",
+         textVersion=paste("Touloumis, A., Marioni, J.C. and Tavar\\'{e}, S. (2019+).",
+               "Hypothesis Testing for the Covariance Matrix in High-Dimensional Transposable Data with Kronecker Product Dependence Structure.",
+               "Statistica Sinica"),
          header = "To cite the covariance matrix hypothesis testing methodology, please use ",
          )
 
