@@ -54,7 +54,6 @@ csl: Biometrics.csl
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
-  library(HDTD)
 knitr::opts_chunk$set(
   tidy = TRUE,
   collapse = TRUE,
@@ -74,9 +73,8 @@ knitr::opts_chunk$set(
 You can install the release version of `HDTD`:
 
 ``` r
-## try http:// if https:// URLs are not supported
-if (!requireNamespace("BiocManager", quietly=TRUE))
-    install.packages("BiocManager")
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
 BiocManager::install("HDTD")
 ```
 
@@ -87,13 +85,14 @@ The source code for the release version of `HDTD` is available on Bioconductor a
 Or you can install the development version of `HDTD`:
 
 ``` r
-# install.packages('devtools')
+if (!requireNamespace("devtools", quietly = TRUE))
+  install.packages("devtools")
 devtools::install_github("AnestisTouloumis/HDTD")
 ```
 
 To use `HDTD`, you should load the package as follows:
 
-``` r
+```{r}
 library("HDTD")
 ```
 
@@ -163,7 +162,7 @@ browseVignettes("HDTD")
 ## How to cite
 
 ```{r, echo=FALSE, comment=""}
-print(citation("HDTD"),bibtex=TRUE)
+print(citation("HDTD"), bibtex = TRUE)
 ```
 
 # References

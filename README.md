@@ -14,9 +14,8 @@ developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repo
 You can install the release version of `HDTD`:
 
 ``` r
-## try http:// if https:// URLs are not supported
-if (!requireNamespace("BiocManager", quietly=TRUE))
-    install.packages("BiocManager")
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
 BiocManager::install("HDTD")
 ```
 
@@ -28,7 +27,8 @@ Bioconductor at:
 Or you can install the development version of `HDTD`:
 
 ``` r
-# install.packages('devtools')
+if (!requireNamespace("devtools", quietly = TRUE))
+  install.packages("devtools")
 devtools::install_github("AnestisTouloumis/HDTD")
 ```
 
@@ -260,6 +260,7 @@ A BibTeX entry for LaTeX users is
     author = {Anestis Touloumis and John C. Marioni and Simon Tavar\'{e}},
     journal = {Statistica Sinica},
     year = {2019+},
+    url = {http://www3.stat.sinica.edu.tw/ss_newpaper/SS-2018-0268_na.pdf},
   }
 
 To cite HDTD or the estimation method for the covariance matrices,

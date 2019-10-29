@@ -37,7 +37,7 @@ The dataset is formatted as a single matrix with rows the $46$ genes and columns
 
 ```{r}
 library("HDTD")
-data(VEGFmouse)
+data("VEGFmouse")
 dim(VEGFmouse)
 rownames(VEGFmouse)
 ```
