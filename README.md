@@ -51,7 +51,7 @@ are available per subject. In this case, a data matrix can be created
 with row variables the genes, column variables the tissues and
 measurements the corresponding expression levels. We expect dependencies
 to occur among genes, among tissues and between genes and tissues. For
-more examples of trasposable data see references in Touloumis, Marioni
+more examples of transposable data see references in Touloumis, Marioni
 and Tavaré (2019), Touloumis, Tavaré and Marioni (2015) and Touloumis,
 Marioni and Tavaré (2016).
 
@@ -66,7 +66,7 @@ There are four core functions:
 
 There are also three utility functions:
 
-  - `transposedata` for interchanching the role of rows and columns,
+  - `transposedata` for interchanging the role of rows and columns,
   - `centerdata` for centering the transposable data around their mean
     matrix,
   - `orderdata` for rearranging the order of the row and/or column
@@ -108,7 +108,8 @@ sample_mean
 ```
 
 and test whether the overall gene expression is constant across the
-\(9\) tissues:
+\(9\)
+tissues:
 
 ``` r
 tissue_mean_test <- meanmat.ts(datamat = VEGFmouse, N = 40, group.sizes = 9)
@@ -247,10 +248,9 @@ A BibTeX entry for LaTeX users is
 To cite the covariance matrix hypothesis testing methodology,
 please use
 
-  Touloumis, A., Marioni, J.C. and Tavar\'{e}, S. (2019+).
+  Touloumis, A., Marioni, J.C. and Tavar\'{e}, S. (2017).
   Hypothesis Testing for the Covariance Matrix in High-Dimensional
   Transposable Data with Kronecker Product Dependence Structure.
-  Statistica Sinica
 
 A BibTeX entry for LaTeX users is
 
@@ -258,9 +258,8 @@ A BibTeX entry for LaTeX users is
     title = {Hypothesis Testing for the Covariance Matrix in 
          High-Dimensional Transposable Data with Kronecker Product Dependence Structure},
     author = {Anestis Touloumis and John C. Marioni and Simon Tavar\'{e}},
-    journal = {Statistica Sinica},
-    year = {2019+},
-    url = {http://www3.stat.sinica.edu.tw/ss_newpaper/SS-2018-0268_na.pdf},
+    journal = {Submitted},
+    year = {2017},
   }
 
 To cite HDTD or the estimation method for the covariance matrices,
@@ -291,7 +290,7 @@ A BibTeX entry for LaTeX users is
 <div id="ref-Touloumis2016">
 
 Touloumis, A., Marioni, J.C. and Tavaré, S. (2016) HDTD: Analyzing
-Multi-tissue Gene Expression Data. *Bioinfomatics*, **32**, 2193–2195.
+Multi-tissue Gene Expression Data. *Bioinformatics*, **32**, 2193–2195.
 
 </div>
 

@@ -3,9 +3,20 @@ Type: Package
 Title: Statistical Inference about the Mean Matrix and the Covariance Matrices in High-Dimensional Transposable Data (HDTD)
 Version: 1.19.1
 Authors@R: c(
-    person("Anestis", "Touloumis", email = "A.Touloumis@brighton.ac.uk", role = c("cre","aut")),
-    person("John C.", "Marioni", role = "aut"),
-    person("Simon", "Tavar\\'{e}", role = "aut"))
+    person(given = "Anestis",
+           family = "Touloumis",
+           email = "A.Touloumis@brighton.ac.uk",
+           role = c("cre","aut"),
+           comment = c(ORCID = "0000-0002-5965-1639")),
+    person(given = "John C.",
+           family = "Marioni",
+           role = "aut",
+           comment = c(ORCID = "0000-0001-9092-0852")),
+    person(given = "Simon",
+           family = "Tavar\\'{e}",
+           role = "aut",
+           comment = c(ORCID = "0000-0002-3716-4952"))
+           )
 Depends: 
     R (>= 3.6)
 Suggests: 

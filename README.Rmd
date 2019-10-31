@@ -10,7 +10,7 @@ references:
     given: John C.
   - family: Tavaré
     given: Simon  
-  container-title: Bioinfomatics
+  container-title: Bioinformatics
   volume: 32
   URL: 'https://doi.org/10.1093/bioinformatics/btw224'
   issue: 14
@@ -98,7 +98,7 @@ library("HDTD")
 
 ## Usage
 
-This package offers functions to estimate and test the matrix parameters of transposable data in high-dimensional settings. The term _transposable data_ refers to datasets that are structured in a matrix form such that both the rows and columns correspond to variables of interest and dependencies are expected to occur _among_ rows, _among_ columns and _between_ rows and columns. For example, consider microarray studies in genetics where multiple RNA samples across different tissues are available per subject. In this case, a data matrix can be created with row variables the genes, column variables the tissues and measurements the corresponding expression levels. We expect dependencies to occur among genes, among tissues and between genes and tissues. For more examples of trasposable data see references in @Touloumis2013, @Touloumis2015 and @Touloumis2016.
+This package offers functions to estimate and test the matrix parameters of transposable data in high-dimensional settings. The term _transposable data_ refers to datasets that are structured in a matrix form such that both the rows and columns correspond to variables of interest and dependencies are expected to occur _among_ rows, _among_ columns and _between_ rows and columns. For example, consider microarray studies in genetics where multiple RNA samples across different tissues are available per subject. In this case, a data matrix can be created with row variables the genes, column variables the tissues and measurements the corresponding expression levels. We expect dependencies to occur among genes, among tissues and between genes and tissues. For more examples of transposable data see references in @Touloumis2013, @Touloumis2015 and @Touloumis2016.
 
 
 There are four core functions:
@@ -111,7 +111,7 @@ There are four core functions:
 
 There are also three utility functions:
 
-- `transposedata` for interchanching the role of rows and columns,
+- `transposedata` for interchanging the role of rows and columns,
 - `centerdata` for centering the transposable data around their mean matrix,
 - `orderdata` for rearranging the order of the row and/or column variables.
 
