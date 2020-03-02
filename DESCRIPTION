@@ -1,7 +1,7 @@
 Package: HDTD
 Type: Package
 Title: Statistical Inference about the Mean Matrix and the Covariance Matrices in High-Dimensional Transposable Data (HDTD)
-Version: 1.19.1
+Version: 1.20.1
 Authors@R: c(
     person(given = "Anestis",
            family = "Touloumis",
@@ -36,5 +36,5 @@ URL: http://github.com/AnestisTouloumis/HDTD
 BugReports: http://github.com/AnestisTouloumis/HDTD/issues
 LazyData: true
 NeedsCompilation: no
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 Encoding: UTF-8

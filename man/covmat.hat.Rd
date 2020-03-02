@@ -5,8 +5,7 @@
 \alias{print.covmat.hat}
 \title{Estimation of the Row and of the Column Covariance Matrices.}
 \usage{
-covmat.hat(datamat, N, shrink = "both", centered = FALSE,
-  voi = "both")
+covmat.hat(datamat, N, shrink = "both", centered = FALSE, voi = "both")
 }
 \arguments{
 \item{datamat}{numeric matrix containing the transposable data.}
