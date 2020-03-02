@@ -14,8 +14,7 @@ developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repo
 You can install the release version of `HDTD`:
 
 ``` r
-if (!requireNamespace("BiocManager", quietly = TRUE))
-  install.packages("BiocManager")
+if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 BiocManager::install("HDTD")
 ```
 
@@ -27,8 +26,7 @@ Bioconductor at:
 Or you can install the development version of `HDTD`:
 
 ``` r
-if (!requireNamespace("devtools", quietly = TRUE))
-  install.packages("devtools")
+if (!requireNamespace("devtools", quietly = TRUE)) install.packages("devtools")
 devtools::install_github("AnestisTouloumis/HDTD")
 ```
 
@@ -108,8 +106,7 @@ sample_mean
 ```
 
 and test whether the overall gene expression is constant across the
-\(9\)
-tissues:
+\(9\) tissues:
 
 ``` r
 tissue_mean_test <- meanmat.ts(datamat = VEGFmouse, N = 40, group.sizes = 9)
@@ -223,14 +220,13 @@ browseVignettes("HDTD")
 
 ``` 
 
-Please use the following guidelines for citing `HDTD' in
-publication:
+Please use the following guidelines for citing `HDTD' in publication:
 
 To cite the mean matrix hypothesis testing methodology, please use
 
-  Touloumis, A., Tavar\'{e}, S. and Marioni, J.C. (2015). Testing
-  the Mean Matrix in High-Dimensional Transposable Data.
-  Biometrics 71 (1), 157-166
+  Touloumis, A., Tavar\'{e}, S. and Marioni, J.C. (2015). Testing the
+  Mean Matrix in High-Dimensional Transposable Data. Biometrics 71 (1),
+  157-166
 
 A BibTeX entry for LaTeX users is
 
@@ -245,12 +241,12 @@ A BibTeX entry for LaTeX users is
     url = {http://onlinelibrary.wiley.com/doi/10.1111/biom.12257/full},
   }
 
-To cite the covariance matrix hypothesis testing methodology,
-please use
+To cite the covariance matrix hypothesis testing methodology, please
+use
 
-  Touloumis, A., Marioni, J.C. and Tavar\'{e}, S. (2017).
-  Hypothesis Testing for the Covariance Matrix in High-Dimensional
-  Transposable Data with Kronecker Product Dependence Structure.
+  Touloumis, A., Marioni, J.C. and Tavar\'{e}, S. (2019+). Hypothesis
+  Testing for the Covariance Matrix in High-Dimensional Transposable
+  Data with Kronecker Product Dependence Structure. Statistica Sinica
 
 A BibTeX entry for LaTeX users is
 
@@ -258,16 +254,17 @@ A BibTeX entry for LaTeX users is
     title = {Hypothesis Testing for the Covariance Matrix in 
          High-Dimensional Transposable Data with Kronecker Product Dependence Structure},
     author = {Anestis Touloumis and John C. Marioni and Simon Tavar\'{e}},
-    journal = {Submitted},
-    year = {2017},
+    journal = {Statistica Sinica},
+    year = {2019+},
+    url = {http://www3.stat.sinica.edu.tw/ss_newpaper/SS-2018-0268_na.pdf},
   }
 
 To cite HDTD or the estimation method for the covariance matrices,
 please use
 
   Touloumis, A., Marioni, J.C. and Tavar\'{e}, S. (2016). HDTD:
-  Analyzing multi-tissue gene expression data. Bioinformatics 32
-  (14), 2193-2195
+  Analyzing multi-tissue gene expression data. Bioinformatics 32 (14),
+  2193-2195
 
 A BibTeX entry for LaTeX users is
 
@@ -285,7 +282,7 @@ A BibTeX entry for LaTeX users is
 
 # References
 
-<div id="refs" class="references">
+<div id="refs" class="references hanging-indent">
 
 <div id="ref-Touloumis2016">
 
