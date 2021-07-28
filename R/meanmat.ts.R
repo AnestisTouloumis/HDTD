@@ -65,7 +65,7 @@ meanmat.ts <- function(datamat, N, group.sizes, voi = "columns") {
         rmvars <- cumsum(group.sizes)[group.sizes == 1]
         order.rows <- order.cols <- NULL
         if (voi == "rows")
-            order.rows <- (1:p1)[-rmvars] else order.cols <- (1:p2)[-rmvars]
+            order.rows <- seq_len(p1)[-rmvars] else order.cols <- seq_len(p2)[-rmvars]
         datamat <- orderdata(datamat, N, order.rows, order.cols)
         group.sizes1 <- group.sizes[group.sizes != 1]
         projmat <- projectionmatrix(cumsum(group.sizes1))

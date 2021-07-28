@@ -39,9 +39,10 @@
 #' \item{centered}{logical indicating if the
 #' transposable data were centered.}
 #' @author Anestis Touloumis
-#' @references Touloumis, A., Marioni, J.C. and Tavare, S. (2019+). Hypothesis
+#' @references Touloumis, A., Marioni, J.C. and Tavare, S. (2021) Hypothesis
 #' Testing for the Covariance Matrix in High-Dimensional Transposable Data with
-#' Kronecker Product Dependence Structure. \emph{Statistica Sinica}.
+#' Kronecker Product Dependence Structure. \emph{Statistica Sinica} \bold{31},
+#' 1309--1329.
 #' @examples
 #' data(VEGFmouse)
 #' ## Hypothesis tests for the covariance matrix of the genes (rows).

@@ -38,7 +38,7 @@ transposedata <- function(datamat, N) {
     if ((p2 - round(p2)) != 0)
         stop("The number of column variables is not a positive integer number")
     ans <- transposedatamatrix(datamat, N)
-    rownames(ans) <- col.vars.names[1:p2]
+    rownames(ans) <- col.vars.names[seq_len(p2)]
     colnames(ans) <- paste(row.vars.names,
                             rep(seq_len(N), each = ncol(ans) / N), sep = ".")
     ans

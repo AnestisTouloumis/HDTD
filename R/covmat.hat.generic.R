@@ -40,7 +40,7 @@ covmat.hat.generic <- function(datamat, N, shrink, centered, p1, p2, voi) {
         if (voi != "columns")
             Sigma <- matrix(0, p1, p1)
         Delta <- matrix(0, p2, p2)
-        id <- rep(1:N, each = p2)
+        id <- rep(seq_len(N), each = p2)
         for (i in seq_len(N)) {
             if (voi != "columns")
                 Sigma <- Sigma + tcrossprod(datacen[, id == i])

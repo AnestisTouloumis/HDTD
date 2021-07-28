@@ -12,7 +12,9 @@ print.covmat.hat <- function(x, ...) {
             cat("Estimated optimal intensity =",
                 round(x$rows.intensity, 4), "\n")
         cat("Estimated covariance matrix [1:5, 1:5] =\n")
-        print(round(x$rows.covmat[1:min(5, x$n.rows), 1:min(5, x$n.rows)], 4))
+        print(round(x$rows.covmat[seq_len(min(5, x$n.rows)), 
+                                  seq_len(min(5, x$n.rows))], 
+                    4))
     }
     if (!is.null(x$cols.covmat)) {
         cat("\nCOLUMN VARIABLES\n")
@@ -20,6 +22,7 @@ print.covmat.hat <- function(x, ...) {
             cat("Estimated optimal intensity =",
                 round(x$cols.intensity, 4), "\n")
         cat("Estimated covariance matrix [1:5, 1:5] =\n")
-        print(round(x$cols.covmat[1:min(5, x$n.cols), 1:min(5, x$n.cols)], 4))
+        print(round(x$cols.covmat[seq_len(min(5, x$n.cols)),
+                                  seq_len(min(5, x$n.cols))], 4))
     }
 }

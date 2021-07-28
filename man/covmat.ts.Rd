@@ -63,9 +63,10 @@ tissues_cov_test <- covmat.ts(datamat = VEGFmouse, N = 40, voi = 'columns')
 tissues_cov_test
 }
 \references{
-Touloumis, A., Marioni, J.C. and Tavare, S. (2019+). Hypothesis
+Touloumis, A., Marioni, J.C. and Tavare, S. (2021) Hypothesis
 Testing for the Covariance Matrix in High-Dimensional Transposable Data with
-Kronecker Product Dependence Structure. \emph{Statistica Sinica}.
+Kronecker Product Dependence Structure. \emph{Statistica Sinica} \bold{31},
+1309--1329.
 }
 \author{
 Anestis Touloumis

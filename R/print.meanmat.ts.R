@@ -20,7 +20,7 @@ print.meanmat.ts <- function(x, ...) {
     if (x$n.groups > 2)
         cat("\nThe number of ", x$voi,
             " in the ", x$n.groups, " successive groups are ",
-            paste(c(paste(x$group.sizes[1:(x$n.groups - 1)],
+            paste(c(paste(x$group.sizes[seq_len(x$n.groups - 1)],
                     collapse = ", "), x$group.sizes[x$n.groups]),
                     collapse = " and "), " respectively.\n",
             sep = "")

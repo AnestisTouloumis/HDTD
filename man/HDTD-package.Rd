@@ -63,15 +63,15 @@ tissues_cov_test
 \references{
 Touloumis, A., Tavare, S. and Marioni, J. C. (2015) Testing the
 Mean Matrix in High-Dimensional Transposable Data.
-\emph{Biometrics} \bold{71}, 157--166
+\emph{Biometrics} \bold{71}, 157--166.
 
 Touloumis, A., Marioni, J. C. and Tavare, S. (2016) HDTD: Analyzing
 multi-tissue gene expression data. \emph{Bioinformatics}
 \bold{32}, 2193--2195.
 
-Touloumis, A., Marioni, J. C. and Tavare, S. (2019+) Hypothesis Testing for
+Touloumis, A., Marioni, J. C. and Tavare, S. (2021) Hypothesis Testing for
 the Covariance Matrix in High-Dimensional Transposable Data with Kronecker
-Product Dependence Structure. \emph{Statistica Sinica}.
+Product Dependence Structure. \emph{Statistica Sinica} \bold{31}, 1309--1329.
 }
 \author{
 Anestis Touloumis, John Marioni, Simon Tavare.

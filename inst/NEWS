@@ -1,5 +1,9 @@
+Version 1.27.1 [2021-07-28]
+ * Updated CITATION FILE.
+ * Added rmarkdown to Suggests.
+ 
 Version 1.19.1 [2019-10-24]
- * Updated CITATION FILES.
+ * Updated CITATION FILE.
  * Fixed minor bug.
 
 Version 1.13.3 [2018-01-10]
