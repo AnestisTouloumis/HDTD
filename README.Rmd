@@ -45,9 +45,13 @@ references:
   - family: Tavaré
     given: Simon  
   container-title: Statistica Sinica
+  volume: 31
+  URL: 'http://www3.stat.sinica.edu.tw/statistica/J31N3/J31N309/J31N309.html'
+  issue: 3
+  page: 1309--1329
   type: article-journal
   issued:
-    year: 2019 
+    year: 2021 
 csl: Biometrics.csl  
 ---
 

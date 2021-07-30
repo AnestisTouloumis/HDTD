@@ -21,7 +21,7 @@ BiocManager::install("HDTD")
 The source code for the release version of `HDTD` is available on
 Bioconductor at:
 
-  - <http://bioconductor.org/packages/release/bioc/html/HDTD.html>
+-   <http://bioconductor.org/packages/release/bioc/html/HDTD.html>
 
 Or you can install the development version of `HDTD`:
 
@@ -50,24 +50,24 @@ with row variables the genes, column variables the tissues and
 measurements the corresponding expression levels. We expect dependencies
 to occur among genes, among tissues and between genes and tissues. For
 more examples of transposable data see references in Touloumis, Marioni
-and Tavaré (2019), Touloumis, Tavaré and Marioni (2015) and Touloumis,
+and Tavaré (2021), Touloumis, Tavaré and Marioni (2015) and Touloumis,
 Marioni and Tavaré (2016).
 
 There are four core functions:
 
-  - `meanmat.hat` to estimate the mean matrix of the transposable data,
-  - `meanmat.ts` to test the overall mean of the row (column) variables
+-   `meanmat.hat` to estimate the mean matrix of the transposable data,
+-   `meanmat.ts` to test the overall mean of the row (column) variables
     across groups of column (row) variables,
-  - `covmat.hat` to estimate the row and column covariance matrix,
-  - `covmat.ts` to test the sphericity, identity and diagonality
+-   `covmat.hat` to estimate the row and column covariance matrix,
+-   `covmat.ts` to test the sphericity, identity and diagonality
     hypothesis test for the row/column covariance matrix.
 
 There are also three utility functions:
 
-  - `transposedata` for interchanging the role of rows and columns,
-  - `centerdata` for centering the transposable data around their mean
+-   `transposedata` for interchanging the role of rows and columns,
+-   `centerdata` for centering the transposable data around their mean
     matrix,
-  - `orderdata` for rearranging the order of the row and/or column
+-   `orderdata` for rearranging the order of the row and/or column
     variables.
 
 ## Example
@@ -79,14 +79,14 @@ mouse dataset
 data(VEGFmouse)
 ```
 
-This dataset contains expression levels for \(40\) mice. For each mouse,
-the expression levels of \(46\) genes (rows) that belong to the vascular
-endothelial growth factor signalling pathway were measured across \(9\)
+This dataset contains expression levels for 40 mice. For each mouse, the
+expression levels of 46 genes (rows) that belong to the vascular
+endothelial growth factor signalling pathway were measured across 9
 tissues (adrenal gland, cerebrum, hippocampus, kidney, lung, muscle,
 spinal cord, spleen and thymus) that are displayed in the columns.
 
 One can estimate the mean relationship of the gene expression levels
-across the \(9\) tissues
+across the 9 tissues
 
 ``` r
 sample_mean <- meanmat.hat(datamat = VEGFmouse, N = 40)
@@ -105,8 +105,8 @@ sample_mean
 #> Casp9    0.0877     0.2600        0.4812   0.3203  0.7416
 ```
 
-and test whether the overall gene expression is constant across the
-\(9\) tissues:
+and test whether the overall gene expression is constant across the 9
+tissues:
 
 ``` r
 tissue_mean_test <- meanmat.ts(datamat = VEGFmouse, N = 40, group.sizes = 9)
@@ -201,16 +201,17 @@ tissues_cov_test
 #> Test Statistic = 38.0811, p-value < 0.0001
 ```
 
-At a \(5\%\) significance level, it appears that the genes are
-correlated but we do not have enough evidence to reject the hypothesis
-that the tissues are uncorrelated.
+At a 5% significance level, it appears that the genes are correlated but
+we do not have enough evidence to reject the hypothesis that the tissues
+are uncorrelated.
 
 ## Getting help
 
-The statistical methods implemented in `HDTD` are described in Touloumis
-et al. (2019), Touloumis et al. (2015) and Touloumis et al. (2016).
-Detailed examples of `HDTD` can be found in Touloumis et al. (2016) or
-in the vignette:
+The statistical methods implemented in `HDTD` are described in
+Touloumis, Marioni and Tavaré (2021), Touloumis, Tavaré and Marioni
+(2015) and Touloumis, Marioni and Tavaré (2016). Detailed examples of
+`HDTD` can be found in Touloumis, Marioni and Tavaré (2016) or in the
+vignette:
 
 ``` r
 browseVignettes("HDTD")
@@ -218,88 +219,87 @@ browseVignettes("HDTD")
 
 ## How to cite
 
-``` 
 
-Please use the following guidelines for citing `HDTD' in publication:
+    Please use the following guidelines for citing `HDTD' in publication:
 
-To cite the mean matrix hypothesis testing methodology, please use
+    To cite the mean matrix hypothesis testing methodology, please use
 
-  Touloumis, A., Tavar\'{e}, S. and Marioni, J.C. (2015). Testing the
-  Mean Matrix in High-Dimensional Transposable Data. Biometrics 71 (1),
-  157-166
+      Touloumis, A., Tavar\'{e}, S. and Marioni, J.C. (2015). Testing the
+      Mean Matrix in High-Dimensional Transposable Data. Biometrics 71 (1),
+      157-166
 
-A BibTeX entry for LaTeX users is
+    A BibTeX entry for LaTeX users is
 
-  @Article{,
-    title = {Testing the Mean Matrix in High-Dimensional Transposable Data},
-    author = {Anestis Touloumis and Simon Tavar\'{e} and John C. Marioni},
-    journal = {Biometrics},
-    year = {2015},
-    volume = {71},
-    issue = {1},
-    pages = {157--166},
-    url = {http://onlinelibrary.wiley.com/doi/10.1111/biom.12257/full},
-  }
+      @Article{,
+        title = {Testing the Mean Matrix in High-Dimensional Transposable Data},
+        author = {Anestis Touloumis and Simon Tavar\'{e} and John C. Marioni},
+        journal = {Biometrics},
+        year = {2015},
+        volume = {71},
+        issue = {1},
+        pages = {157--166},
+        url = {http://onlinelibrary.wiley.com/doi/10.1111/biom.12257/full},
+      }
 
-To cite the covariance matrix hypothesis testing methodology, please
-use
+    To cite the covariance matrix hypothesis testing methodology, please
+    use
 
-  Touloumis, A., Marioni, J.C. and Tavar\'{e}, S. (2019+). Hypothesis
-  Testing for the Covariance Matrix in High-Dimensional Transposable
-  Data with Kronecker Product Dependence Structure. Statistica Sinica
+      Touloumis, A., Marioni, J.C. and Tavar\'{e}, S. (2019+). Hypothesis
+      Testing for the Covariance Matrix in High-Dimensional Transposable
+      Data with Kronecker Product Dependence Structure. Statistica Sinica
 
-A BibTeX entry for LaTeX users is
+    A BibTeX entry for LaTeX users is
 
-  @Article{,
-    title = {Hypothesis Testing for the Covariance Matrix in 
-         High-Dimensional Transposable Data with Kronecker Product Dependence Structure},
-    author = {Anestis Touloumis and John C. Marioni and Simon Tavar\'{e}},
-    journal = {Statistica Sinica},
-    year = {2019+},
-    url = {http://www3.stat.sinica.edu.tw/ss_newpaper/SS-2018-0268_na.pdf},
-  }
+      @Article{,
+        title = {Hypothesis Testing for the Covariance Matrix in 
+             High-Dimensional Transposable Data with Kronecker Product Dependence Structure},
+        author = {Anestis Touloumis and John C. Marioni and Simon Tavar\'{e}},
+        journal = {Statistica Sinica},
+        year = {2019+},
+        url = {http://www3.stat.sinica.edu.tw/ss_newpaper/SS-2018-0268_na.pdf},
+      }
 
-To cite HDTD or the estimation method for the covariance matrices,
-please use
+    To cite HDTD or the estimation method for the covariance matrices,
+    please use
 
-  Touloumis, A., Marioni, J.C. and Tavar\'{e}, S. (2016). HDTD:
-  Analyzing multi-tissue gene expression data. Bioinformatics 32 (14),
-  2193-2195
+      Touloumis, A., Marioni, J.C. and Tavar\'{e}, S. (2016). HDTD:
+      Analyzing multi-tissue gene expression data. Bioinformatics 32 (14),
+      2193-2195
 
-A BibTeX entry for LaTeX users is
+    A BibTeX entry for LaTeX users is
 
-  @Article{,
-    title = {HDTD: Analyzing multi-tissue gene expression data},
-    author = {Anestis Touloumis and John C. Marioni and Simon Tavar\'{e}},
-    journal = {Bioinformatics},
-    year = {2016},
-    volume = {32},
-    issue = {14},
-    pages = {2193--2195},
-    url = {https://doi.org/10.1093/bioinformatics/btw224},
-  }
-```
+      @Article{,
+        title = {HDTD: Analyzing multi-tissue gene expression data},
+        author = {Anestis Touloumis and John C. Marioni and Simon Tavar\'{e}},
+        journal = {Bioinformatics},
+        year = {2016},
+        volume = {32},
+        issue = {14},
+        pages = {2193--2195},
+        url = {https://doi.org/10.1093/bioinformatics/btw224},
+      }
 
 # References
 
-<div id="refs" class="references hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent">
 
-<div id="ref-Touloumis2016">
+<div id="ref-Touloumis2016" class="csl-entry">
 
 Touloumis, A., Marioni, J.C. and Tavaré, S. (2016) HDTD: Analyzing
 Multi-tissue Gene Expression Data. *Bioinformatics*, **32**, 2193–2195.
 
 </div>
 
-<div id="ref-Touloumis2013">
+<div id="ref-Touloumis2013" class="csl-entry">
 
-Touloumis, A., Marioni, J.C. and Tavaré, S. (2019) Hypothesis Testing
+Touloumis, A., Marioni, J.C. and Tavaré, S. (2021) Hypothesis Testing
 for the Covariance Matrix in High-Dimensional Transposable Data with
-Kronecker Product Dependence Structure. *Statistica Sinica*.
+Kronecker Product Dependence Structure. *Statistica Sinica*, **31**,
+1309–1329.
 
 </div>
 
-<div id="ref-Touloumis2015">
+<div id="ref-Touloumis2015" class="csl-entry">
 
 Touloumis, A., Tavaré, S. and Marioni, J.C. (2015) Testing the Mean
 Matrix in High-Dimensional Transposable Data. *Biometrics*, **71**,
